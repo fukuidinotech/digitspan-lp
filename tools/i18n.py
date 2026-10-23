@@ -36,7 +36,7 @@ CONTACT = "fukuidinotech@gmail.com"
 # ja は repo 直下。ほかの言語は同名のサブディレクトリ
 LANGS = {
     "ja": {
-        "dir": "", "native": "日本語", "pick": "言語を選ぶ",
+        "dir": "", "locale": "ja_JP", "native": "日本語", "pick": "言語を選ぶ",
         "app": "数字記憶テスト", "tagline": "何桁まで覚えられるかを測る短期記憶テスト（iOS）",
         "guide": "使い方", "privacy": "プライバシーポリシー", "terms": "利用規約",
         "contact": "お問い合わせ",
@@ -44,7 +44,7 @@ LANGS = {
         "updated": "最終更新日", "date": "{y}年{m}月{d}日",
     },
     "en": {
-        "dir": "en", "native": "English", "pick": "Choose a language",
+        "dir": "en", "locale": "en_US", "native": "English", "pick": "Choose a language",
         "app": "Digit Span", "tagline": "number memory test for iOS",
         "guide": "How to Use", "privacy": "Privacy Policy", "terms": "Terms of Use",
         "contact": "Contact",
@@ -115,6 +115,14 @@ def block_alt(lang: str, page: str) -> str:
     lines.append(f'<link rel="icon" href="{asset(lang, page, "favicon.ico")}" sizes="16x16 32x32 48x48">')
     lines.append(f'<link rel="icon" type="image/png" href="{asset(lang, page, "favicon.png")}" sizes="192x192">')
     lines.append(f'<link rel="apple-touch-icon" href="{asset(lang, page, "apple-touch-icon.png")}">')
+    # SNS で共有されたときの情報。og:title / description / image は各ページで手書きする
+    lines.append(f'<meta property="og:url" content="{url_for(lang, page)}">')
+    lines.append(f'<meta property="og:site_name" content="{LANGS[lang]["app"]}">')
+    lines.append(f'<meta property="og:locale" content="{LANGS[lang]["locale"]}">')
+    for other in LANGS:
+        if other != lang:
+            lines.append(f'<meta property="og:locale:alternate" content="{LANGS[other]["locale"]}">')
+    lines.append('<meta name="twitter:card" content="summary">')
     return "\n".join(lines)
 
 

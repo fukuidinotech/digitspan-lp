@@ -71,9 +71,12 @@ ul.features li, ol.steps li { margin: 6px 0; }
 ol.steps strong { display: block; font-size: 19px; }
 ol.steps span { color: var(--sub); }
 .note { color: var(--sub); font-size: 16px; }
-footer { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 20px; font-size: 14px; color: var(--sub); }
+footer { max-width: 720px; margin-left: auto; margin-right: auto; border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 20px; font-size: 14px; color: var(--sub); }
 footer p { margin: 6px 0; }
 footer a { color: var(--sub); margin-right: 14px; }
 @media (max-width: 420px) {
   h1 { font-size: 34px; }
+  /* iPhone SE（375×667）でも App Store のボタンを最初の画面に入れる */
+  .hero { padding-top: 20px; }
+  .hero-icon { width: 56px; height: 56px; border-radius: 13px; margin-bottom: 12px; }
 }
