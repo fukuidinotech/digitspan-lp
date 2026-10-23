@@ -1,37 +1,61 @@
-/* 色はアプリの docs/DESIGN.md と同じ */
+/* 色はアプリの docs/DESIGN.md（Dark Slate / 紙・案 LA）と同じ */
 :root {
-  --bg: #0B0C14; --text: #E8EAF4; --sub: #8A8FA8; --rule: #1F2236; --accent: #9A8CFF;
+  --bg: #0B0C14; --surface: #151726; --text: #E8EAF4; --sub: #8A8FA8; --dim: #555A73;
+  --rule: #1F2236; --accent: #9A8CFF; --accent-soft: rgba(154,140,255,.15); --success: #3DDC97;
+  --on-accent: #0B0C14;
   color-scheme: dark;
+}
+/* 自動は端末に従い、ラジオの明示選択を優先する。 */
+@media (prefers-color-scheme: light) {
+  :root:not(:has(#theme-dark:checked)) {
+    --bg: #F5F4EF; --surface: #FFFFFF; --text: #14151F; --sub: #62657A; --dim: #8B8E9E;
+    --rule: #E2E0D8; --accent: #5B4BD6; --accent-soft: rgba(91,75,214,.12); --success: #1C7F52;
+    --on-accent: #FFFFFF;
+    color-scheme: light;
+  }
+}
+:root:has(#theme-light:checked) {
+  --bg: #F5F4EF; --surface: #FFFFFF; --text: #14151F; --sub: #62657A; --dim: #8B8E9E;
+  --rule: #E2E0D8; --accent: #5B4BD6; --accent-soft: rgba(91,75,214,.12); --success: #1C7F52;
+  --on-accent: #FFFFFF;
+  color-scheme: light;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0; padding: 0 20px 80px; background: var(--bg); color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", sans-serif;
-  font-size: 15px; line-height: 1.9;
+  font-size: 17px; line-height: 1.9;
 }
 main { max-width: 720px; margin: 0 auto; }
 a { color: var(--accent); }
 .topbar { max-width: 720px; margin: 0 auto; padding: 14px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; border-bottom: 1px solid var(--rule); }
 .brand { display: flex; align-items: center; gap: 8px; margin-right: auto; color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px; }
 .brand img { border-radius: 7px; }
-.pages { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+.pages { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; }
 .pages a { color: var(--sub); text-decoration: none; }
 .pages a[aria-current="page"] { color: var(--text); font-weight: 600; }
-.langs { display: flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; font-size: 13px; }
-.langs a { padding: 4px 12px; border-radius: 999px; color: var(--sub); text-decoration: none; }
-.langs a[aria-current="true"] { background: var(--accent); color: var(--bg); font-weight: 600; }
-/* 狭い画面: 1段目にアプリ名と言語、2段目にページ */
-@media (max-width: 560px) { .pages { order: 3; width: 100%; } }
+.display-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+.langs, .themes { display: flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; font-size: 14px; line-height: 1.8; }
+.themes { min-inline-size: 0; margin: 0; }
+.langs a, .themes label { padding: 4px 8px; border-radius: 999px; color: var(--sub); text-decoration: none; white-space: nowrap; }
+.themes label { cursor: pointer; }
+.langs a[aria-current="true"], .themes input:checked + label { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+.themes input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+/* 狭い画面: アプリ名、言語とテーマ、ページの順に折り返す。 */
+@media (max-width: 560px) {
+  .brand, .pages { width: 100%; }
+}
 main > header { border-bottom: 1px solid var(--rule); padding: 32px 0 18px; margin-bottom: 32px; }
-.app-name { font-size: 12px; letter-spacing: .18em; color: var(--sub); margin: 0 0 8px; }
-h1 { font-size: 24px; font-weight: 600; margin: 0 0 8px; }
-h2 { font-size: 17px; margin: 36px 0 8px; }
-.updated { font-size: 12px; color: var(--sub); margin: 0; }
-.i18n-note { font-size: 13px; color: var(--sub); border-left: 3px solid var(--rule); padding-left: 12px; }
+.app-name { font-size: 14px; letter-spacing: .18em; color: var(--sub); margin: 0 0 8px; }
+h1 { font-size: 30px; font-weight: 600; line-height: 1.3; margin: 0 0 8px; }
+h2 { font-size: 21px; margin: 36px 0 8px; }
+.updated { font-size: 14px; color: var(--sub); margin: 0; }
+.i18n-note { font-size: 15px; color: var(--sub); border-left: 3px solid var(--rule); padding-left: 12px; }
 .table-wrap { overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
 th, td { text-align: left; border-bottom: 1px solid var(--rule); padding: 8px 10px; vertical-align: top; }
 th { color: var(--sub); font-weight: 500; }
-footer { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 20px; font-size: 13px; color: var(--sub); }
+footer { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 20px; font-size: 14px; color: var(--sub); }
 footer p { margin: 6px 0; }
 footer a { color: var(--sub); }

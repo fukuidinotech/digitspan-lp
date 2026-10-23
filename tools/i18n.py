@@ -7,7 +7,7 @@
 手で書かない。目印の外（title / description / og / 本文）だけを手で書く。
 
     <!--chrome:alt-->  ... <!--/chrome:alt-->    canonical / hreflang / css / アイコン
-    <!--chrome:nav-->  ... <!--/chrome:nav-->    上のバー（ページへのリンクと言語切替。JS を使わないただのリンク）
+    <!--chrome:nav-->  ... <!--/chrome:nav-->    上のバー（ページ・言語へのリンクと、JS を使わないテーマ切替）
     <!--chrome:foot--> ... <!--/chrome:foot-->   フッター
 
 法務ページの更新日は `<p class="updated" data-updated="YYYY-MM-DD">` の日付から
@@ -40,6 +40,7 @@ LANGS = {
         "app": "数字記憶テスト", "tagline": "何桁まで覚えられるかを測る短期記憶テスト（iOS）",
         "guide": "使い方", "privacy": "プライバシーポリシー", "terms": "利用規約",
         "contact": "お問い合わせ",
+        "theme": "表示の色", "theme_auto": "自動", "theme_light": "ライト", "theme_dark": "ダーク",
         "updated": "最終更新日", "date": "{y}年{m}月{d}日",
     },
     "en": {
@@ -47,6 +48,7 @@ LANGS = {
         "app": "Digit Span", "tagline": "number memory test for iOS",
         "guide": "How to Use", "privacy": "Privacy Policy", "terms": "Terms of Use",
         "contact": "Contact",
+        "theme": "Color theme", "theme_auto": "Auto", "theme_light": "Light", "theme_dark": "Dark",
         "updated": "Last updated", "date": "{month} {d}, {y}",
     },
 }
@@ -125,16 +127,26 @@ def block_nav(lang: str, page: str) -> str:
     out = ['<header class="topbar">',
            f'  <a class="brand" href="{rel(lang, page, lang, "index")}">'
            f'<img src="{asset(lang, page, "favicon.png")}" alt="" width="28" height="28">{cfg["app"]}</a>',
-           '  <nav class="pages">']
+           '  <div class="display-controls">',
+           f'    <nav class="langs" aria-label="{cfg["pick"]}">']
+    for other, ocfg in LANGS.items():
+        cur = ' aria-current="true"' if other == lang else ""
+        out.append(f'      <a lang="{other}" hreflang="{other}" '
+                   f'href="{rel(lang, page, other, page)}"{cur}>{ocfg["native"]}</a>')
+    out.append('    </nav>')
+    out.append('    <fieldset class="themes">')
+    out.append(f'      <legend class="visually-hidden">{cfg["theme"]}</legend>')
+    for theme in ("auto", "light", "dark"):
+        checked = " checked" if theme == "auto" else ""
+        out.append(f'      <input class="visually-hidden" type="radio" name="theme" '
+                   f'id="theme-{theme}" value="{theme}"{checked}>')
+        out.append(f'      <label for="theme-{theme}">{cfg[f"theme_{theme}"]}</label>')
+    out.append('    </fieldset>')
+    out.append('  </div>')
+    out.append('  <nav class="pages">')
     for p in NAV:
         cur = ' aria-current="page"' if p == page else ""
         out.append(f'    <a href="{rel(lang, page, lang, p)}"{cur}>{cfg[p]}</a>')
-    out.append('  </nav>')
-    out.append(f'  <nav class="langs" aria-label="{cfg["pick"]}">')
-    for other, ocfg in LANGS.items():
-        cur = ' aria-current="true"' if other == lang else ""
-        out.append(f'    <a lang="{other}" hreflang="{other}" '
-                   f'href="{rel(lang, page, other, page)}"{cur}>{ocfg["native"]}</a>')
     out.append('  </nav>')
     out.append('</header>')
     return "\n".join(out)

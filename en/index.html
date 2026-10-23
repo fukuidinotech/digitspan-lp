@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/">
 <link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/en/">
 <link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/en/">
-<link rel="stylesheet" href="../site.css?v=c22eb1ab">
+<link rel="stylesheet" href="../site.css?v=e1450aae">
 <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -24,14 +24,25 @@
 <!--chrome:nav-->
 <header class="topbar">
   <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Choose a language">
+      <a lang="ja" hreflang="ja" href="../index.html">日本語</a>
+      <a lang="en" hreflang="en" href="index.html" aria-current="true">English</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Color theme</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" checked>
+      <label for="theme-auto">Auto</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light">
+      <label for="theme-light">Light</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark">
+      <label for="theme-dark">Dark</label>
+    </fieldset>
+  </div>
   <nav class="pages">
     <a href="guide/index.html">How to Use</a>
     <a href="privacy/index.html">Privacy Policy</a>
     <a href="terms/index.html">Terms of Use</a>
-  </nav>
-  <nav class="langs" aria-label="Choose a language">
-    <a lang="ja" hreflang="ja" href="../index.html">日本語</a>
-    <a lang="en" hreflang="en" href="index.html" aria-current="true">English</a>
   </nav>
 </header>
 <!--/chrome:nav-->
@@ -44,7 +55,12 @@
     <a class="badge" href="https://apps.apple.com/us/app/id6826156702">View on the App Store</a>
   </section>
 
-  <p class="digits mono" aria-hidden="true"><span>3</span><span>8</span><span>1</span><span>6</span><span>4</span></p>
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Watch digits appear, enter them from memory, and see the result."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Watch digits appear, enter them from memory, and see the result."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="Watch digits appear, enter them from memory, and see the result.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="Watch digits appear, enter them from memory, and see the result.">
+  </figure>
 
   <h2>How it works</h2>
   <ol class="steps">
