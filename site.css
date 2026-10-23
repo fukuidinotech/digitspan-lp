@@ -72,6 +72,12 @@ ul.features, ol.steps { padding-left: 1.2em; }
 ul.features li, ol.steps li { margin: 6px 0; }
 ol.steps strong { display: block; font-size: 19px; }
 ol.steps span { color: var(--sub); }
+/* 姉妹アプリのカード（アイコン＋名前＋一言） */
+.sister { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; color: var(--text); text-decoration: none; }
+.sister img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.sister strong { display: block; font-size: 17px; }
+.sister span span { display: block; color: var(--sub); font-size: 14px; line-height: 1.6; }
+.sister:hover { border-color: var(--accent); }
 .note { color: var(--sub); font-size: 16px; }
 footer { max-width: 720px; margin-left: auto; margin-right: auto; border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 20px; font-size: 14px; color: var(--sub); }
 footer p { margin: 6px 0; }
