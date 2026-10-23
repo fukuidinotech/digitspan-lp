@@ -7,7 +7,7 @@
 手で書かない。目印の外（title / description / og / 本文）だけを手で書く。
 
     <!--chrome:alt-->  ... <!--/chrome:alt-->    canonical / hreflang / css / アイコン
-    <!--chrome:lang--> ... <!--/chrome:lang-->   言語切替（JS を使わないただのリンク）
+    <!--chrome:nav-->  ... <!--/chrome:nav-->    上のバー（ページへのリンクと言語切替。JS を使わないただのリンク）
     <!--chrome:foot--> ... <!--/chrome:foot-->   フッター
 
 法務ページの更新日は `<p class="updated" data-updated="YYYY-MM-DD">` の日付から
@@ -29,8 +29,8 @@ BASE = "https://fukuidinotech.github.io/digitspan-lp/"
 
 # ページの鍵 → 言語ディレクトリからの置き場（空 = 言語の直下）。
 # **privacy の URL は `/privacy/` で固定。** AdMob の EU 同意メッセージがこの URL を指している（2026-10-22 登録）
-PAGES = {"index": "", "privacy": "privacy", "terms": "terms"}
-LEGAL = ["privacy", "terms"]
+PAGES = {"index": "", "guide": "guide", "privacy": "privacy", "terms": "terms"}
+NAV = ["guide", "privacy", "terms"]
 CONTACT = "fukuidinotech@gmail.com"
 
 # ja は repo 直下。ほかの言語は同名のサブディレクトリ
@@ -38,14 +38,14 @@ LANGS = {
     "ja": {
         "dir": "", "native": "日本語", "pick": "言語を選ぶ",
         "app": "数字記憶テスト", "tagline": "何桁まで覚えられるかを測る短期記憶テスト（iOS）",
-        "privacy": "プライバシーポリシー", "terms": "利用規約",
+        "guide": "使い方", "privacy": "プライバシーポリシー", "terms": "利用規約",
         "contact": "お問い合わせ",
         "updated": "最終更新日", "date": "{y}年{m}月{d}日",
     },
     "en": {
         "dir": "en", "native": "English", "pick": "Choose a language",
         "app": "Digit Span", "tagline": "number memory test for iOS",
-        "privacy": "Privacy Policy", "terms": "Terms of Use",
+        "guide": "How to Use", "privacy": "Privacy Policy", "terms": "Terms of Use",
         "contact": "Contact",
         "updated": "Last updated", "date": "{month} {d}, {y}",
     },
@@ -120,13 +120,23 @@ def block_alt(lang: str, page: str) -> str:
 # （kakesu-lp で JS の振り分けを入れて外した経緯。外から書ける値を遷移先に使うと穴になる）
 
 
-def block_lang(lang: str, page: str) -> str:
-    out = [f'<div class="langbar" role="navigation" aria-label="{LANGS[lang]["pick"]}">']
-    for other, cfg in LANGS.items():
+def block_nav(lang: str, page: str) -> str:
+    cfg = LANGS[lang]
+    out = ['<header class="topbar">',
+           f'  <a class="brand" href="{rel(lang, page, lang, "index")}">'
+           f'<img src="{asset(lang, page, "favicon.png")}" alt="" width="28" height="28">{cfg["app"]}</a>',
+           '  <nav class="pages">']
+    for p in NAV:
+        cur = ' aria-current="page"' if p == page else ""
+        out.append(f'    <a href="{rel(lang, page, lang, p)}"{cur}>{cfg[p]}</a>')
+    out.append('  </nav>')
+    out.append(f'  <nav class="langs" aria-label="{cfg["pick"]}">')
+    for other, ocfg in LANGS.items():
         cur = ' aria-current="true"' if other == lang else ""
-        out.append(f'  <a lang="{other}" hreflang="{other}" '
-                   f'href="{rel(lang, page, other, page)}"{cur}>{cfg["native"]}</a>')
-    out.append('</div>')
+        out.append(f'    <a lang="{other}" hreflang="{other}" '
+                   f'href="{rel(lang, page, other, page)}"{cur}>{ocfg["native"]}</a>')
+    out.append('  </nav>')
+    out.append('</header>')
     return "\n".join(out)
 
 
@@ -134,7 +144,7 @@ def block_foot(lang: str, page: str) -> str:
     cfg = LANGS[lang]
     out = ['<footer>']
     if page == "index":
-        links = [f'<a href="{rel(lang, page, lang, p)}">{cfg[p]}</a>' for p in LEGAL]
+        links = [f'<a href="{rel(lang, page, lang, p)}">{cfg[p]}</a>' for p in NAV]
         links.append(f'<a href="mailto:{CONTACT}">{cfg["contact"]}</a>')
         out.append('  <p>')
         out += [f'    {a}' for a in links]
@@ -142,14 +152,14 @@ def block_foot(lang: str, page: str) -> str:
         out.append(f'  <p>{cfg["app"]} — {cfg["tagline"]}</p>')
     else:
         out.append(f'  <p><a href="{rel(lang, page, lang, "index")}">{cfg["app"]}</a> — {cfg["tagline"]}</p>')
-        others = " / ".join(f'<a href="{rel(lang, page, lang, p)}">{cfg[p]}</a>' for p in LEGAL if p != page)
+        others = " / ".join(f'<a href="{rel(lang, page, lang, p)}">{cfg[p]}</a>' for p in NAV if p != page)
         out.append(f'  <p>{others}</p>')
     out.append('  <p>&copy; 2026 Toru Fukui</p>')
     out.append('</footer>')
     return "\n".join(out)
 
 
-BLOCKS = {"alt": block_alt, "lang": block_lang, "foot": block_foot}
+BLOCKS = {"alt": block_alt, "nav": block_nav, "foot": block_foot}
 
 
 def apply(text: str, lang: str, page: str) -> str:
