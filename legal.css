@@ -5,16 +5,16 @@
   --on-accent: #0B0C14;
   color-scheme: dark;
 }
-/* 自動は端末に従い、ラジオの明示選択を優先する。 */
+/* 自動は端末に従い、明示の選択（JS が覚えた html の data-scheme、または上のバーのラジオ）を優先する */
 @media (prefers-color-scheme: light) {
-  :root:not(:has(#theme-dark:checked)) {
+  :root:not([data-scheme="dark"]):not(:has(#theme-dark:checked)) {
     --bg: #F5F4EF; --surface: #FFFFFF; --text: #14151F; --sub: #62657A; --dim: #8B8E9E;
     --rule: #E2E0D8; --accent: #5B4BD6; --accent-soft: rgba(91,75,214,.12); --success: #1C7F52;
     --on-accent: #FFFFFF;
     color-scheme: light;
   }
 }
-:root:has(#theme-light:checked) {
+:root:is([data-scheme="light"], :has(#theme-light:checked)) {
   --bg: #F5F4EF; --surface: #FFFFFF; --text: #14151F; --sub: #62657A; --dim: #8B8E9E;
   --rule: #E2E0D8; --accent: #5B4BD6; --accent-soft: rgba(91,75,214,.12); --success: #1C7F52;
   --on-accent: #FFFFFF;

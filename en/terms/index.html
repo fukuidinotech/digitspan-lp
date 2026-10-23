@@ -5,11 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of Use | Digit Span</title>
 <!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
 <link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/en/terms/">
 <link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
 <link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/en/terms/">
 <link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/en/terms/">
-<link rel="stylesheet" href="../../legal.css?v=fae9dcfc">
+<link rel="stylesheet" href="../../legal.css?v=5fed20a3">
 <link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
@@ -31,15 +58,16 @@
     </nav>
     <fieldset class="themes">
       <legend class="visually-hidden">Color theme</legend>
-      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" checked>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
       <label for="theme-auto">Auto</label>
-      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light">
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
       <label for="theme-light">Light</label>
-      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark">
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
       <label for="theme-dark">Dark</label>
     </fieldset>
   </div>
   <nav class="pages">
+    <a href="../index.html">Home</a>
     <a href="../guide/index.html">How to Use</a>
     <a href="../privacy/index.html">Privacy Policy</a>
     <a href="index.html" aria-current="page">Terms of Use</a>
