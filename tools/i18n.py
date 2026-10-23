@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """digitspan-lp の共通部分（head の alternate・言語切替・フッター・更新日）を
-全言語ぶん書き戻す。sumflash-lp の tools/i18n.py をもとに、ページをディレクトリ型
+全言語ぶん書き戻す。旧 `en/` の URL の受け皿（直下の英語ページへ飛ばす）もここで書く。sumflash-lp の tools/i18n.py をもとに、ページをディレクトリ型
 （`privacy/index.html` → URL は `/privacy/`）にしたもの。
 
 各 HTML は次の3つの目印を持つ。目印のあいだはこのスクリプトが上書きするので、
@@ -28,29 +28,32 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://fukuidinotech.github.io/digitspan-lp/"
 
 # ページの鍵 → 言語ディレクトリからの置き場（空 = 言語の直下）。
-# **privacy の URL は `/privacy/` で固定。** AdMob の EU 同意メッセージがこの URL を指している（2026-10-22 登録）
+# **privacy の URL は `/privacy/` で固定。** AdMob の EU 同意メッセージがこの URL を指している（2026-10-22 登録。
+# 2026-10-23 に en を直下へ移してからは英語版）
 PAGES = {"index": "", "guide": "guide", "privacy": "privacy", "terms": "terms"}
 NAV = ["guide", "privacy", "terms"]
 CONTACT = "fukuidinotech@gmail.com"
 
-# ja は repo 直下。ほかの言語は同名のサブディレクトリ
+# **en は repo 直下（既定の言語）。ほかの言語は同名のサブディレクトリ**（2026-10-23〜。それまでは ja が直下で en は `en/`）。
+# 言語切替もこの順に並ぶ
 LANGS = {
-    "ja": {
-        "dir": "", "locale": "ja_JP", "native": "日本語", "pick": "言語を選ぶ",
-        "app": "数字記憶テスト", "tagline": "何桁まで覚えられるかを測る短期記憶テスト（iOS）",
-        "home": "トップ", "guide": "使い方", "privacy": "プライバシーポリシー", "terms": "利用規約",
-        "contact": "お問い合わせ",
-        "theme": "表示の色", "theme_auto": "自動", "theme_light": "ライト", "theme_dark": "ダーク",
-        "updated": "最終更新日", "date": "{y}年{m}月{d}日",
-    },
     "en": {
-        "dir": "en", "locale": "en_US", "native": "English", "pick": "Choose a language",
+        "dir": "", "locale": "en_US", "native": "English", "pick": "Choose a language",
         "app": "Digit Span", "tagline": "number memory test for iOS",
         "home": "Home", "guide": "How to Use", "privacy": "Privacy Policy", "terms": "Terms of Use",
         "contact": "Contact",
         "theme": "Color theme", "theme_auto": "Auto", "theme_light": "Light", "theme_dark": "Dark",
         "updated": "Last updated", "date": "{month} {d}, {y}",
     },
+    "ja": {
+        "dir": "ja", "locale": "ja_JP", "native": "日本語", "pick": "言語を選ぶ",
+        "app": "数字記憶テスト", "tagline": "何桁まで覚えられるかを測る短期記憶テスト（iOS）",
+        "home": "トップ", "guide": "使い方", "privacy": "プライバシーポリシー", "terms": "利用規約",
+        "contact": "お問い合わせ",
+        "theme": "表示の色", "theme_auto": "自動", "theme_light": "ライト", "theme_dark": "ダーク",
+        "updated": "最終更新日", "date": "{y}年{m}月{d}日",
+    },
+
 }
 
 # 月の名前が要る言語だけ持つ（ja は数字で書く）
@@ -216,6 +219,30 @@ def block_foot(lang: str, page: str) -> str:
 
 BLOCKS = {"alt": block_alt, "nav": block_nav, "foot": block_foot}
 
+# 2026-10-23 まで en を置いていた `en/` の URL。外（ストアの登録・共有されたリンク・TestFlight 版のアプリ）から
+# 開かれても迷わないよう、直下の英語ページへ飛ばす受け皿を置く。**消さない**（公開済みの URL は消さない決まり）
+OLD_EN_DIR = "en"
+
+
+def redirect_page(page: str) -> str:
+    """JS を使わない受け皿（meta refresh ＋ canonical ＋ noindex ＋ 手で辿れるリンク）"""
+    target = url_for("en", page)
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={target}">
+<link rel="canonical" href="{target}">
+<title>{LANGS["en"]["app"]}</title>
+</head>
+<body>
+<p>This page has moved: <a href="{target}">{target}</a></p>
+</body>
+</html>
+"""
+
 
 def apply(text: str, lang: str, page: str) -> str:
     for key, fn in BLOCKS.items():
@@ -245,6 +272,16 @@ def main() -> int:
                 stale.append(str(path.relative_to(ROOT)))
                 if not check:
                     path.write_text(after, encoding="utf-8")
+
+    for page in PAGES:
+        d = "/".join(p for p in (OLD_EN_DIR, PAGES[page]) if p)
+        path = ROOT / d / "index.html"
+        want = redirect_page(page)
+        if not path.exists() or path.read_text(encoding="utf-8") != want:
+            stale.append(str(path.relative_to(ROOT)))
+            if not check:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(want, encoding="utf-8")
 
     for name in missing:
         print(f"無い: {name}")

@@ -1,142 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Number Memory Test: Digit Span — How Many Digits Can You Remember?</title>
-<meta name="description" content="Watch digits appear one at a time, then type them back in order — or in reverse. An iOS short-term memory test that measures how many digits you can hold (your digit span), with separate Forward and Backward personal bests and a side-by-side view of the digits you missed.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Digit Span — How many digits can you remember?">
-<meta property="og:description" content="Watch the digits, type them back in order. A number memory test for iOS.">
-<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
-<!--chrome:alt-->
-<script>
-(function () {
-  var KEY = "digitspan-lp-theme", root = document.documentElement;
-  function saved() {
-    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
-  }
-  function apply(v) {
-    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
-    var radio = document.getElementById("theme-" + v);
-    if (radio) { radio.checked = true; }
-  }
-  apply(saved());
-  document.addEventListener("DOMContentLoaded", function () {
-    apply(saved());
-    var radios = document.querySelectorAll('input[name="theme"]');
-    for (var i = 0; i < radios.length; i++) {
-      radios[i].addEventListener("change", function (event) {
-        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
-        apply(v);
-        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
-      });
-    }
-  });
-  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
-  window.addEventListener("pageshow", function () { apply(saved()); });
-})();
-</script>
-<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/en/">
-<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/">
-<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/en/">
-<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/en/">
-<link rel="stylesheet" href="../site.css?v=ddebec9a">
-<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
-<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/en/">
-<meta property="og:site_name" content="Digit Span">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ja_JP">
-<meta name="twitter:card" content="summary">
-<!--/chrome:alt-->
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/">
+<title>Digit Span</title>
 </head>
 <body>
-<!--chrome:nav-->
-<header class="topbar">
-  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
-  <div class="display-controls">
-    <nav class="langs" aria-label="Choose a language">
-      <a lang="ja" hreflang="ja" href="../index.html">日本語</a>
-      <a lang="en" hreflang="en" href="index.html" aria-current="true">English</a>
-    </nav>
-    <fieldset class="themes">
-      <legend class="visually-hidden">Color theme</legend>
-      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
-      <label for="theme-auto">Auto</label>
-      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
-      <label for="theme-light">Light</label>
-      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
-      <label for="theme-dark">Dark</label>
-    </fieldset>
-  </div>
-  <nav class="pages">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="guide/index.html">How to Use</a>
-    <a href="privacy/index.html">Privacy Policy</a>
-    <a href="terms/index.html">Terms of Use</a>
-  </nav>
-</header>
-<!--/chrome:nav-->
-<main>
-  <section class="hero">
-    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
-    <p class="app-name">NUMBER MEMORY TEST / DIGIT SPAN</p>
-    <h1><span>How many digits</span> <span>can you remember?</span></h1>
-    <p class="lead">Digits appear one at a time. When they disappear, type them back in the order you saw them. Each correct answer adds one more digit, until you find how many you can hold — your digit span. A simple short-term memory test.</p>
-    <!-- When live on the App Store, restore: <a class="badge" href="https://apps.apple.com/us/app/id6826156702">View on the App Store</a> -->
-    <span class="badge badge-soon">Coming soon (free to use, for iPhone)</span>
-  </section>
-
-  <figure class="intro-media">
-    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Watch digits appear, enter them from memory, and see the result."></video>
-    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Watch digits appear, enter them from memory, and see the result."></video>
-    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="Watch digits appear, enter them from memory, and see the result.">
-    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="Watch digits appear, enter them from memory, and see the result.">
-  </figure>
-
-  <h2>How it works</h2>
-  <ol class="steps">
-    <li><strong>Watch the digits</strong><span>They appear one at a time (0.7 seconds each by default).</span></li>
-    <li><strong>Type them back</strong><span>In Backward mode, enter them in reverse order.</span></li>
-    <li><strong>Add a digit</strong><span>Get it right and the sequence grows by one digit. Miss the same length twice and the test ends — that length is your digit span.</span></li>
-  </ol>
-  <p><a href="guide/index.html">Full guide and FAQ →</a></p>
-
-  <h2>Features</h2>
-  <ul class="features">
-    <li>Two tests, Forward and Backward, each with its own personal best. Backward has you reorder the digits in your head, so it also uses working memory</li>
-    <li>When you miss, your answer is shown next to the correct one, with the wrong digits highlighted</li>
-    <li>See your daily personal best over time on the History screen</li>
-    <li>Change the starting length (2–12 digits) and how long each digit is shown (0.3–2.0 seconds)</li>
-    <li>Choose how digits are presented: Screen, Voice, or Both. Choose Voice to make it a listening test</li>
-    <li>Every digit is monospaced, on a clean, instrument-like screen</li>
-    <li>Records stay on your device. No sign-in</li>
-  </ul>
-  <p class="note">A typical adult forward span is said to be 7±2 digits (Miller, 1956). This app lets you check how many digits you can hold; it is not a medical diagnosis and is not intended to improve memory.</p>
-
-  <h2>Sister app</h2>
-  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/en/" hreflang="en">
-    <img src="../images/nback-icon.png" alt="" width="64" height="64">
-    <span><strong>N-Back Brain Trainer</strong><span>A working memory test that keeps you updating what you hold</span></span>
-  </a>
-
-  <h2>About ads</h2>
-  <p class="note">Ads appear at the bottom of the Home, results, and History screens, and when you tap Try Again on the results screen (every other time). No ads are shown while you watch the digits, type your answer, or see whether it was correct.</p>
-  <p class="note">No ads are shown while you have a Premium subscription (monthly, auto-renewable). Every test and history feature works without subscribing.</p>
-</main>
-<!--chrome:foot-->
-<footer>
-  <p>
-    <a href="guide/index.html">How to Use</a>
-    <a href="privacy/index.html">Privacy Policy</a>
-    <a href="terms/index.html">Terms of Use</a>
-    <a href="mailto:fukuidinotech@gmail.com">Contact</a>
-  </p>
-  <p>Digit Span — number memory test for iOS</p>
-  <p>&copy; 2026 Toru Fukui</p>
-</footer>
-<!--/chrome:foot-->
+<p>This page has moved: <a href="https://fukuidinotech.github.io/digitspan-lp/">https://fukuidinotech.github.io/digitspan-lp/</a></p>
 </body>
 </html>

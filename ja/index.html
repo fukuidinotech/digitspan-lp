@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数字記憶テスト｜何桁まで覚えられるかを測る短期記憶テスト</title>
+<meta name="description" content="数字を1つずつ見て、覚えた順（または逆の順）に打つ。何桁まで覚えられるか（数字スパン）を測る iOS アプリ。順唱・逆唱の自己ベストと、ミスした桁の見比べ。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数字記憶テスト｜何桁まで覚えられる？">
+<meta property="og:description" content="数字を1つずつ見て、覚えた順に打つ。何桁まで覚えられるかを測る短期記憶テスト。">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=ddebec9a">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<meta property="og:site_name" content="数字記憶テスト">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">数字記憶テスト</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="言語を選ぶ">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="index.html" aria-current="true">日本語</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">表示の色</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">自動</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">ライト</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">ダーク</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">トップ</a>
+    <a href="guide/index.html">使い方</a>
+    <a href="privacy/index.html">プライバシーポリシー</a>
+    <a href="terms/index.html">利用規約</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">数字記憶テスト / DIGIT SPAN</p>
+    <h1><span>何桁まで、</span><span>覚えられる？</span></h1>
+    <p class="lead">数字が1つずつ表示されます。消えたら、出た順に打ちます。正解するたびに1桁ずつ増えていき、何桁まで覚えられるか（数字スパン）を測る、短期記憶のテストです。</p>
+    <!-- App Store で公開されたら次に戻す: <a class="badge" href="https://apps.apple.com/jp/app/id6826156702">App Store で見る</a> -->
+    <span class="badge badge-soon">近日公開（iPhone・基本無料）</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-ja-dark.mp4" poster="../media/intro-ja-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="数字を覚えて入力し、結果を確認するテストの流れを紹介します。"></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-ja-light.mp4" poster="../media/intro-ja-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="数字を覚えて入力し、結果を確認するテストの流れを紹介します。"></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-ja-dark.jpg" width="1080" height="1350" alt="数字を覚えて入力し、結果を確認するテストの流れを紹介します。">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-ja-light.jpg" width="1080" height="1350" alt="数字を覚えて入力し、結果を確認するテストの流れを紹介します。">
+  </figure>
+
+  <h2>使い方</h2>
+  <ol class="steps">
+    <li><strong>数字を見る</strong><span>1つずつ表示されます（初期値は1つ0.7秒）。</span></li>
+    <li><strong>覚えた順に打つ</strong><span>「逆から」では、出た順の反対に打ちます。</span></li>
+    <li><strong>次の桁へ</strong><span>正解なら1桁増えます。同じ桁で2回まちがえたら終了。そこまでが、あなたの数字スパンです。</span></li>
+  </ol>
+  <p><a href="guide/index.html">詳しい使い方とよくある質問 →</a></p>
+
+  <h2>特徴</h2>
+  <ul class="features">
+    <li>「そのまま」（順唱）と「逆から」（逆唱）の2つのテスト。自己ベストを別々に記録します。「逆から」は頭の中で並べ替えるので、ワーキングメモリも使います</li>
+    <li>まちがえたときは、正解とあなたの答えを並べて、ずれた桁に色が付きます</li>
+    <li>成績の画面で、日ごとの自己ベストの推移を見られます</li>
+    <li>開始の桁数（2〜12桁）と、数字を見せる長さ（0.3〜2.0秒）を変えられます</li>
+    <li>数字の出し方は「画面」「読み上げ」「両方」から選べます。読み上げだけにすると、耳で覚えるテストになります</li>
+    <li>数字はすべて等幅。装飾のない、計器のような画面です</li>
+    <li>記録は端末の中だけに保存。ログイン不要</li>
+  </ul>
+  <p class="note">一般的な成人の目安は、そのまま（順唱）で 7±2 桁といわれています（Miller, 1956）。本アプリは記憶の状態を確かめるためのもので、医療上の診断や、記憶力の向上を目的としたものではありません。</p>
+
+  <h2>姉妹アプリ</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/" hreflang="ja">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>覚えた内容を更新し続ける、ワーキングメモリのテスト</span></span>
+  </a>
+
+  <h2>広告について</h2>
+  <p class="note">ホーム・結果・成績の画面の下と、結果から「もう一度」を押したとき（2回に1回）に広告が表示されます。数字を見ている間、答えを打っている間、判定の間には表示しません。</p>
+  <p class="note">プレミアム（月額の自動更新サブスクリプション）の購読中は、広告を表示しません。テストと成績の機能は、購読しなくてもすべて使えます。</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">使い方</a>
+    <a href="privacy/index.html">プライバシーポリシー</a>
+    <a href="terms/index.html">利用規約</a>
+    <a href="mailto:fukuidinotech@gmail.com">お問い合わせ</a>
+  </p>
+  <p>数字記憶テスト — 何桁まで覚えられるかを測る短期記憶テスト（iOS）</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>
