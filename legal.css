@@ -1,0 +1,29 @@
+/* 色はアプリの docs/DESIGN.md と同じ */
+:root {
+  --bg: #0B0C14; --text: #E8EAF4; --sub: #8A8FA8; --rule: #1F2236; --accent: #9A8CFF;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 0 20px 80px; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px; line-height: 1.9;
+}
+main { max-width: 720px; margin: 0 auto; }
+a { color: var(--accent); }
+.langbar { max-width: 720px; margin: 0 auto; padding: 14px 0; display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: flex-end; font-size: 13px; }
+.langbar a { color: var(--sub); text-decoration: none; }
+.langbar a[aria-current="true"] { color: var(--text); font-weight: 600; }
+header { border-bottom: 1px solid var(--rule); padding: 32px 0 18px; margin-bottom: 32px; }
+.app-name { font-size: 12px; letter-spacing: .18em; color: var(--sub); margin: 0 0 8px; }
+h1 { font-size: 24px; font-weight: 600; margin: 0 0 8px; }
+h2 { font-size: 17px; margin: 36px 0 8px; }
+.updated { font-size: 12px; color: var(--sub); margin: 0; }
+.i18n-note { font-size: 13px; color: var(--sub); border-left: 3px solid var(--rule); padding-left: 12px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; border-bottom: 1px solid var(--rule); padding: 8px 10px; vertical-align: top; }
+th { color: var(--sub); font-weight: 500; }
+footer { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 20px; font-size: 13px; color: var(--sub); }
+footer p { margin: 6px 0; }
+footer a { color: var(--sub); }
