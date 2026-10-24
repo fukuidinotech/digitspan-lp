@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiểm tra trí nhớ số: Digit Span — Bạn nhớ được bao nhiêu chữ số?</title>
+<meta name="description" content="Xem từng chữ số lần lượt hiện ra, rồi nhập lại theo đúng thứ tự (hoặc bắt đầu từ chữ số xuất hiện sau cùng). Ứng dụng iOS đo xem bạn nhớ được bao nhiêu chữ số (khoảng nhớ chữ số), với kỷ lục cá nhân riêng cho Theo thứ tự và Đảo ngược, cùng phần so sánh các chữ số bạn nhập sai.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kiểm tra trí nhớ số — Bạn nhớ được bao nhiêu chữ số?">
+<meta property="og:description" content="Xem từng chữ số, rồi nhập lại theo đúng thứ tự. Bài kiểm tra trí nhớ ngắn hạn đo xem bạn nhớ được bao nhiêu chữ số.">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Chọn ngôn ngữ">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../es/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../nl/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../pl/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../ar/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../ko/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="index.html" aria-current="true">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Màu hiển thị</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Tự động</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Sáng</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Tối</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">Trang chủ</a>
+    <a href="guide/index.html">Cách sử dụng</a>
+    <a href="privacy/index.html">Chính sách quyền riêng tư</a>
+    <a href="terms/index.html">Điều khoản sử dụng</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">KIỂM TRA TRÍ NHỚ SỐ / DIGIT SPAN</p>
+    <h1><span>Bạn nhớ được</span> <span>bao nhiêu chữ số?</span></h1>
+    <p class="lead">Các chữ số lần lượt hiện ra từng số một. Khi chúng biến mất, hãy nhập lại theo đúng thứ tự đã xuất hiện. Chọn số chữ số và trả lời 5 câu. Mức cao nhất mà bạn trả lời đúng cả 5 câu cho biết bạn nhớ được bao nhiêu chữ số (khoảng nhớ chữ số). Đây là một bài kiểm tra trí nhớ ngắn hạn.</p>
+    <!-- Khi ứng dụng có mặt trên App Store, khôi phục dòng này: <a class="badge" href="https://apps.apple.com/vn/app/id6826156702">Xem trên App Store</a> -->
+    <span class="badge badge-soon">Sắp ra mắt (iPhone, miễn phí)</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Giới thiệu trình tự bài kiểm tra: ghi nhớ các chữ số, nhập lại và xem kết quả."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Giới thiệu trình tự bài kiểm tra: ghi nhớ các chữ số, nhập lại và xem kết quả."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="Giới thiệu trình tự bài kiểm tra: ghi nhớ các chữ số, nhập lại và xem kết quả.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="Giới thiệu trình tự bài kiểm tra: ghi nhớ các chữ số, nhập lại và xem kết quả.">
+  </figure>
+
+  <h2>Cách sử dụng</h2>
+  <ol class="steps">
+    <li><strong>Xem các chữ số</strong><span>Các chữ số hiện ra lần lượt từng số (mặc định 0,7 giây mỗi số).</span></li>
+    <li><strong>Nhập theo thứ tự đã nhớ</strong><span>Ở chế độ “Đảo ngược”, hãy nhập từ chữ số xuất hiện sau cùng.</span></li>
+    <li><strong>Đối chiếu đáp án sau 5 câu</strong><span>5 câu với cùng số chữ số. Sau mỗi câu chỉ hiện đúng hay sai; khi làm xong, đáp án của cả 5 câu được hiển thị cùng lúc. Mức cao nhất mà bạn trả lời đúng cả 5 câu chính là khoảng nhớ chữ số của bạn.</span></li>
+  </ol>
+  <p><a href="guide/index.html">Hướng dẫn chi tiết và câu hỏi thường gặp →</a></p>
+
+  <h2>Tính năng</h2>
+  <ul class="features">
+    <li>Hai bài kiểm tra: “Theo thứ tự” (nhắc lại xuôi) và “Đảo ngược” (nhắc lại ngược), mỗi bài ghi kỷ lục cá nhân riêng. Ở “Đảo ngược”, bạn phải sắp xếp lại các chữ số trong đầu nên cũng dùng đến trí nhớ làm việc</li>
+    <li>Đối chiếu đáp án cả 5 câu trên màn hình Kết quả: đáp án đúng và câu trả lời của bạn được đặt cạnh nhau, chữ số sai được tô màu</li>
+    <li>Xem diễn biến kỷ lục cá nhân theo ngày trên màn hình Thành tích</li>
+    <li>Có thể thay đổi mức (2–12 chữ số) và tốc độ hiển thị chữ số (0,05–2,0 giây)</li>
+    <li>Chọn cách trình bày chữ số: “Màn hình”, “Giọng đọc” hoặc “Cả hai”. Nếu chỉ chọn “Giọng đọc”, bài kiểm tra trở thành bài ghi nhớ bằng tai</li>
+    <li>Chọn chủ đề (Theo hệ thống, Sáng, Tối) và màu (Tím, Xanh dương, Cam, Hồng)</li>
+    <li>Mọi chữ số đều dùng phông chữ đơn cách, trên một màn hình gọn gàng, không trang trí, như một thiết bị đo</li>
+    <li>Kết quả chỉ được lưu trên thiết bị. Không cần đăng nhập</li>
+  </ul>
+  <p class="note">Ở chế độ Theo thứ tự (nhắc lại xuôi), mức thông thường của người trưởng thành được cho là 7±2 chữ số (Miller, 1956). Tuy nhiên, ứng dụng này chỉ tính một mức khi bạn trả lời đúng cả 5 câu ở cùng số chữ số, nên cách tính khác với các bài kiểm tra thông thường. Ứng dụng này dùng để kiểm tra trạng thái trí nhớ của bạn, không phải là chẩn đoán y khoa và không nhằm mục đích cải thiện trí nhớ.</p>
+
+  <h2>Ứng dụng anh em</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/vi/" hreflang="vi">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>Bài kiểm tra trí nhớ làm việc, trong đó bạn liên tục cập nhật những gì đang ghi nhớ</span></span>
+  </a>
+
+  <h2>Về quảng cáo</h2>
+  <p class="note">Quảng cáo hiển thị ở cuối màn hình Trang chủ, Kết quả và Thành tích. Khi bạn bắt đầu bài kiểm tra (“Bắt đầu kiểm tra” ở Trang chủ và “Thử lại” ở màn hình Kết quả; cứ 2 lần thì có 1 lần), một quảng cáo toàn màn hình sẽ hiển thị. Không có quảng cáo trong lúc bạn xem các chữ số, nhập câu trả lời hay trong lúc chấm từng câu.</p>
+  <p class="note">Khi bạn đang đăng ký Premium (gói đăng ký hằng tháng, tự động gia hạn; giá được hiển thị trong ứng dụng và trên App Store), quảng cáo sẽ không hiển thị. Gói đăng ký tự động gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi kỳ hiện tại kết thúc. Xem <a href="terms/index.html">Điều khoản sử dụng</a> để biết điều kiện và cách hủy. Mọi tính năng kiểm tra và thành tích đều dùng được mà không cần đăng ký.</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">Cách sử dụng</a>
+    <a href="privacy/index.html">Chính sách quyền riêng tư</a>
+    <a href="terms/index.html">Điều khoản sử dụng</a>
+    <a href="mailto:fukuidinotech@gmail.com">Liên hệ</a>
+  </p>
+  <p>Digit Span — bài kiểm tra trí nhớ số cho iOS</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

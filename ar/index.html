@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اختبار ذاكرة الأرقام | اختبار للذاكرة قصيرة المدى يقيس عدد الأرقام التي يمكنك تذكّرها</title>
+<meta name="description" content="تظهر الأرقام واحدًا تلو الآخر، ثم تُدخَل بالترتيب الذي ظهرت به (أو بدءًا بآخر رقم ظهر). تطبيق iOS يقيس عدد الأرقام التي يمكنك تذكّرها (سعة الأرقام)، مع أفضل نتيجة شخصية مستقلة لوضعَي «بالترتيب» و«من آخر رقم»، ومقارنة الأرقام التي أخطأت فيها.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="اختبار ذاكرة الأرقام | كم رقمًا يمكنك تذكّره؟">
+<meta property="og:description" content="تظهر الأرقام واحدًا تلو الآخر، ثم تُدخَل بالترتيب الذي ظهرت به. اختبار للذاكرة قصيرة المدى يقيس عدد الأرقام التي يمكنك تذكّرها.">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="اختيار اللغة">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../es/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../nl/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../pl/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="index.html" aria-current="true">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../ko/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../vi/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">سمة العرض</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">تلقائي</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">فاتح</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">داكن</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">الرئيسية</a>
+    <a href="guide/index.html">طريقة الاستخدام</a>
+    <a href="privacy/index.html">سياسة الخصوصية</a>
+    <a href="terms/index.html">شروط الخدمة</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">اختبار ذاكرة الأرقام / DIGIT SPAN</p>
+    <h1><span>كم رقمًا</span> <span>يمكنك تذكّره؟</span></h1>
+    <p class="lead">تظهر الأرقام واحدًا تلو الآخر، وبعد أن تختفي يحين وقت إدخالها بالترتيب الذي ظهرت به. يمكنك اختيار عدد الأرقام، ويتكوّن الاختبار من 5 أسئلة. وأعلى مستوى تكون فيه إجاباتك عن الأسئلة الخمسة كلها صحيحة يبيّن كم رقمًا يمكنك تذكّره (سعة الأرقام). إنه اختبار بسيط للذاكرة قصيرة المدى.</p>
+    <!-- App Store で公開されたら次に戻す: <a class="badge" href="https://apps.apple.com/sa/app/id6826156702">عرض في App Store</a> -->
+    <span class="badge badge-soon">قريبًا (لأجهزة iPhone · الاستخدام الأساسي مجاني)</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="عرض لمسار الاختبار: ظهور الأرقام، ثم إدخالها من الذاكرة، ثم الاطلاع على النتيجة."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="عرض لمسار الاختبار: ظهور الأرقام، ثم إدخالها من الذاكرة، ثم الاطلاع على النتيجة."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="عرض لمسار الاختبار: ظهور الأرقام، ثم إدخالها من الذاكرة، ثم الاطلاع على النتيجة.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="عرض لمسار الاختبار: ظهور الأرقام، ثم إدخالها من الذاكرة، ثم الاطلاع على النتيجة.">
+  </figure>
+
+  <h2>طريقة الاستخدام</h2>
+  <ol class="steps">
+    <li><strong>مشاهدة الأرقام</strong><span>تظهر الأرقام واحدًا تلو الآخر (0.7 ثانية لكل رقم في الإعداد الافتراضي).</span></li>
+    <li><strong>إدخالها بالترتيب الذي ظهرت به</strong><span>في وضع «من آخر رقم» تُدخَل الأرقام بدءًا بآخر رقم ظهر وانتهاءً بأول رقم.</span></li>
+    <li><strong>مراجعة الإجابات بعد 5 أسئلة</strong><span>5 أسئلة بعدد الأرقام نفسه. بعد كل سؤال يظهر فقط ما إذا كانت الإجابة صحيحة أم لا، وفي النهاية تُعرض إجابات الأسئلة الخمسة كلها معًا. وأعلى مستوى تكون فيه إجاباتك عن الأسئلة الخمسة كلها صحيحة هو سعة الأرقام لديك.</span></li>
+  </ol>
+  <p><a href="guide/index.html">الدليل الكامل والأسئلة الشائعة ←</a></p>
+
+  <h2>الميزات</h2>
+  <ul class="features">
+    <li>اختباران: «بالترتيب» و«من آخر رقم»، ولكلٍّ منهما أفضل نتيجة شخصية مستقلة. وفي «من آخر رقم» يُعاد ترتيب الأرقام في الذهن، لذا يستعين الاختبار أيضًا بالذاكرة العاملة</li>
+    <li>مراجعة الأسئلة الخمسة كلها في شاشة «النتيجة»: إجابتك بجوار الإجابة الصحيحة، مع تلوين الأرقام المختلفة</li>
+    <li>متابعة «أفضل نتيجة لكل يوم» مع مرور الوقت في شاشة «الإحصاءات»</li>
+    <li>إمكانية تغيير المستوى (من 2 إلى 12 رقمًا) و«سرعة عرض الأرقام» (من 0.05 إلى 2.0 ثانية)</li>
+    <li>إمكانية اختيار «طريقة العرض»: «الشاشة» أو «الصوت» أو «كلاهما». ومع «الصوت» وحده يصبح الاختبار اختبارًا للحفظ بالسمع</li>
+    <li>إمكانية اختيار «السمة» («حسب الجهاز» أو «فاتح» أو «داكن») و«اللون» (بنفسجي أو أزرق أو برتقالي أو وردي)</li>
+    <li>جميع الأرقام بعرض ثابت، على شاشة خالية من الزخارف تشبه أداة القياس</li>
+    <li>تُحفظ السجلات على جهازك فقط. لا حاجة إلى تسجيل الدخول</li>
+  </ul>
+  <p class="note">يُقال إن المعتاد لدى البالغين في وضع «بالترتيب» هو 7±2 أرقام (<bdi>Miller, 1956</bdi>). غير أن هذا التطبيق لا يحتسب المستوى إلا عند الإجابة الصحيحة عن الأسئلة الخمسة كلها بعدد الأرقام نفسه، لذا تختلف طريقة الاحتساب عن الاختبارات المعتادة. هذا التطبيق وسيلة للتعرّف على حالة الذاكرة، وليس تشخيصًا طبيًا، ولا يهدف إلى تحسين الذاكرة.</p>
+
+  <h2>تطبيق شقيق</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/ar/" hreflang="ar">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>اختبار للذاكرة العاملة يقوم على تحديث ما في الذهن باستمرار</span></span>
+  </a>
+
+  <h2>عن الإعلانات</h2>
+  <p class="note">تظهر الإعلانات أسفل شاشات «الرئيسية» و«النتيجة» و«الإحصاءات». ويظهر إعلان بملء الشاشة عند بدء الاختبار («بدء الاختبار» في الشاشة الرئيسية و«إعادة الاختبار» في شاشة النتيجة؛ مرة واحدة من كل مرتين). ولا تظهر أي إعلانات أثناء مشاهدة الأرقام أو إدخال الإجابة أو عرض الحكم عليها.</p>
+  <p class="note">لا تظهر أي إعلانات أثناء الاشتراك في بريميوم (اشتراك شهري يتجدد تلقائيًا؛ يظهر السعر في التطبيق وفي App Store). ويتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل 24 ساعة على الأقل من نهاية الفترة الحالية. والشروط وطريقة الإلغاء موضّحة في <a href="terms/index.html">شروط الخدمة</a>. وجميع ميزات الاختبار والإحصاءات متاحة دون اشتراك.</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">طريقة الاستخدام</a>
+    <a href="privacy/index.html">سياسة الخصوصية</a>
+    <a href="terms/index.html">شروط الخدمة</a>
+    <a href="mailto:fukuidinotech@gmail.com">التواصل معنا</a>
+  </p>
+  <p>Digit Span — اختبار ذاكرة الأرقام لنظام iOS</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

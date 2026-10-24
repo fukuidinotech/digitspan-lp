@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سياسة الخصوصية | Digit Span</title>
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/ar/privacy/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/privacy/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/privacy/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/privacy/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/privacy/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/privacy/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/privacy/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/privacy/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/privacy/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/privacy/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/privacy/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/privacy/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/privacy/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/privacy/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/privacy/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/privacy/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/ar/privacy/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="اختيار اللغة">
+      <a lang="en" hreflang="en" href="../../privacy/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/privacy/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/privacy/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/privacy/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/privacy/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/privacy/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/privacy/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/privacy/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/privacy/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/privacy/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="index.html" aria-current="true">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/privacy/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/privacy/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/privacy/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/privacy/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/privacy/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">سمة العرض</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">تلقائي</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">فاتح</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">داكن</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">الرئيسية</a>
+    <a href="../guide/index.html">طريقة الاستخدام</a>
+    <a href="index.html" aria-current="page">سياسة الخصوصية</a>
+    <a href="../terms/index.html">شروط الخدمة</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">اختبار ذاكرة الأرقام / DIGIT SPAN</p>
+    <h1>سياسة الخصوصية</h1>
+    <p class="updated" data-updated="2026-10-24">آخر تحديث: 24 أكتوبر 2026</p>
+  </header>
+
+  <p class="i18n-note">هذه ترجمة للنص الأصلي باللغة اليابانية. وفي حال وجود أي اختلاف بينهما، تكون الأولوية للنسخة اليابانية.</p>
+
+  <p>تبيّن سياسة الخصوصية هذه كيفية تعامل تطبيق iOS «Digit Span» (الاسم الياباني: <bdi lang="ja">数字記憶テスト</bdi>؛ ويُشار إليه فيما يلي بـ«التطبيق») مع معلومات المستخدمين.</p>
+
+  <h2>1. المعلومات التي لا نجمعها</h2>
+  <p>لا يجمع التطبيق المعلومات التالية:</p>
+  <ul>
+    <li>الاسم وتاريخ الميلاد والجنس</li>
+    <li>عنوان البريد الإلكتروني ورقم الهاتف والعنوان البريدي</li>
+    <li>جهات الاتصال والصور والتقويم والميكروفون وغيرها من بيانات الجهاز</li>
+    <li>وسيلة الدفع ومعلومات البطاقة (تتولى Apple معالجة مدفوعات المشتريات داخل التطبيق)</li>
+    <li>لا يلزم إنشاء حساب، ولا توجد ميزة لتسجيل الدخول</li>
+  </ul>
+
+  <h2>2. المعلومات التي تُعالَج على جهازك فقط</h2>
+  <p>تُحفظ المعلومات التالية على جهازك فقط، وتُحذف عند حذف التطبيق. ولا تُرسَل أبدًا إلى خوادم المطوّر أو إلى أطراف ثالثة.</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>المعلومات</th><th>الغرض</th></tr>
+      <tr><td>سجلات الاختبار (التاريخ والوقت، ونوع الاختبار [بالترتيب / من آخر رقم]، والمستوى [عدد الأرقام]، وعدد الإجابات الصحيحة وعدد الأسئلة، وعدد الأرقام الذي أُجيب فيه عن جميع الأسئلة إجابة صحيحة)</td><td>عرض أفضل النتائج الشخصية والنتائج الأخيرة والتطور اليومي</td></tr>
+      <tr><td>الإعدادات (المستوى [عدد الأرقام]، وسرعة عرض الأرقام، وطريقة العرض، والسمة واللون، ونوع الاختبار المختار في الشاشة الرئيسية)</td><td>الاحتفاظ بالإعدادات</td></tr>
+    </table>
+  </div>
+  <p>إذا كان النسخ الاحتياطي لجهاز iPhone مفعّلًا (مثل iCloud)، فقد تُضمَّن هذه المعلومات في النسخة الاحتياطية لدى Apple.</p>
+  <p>تُقرأ الأرقام بصوت مسموع باستخدام محرّك تحويل النص إلى كلام المدمج في iOS. وتتم القراءة على الجهاز نفسه، ولا يُرسَل أي صوت أو أرقام إلى الخارج.</p>
+
+  <h2>3. الإعلانات</h2>
+  <p>يعرض التطبيق الإعلانات باستخدام خدمة Google AdMob التي تقدّمها Google LLC. ولتقديم الإعلانات ومنع الاحتيال، قد تجمع Google معلومات عن الجهاز (مثل عنوان IP ونوع الجهاز ومعلومات عن مشاهدة الإعلانات والتفاعل معها). كما قد ترسل حزمة SDK الإعلانية معلومات تشخيصية (مثل الأعطال وسرعة الأداء) إلى Google لفحص مشكلات الإعلانات.</p>
+  <p>لا يستخدم التطبيق نظام GPS أو غيره من بيانات الموقع. ولتقديم الإعلانات، قد تقدّر Google منطقتك التقريبية من عنوان IP.</p>
+  <p>قبل عرض أول إعلان، نطلب عبر ميزة App Tracking Transparency الإذن بتتبّعك عبر تطبيقات الشركات الأخرى ومواقعها الإلكترونية. ولا يُستخدم معرّف الإعلانات (IDFA) لتقديم الإعلانات إلا في حال منح الإذن. ويمكن استخدام جميع الميزات دون منح الإذن، كما يمكن تغييره في أي وقت على iPhone من «الإعدادات ← الخصوصية والأمن ← التتبع».</p>
+  <p>للمقيمين في المنطقة الاقتصادية الأوروبية (EEA) والمملكة المتحدة وسويسرا، نطلب قبل عرض أول إعلان، عبر أداة إدارة الموافقة من Google (User Messaging Platform)، الموافقة على تخصيص الإعلانات وعلى تخزين المعلومات على الجهاز وقراءتها منه. وفي حال عدم الموافقة، تُعرض إعلانات غير مخصّصة أو إعلانات محدودة (وقد لا تظهر الإعلانات أحيانًا). ويمكن تغيير الموافقة أو سحبها في أي وقت من «الإعدادات ← إعدادات الخصوصية» في التطبيق (يُنظر القسم 8).</p>
+  <p>للاطلاع على كيفية تعامل Google مع المعلومات، يُرجى مراجعة ما يلي:</p>
+  <ul>
+    <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">كيفية استخدام Google للمعلومات الواردة من المواقع أو التطبيقات التي تستخدم خدماتها</a></li>
+  </ul>
+
+  <p>لا تُعرض أي إعلانات أثناء الاشتراك في بريميوم (اشتراك يتجدد تلقائيًا). وإذا تأكّد التطبيق عند التشغيل من أن الاشتراك مفعّل، فلن تُشغَّل حزمة SDK الإعلانية، ولن تُطلب الموافقة ولا إذن التتبع المذكوران أعلاه (وإذا استغرق التأكد وقتًا أطول، فقد يُطلبان كما في حالة الاستخدام دون اشتراك). ولأن الموافقة على الإعلانات لا تُستخدم أثناء الاشتراك، فقد لا تظهر «إعدادات الخصوصية». وعند انتهاء الاشتراك، نطلبها مرة أخرى.</p>
+
+  <h2>4. المشتريات داخل التطبيق (بريميوم)</h2>
+  <ul>
+    <li>تتولى Apple إجراءات الشراء والدفع. ولا يتلقى المطوّر اسمك أو وسيلة الدفع أو معلومات البطاقة.</li>
+    <li>للتحقق من أن الاشتراك مفعّل، يطّلع التطبيق على جهازك على سجلات الشراء لدى Apple (المنتج المشترى ومدة صلاحيته). ولا تُرسَل هذه المعلومات إلى خوادم المطوّر أو إلى أطراف ثالثة.</li>
+  </ul>
+
+  <h2>5. أدوات تحليل الاستخدام</h2>
+  <p>لا يتضمن التطبيق أي أدوات لتحليل الاستخدام أو حزم SDK للإبلاغ عن الأعطال (مثل Google Analytics أو Firebase).</p>
+
+  <h2>6. مشاركة المعلومات مع أطراف ثالثة</h2>
+  <p>لا يحتفظ المطوّر بمعلومات شخصية تتعلق باستخدام التطبيق، ولا يقدّم المعلومات الشخصية للمستخدمين إلى أطراف ثالثة، إلا إذا طُلب الإفصاح عنها بموجب القانون. أما المعلومات المرسلة إلى Google عبر حزمة SDK الإعلانية فموضّحة في القسم 3، والمعلومات التي تعالجها Apple في المشتريات داخل التطبيق موضّحة في القسم 4.</p>
+
+  <h2>7. خصوصية الأطفال</h2>
+  <p>لا يجمع التطبيق عن قصد معلومات شخصية من الأطفال دون سن 13 عامًا (أو دون السن الأعلى المحددة في بلد الإقامة، إن وُجدت).</p>
+
+  <h2>8. للمقيمين في المنطقة الاقتصادية الأوروبية (EEA) والمملكة المتحدة وسويسرا</h2>
+  <p>بموجب اللائحة العامة لحماية البيانات في الاتحاد الأوروبي (GDPR)، واللائحة العامة لحماية البيانات في المملكة المتحدة (UK GDPR)، والقانون الاتحادي السويسري لحماية البيانات، نقدّم المعلومات التالية.</p>
+  <ul>
+    <li>المسؤول عن المعالجة: Toru Fukui (بيانات التواصل في القسم 10). لا يتلقى المطوّر بيانات شخصية تتعلق باستخدام التطبيق، وتُعالَج سجلات الاختبار على جهازك فقط (يُنظر القسم 2)</li>
+    <li>الاستفسارات: عند المراسلة عبر البريد الإلكتروني، يُعالَج عنوان بريدك الإلكتروني ومحتوى رسالتك للرد عليك وفحص الأعطال، استنادًا إلى المصلحة المشروعة للمطوّر (المادة <bdi>6(1)(f)</bdi> من GDPR) (يُنظر القسم 10)</li>
+    <li>الإعلانات: تعالج Google معلومات الجهاز بصفتها مسؤولًا مستقلًا عن المعالجة. ويستند تخصيص الإعلانات وتخزين المعلومات على الجهاز وقراءتها منه إلى موافقة المستخدم (المادة <bdi>6(1)(a)</bdi> من GDPR). ويستند تقديم الإعلانات المحدودة غير المخصّصة ومنع الاحتيال إلى المصلحة المشروعة لشركة Google (المادة <bdi>6(1)(f)</bdi> من GDPR)</li>
+    <li>النقل إلى خارج المنطقة: قد تنقل Google المعلومات إلى خارج أوروبا استنادًا إلى إطار خصوصية البيانات بين الاتحاد الأوروبي والولايات المتحدة والبنود التعاقدية القياسية</li>
+    <li>سحب الموافقة: يمكن سحب الموافقة في أي وقت من «الإعدادات ← إعدادات الخصوصية» في التطبيق. ولا يؤثر السحب في مشروعية المعالجة التي تمّت قبله</li>
+    <li>حقوق المستخدم: يحق لك طلب الوصول إلى بياناتك الشخصية وتصحيحها وحذفها وتقييد معالجتها والاعتراض عليها ونقلها. وبالنسبة إلى المعلومات التي تعالجها Google، يُرجى التواصل مع Google مباشرة. وتُستقبل الاستفسارات الموجّهة إلى المطوّر عبر وسيلة التواصل الواردة في القسم 10</li>
+    <li>يحق لك تقديم شكوى إلى هيئة الإشراف على حماية البيانات في بلد إقامتك</li>
+  </ul>
+
+  <h2>9. التغييرات على هذه السياسة</h2>
+  <p>قد تتغير هذه السياسة تبعًا لتغيّر القوانين أو إضافة ميزات جديدة. وفي حال إجراء تغييرات جوهرية، سنعلن عنها في هذه الصفحة.</p>
+
+  <h2>10. التواصل معنا</h2>
+  <p>عند التواصل معنا عبر البريد الإلكتروني، نستخدم عنوان بريدك الإلكتروني ومحتوى استفسارك للرد عليك وفحص الأعطال فقط. ولا نقدّمهما إلى أطراف ثالثة، ونحذفهما بعد الانتهاء من الاستفسار حين لا تبقى حاجة إليهما.</p>
+  <p>مقدّم الخدمة: Toru Fukui</p>
+  <p><a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a></p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — اختبار ذاكرة الأرقام لنظام iOS</p>
+  <p><a href="../guide/index.html">طريقة الاستخدام</a> / <a href="../terms/index.html">شروط الخدمة</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

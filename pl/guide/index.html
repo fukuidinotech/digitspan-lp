@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jak korzystać | Digit Span</title>
+<meta name="description" content="Jak korzystać z aplikacji Digit Span: przebieg testu, tryby „Po kolei” i „Od końca”, zasady oceniania, wynik i historia, ustawienia oraz najczęstsze pytania.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Wybierz język">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="index.html" aria-current="true">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Motyw kolorystyczny</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Auto</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Jasny</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Ciemny</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Strona główna</a>
+    <a href="index.html" aria-current="page">Jak korzystać</a>
+    <a href="../privacy/index.html">Polityka prywatności</a>
+    <a href="../terms/index.html">Regulamin</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">TEST PAMIĘCI CYFR / DIGIT SPAN</p>
+    <h1>Jak korzystać</h1>
+  </header>
+
+  <h2>1. Rozpocznij test</h2>
+  <p>Na ekranie głównym wybierz „Po kolei” lub „Od końca” oraz poziom (liczbę cyfr), a potem dotknij „Rozpocznij test”.</p>
+  <ul>
+    <li><strong>Po kolei</strong>: wpisz cyfry w tej samej kolejności, w jakiej się pojawiły. Przykład: 3 → 8 → 1 to „381”</li>
+    <li><strong>Od końca</strong>: wpisz cyfry od ostatniej, która się pojawiła, do pierwszej. Przykład: 3 → 8 → 1 to „183”</li>
+  </ul>
+  <p>Tryby „Po kolei” i „Od końca” mają osobne rekordy osobiste.</p>
+
+  <h2>2. Zapamiętaj cyfry</h2>
+  <p>Cyfry pojawiają się po jednej. Domyślnie każda jest wyświetlana przez 0,7 sekundy, a po niej następuje przerwa 0,3 sekundy. Podczas wyświetlania nie musisz dotykać ekranu. Jeśli w ustawieniach wybierzesz „Głos”, cyfry będą tylko czytane na głos, bez wyświetlania na ekranie.</p>
+
+  <h2>3. Wpisz odpowiedź</h2>
+  <p>Gdy wszystkie cyfry zostaną pokazane, pojawi się klawiatura numeryczna. Wpisz zapamiętane cyfry. Jeśli się pomylisz, dotknij „Usuń”, aby skasować ostatnią cyfrę. Gdy wpiszesz wszystkie cyfry, odpowiedź zostanie od razu sprawdzona — nie ma przycisku zatwierdzania.</p>
+  <p>Aby przerwać test, dotknij „Zakończ”. Przerwany test nie jest zapisywany.</p>
+
+  <h2>4. Zasady oceniania</h2>
+  <ul>
+    <li>Każdy test składa się z 5 zadań. Liczba cyfr się nie zmienia i odpowiada wybranemu poziomowi (od 2 do 12 cyfr; domyślnie 3)</li>
+    <li>Poprawna odpowiedź nie dodaje cyfry. Aby spróbować dłuższego ciągu, podnieś poziom na ekranie głównym lub w ustawieniach</li>
+    <li>Po każdym zadaniu widać tylko „Dobrze” albo „Pomyłka” — poprawna odpowiedź nie jest pokazywana</li>
+    <li>Cyfry są z zakresu 0–9, a ta sama cyfra nigdy nie pojawia się dwa razy z rzędu</li>
+  </ul>
+
+  <h2>5. Wynik</h2>
+  <p>Zobaczysz, ile z 5 zadań zostało rozwiązanych poprawnie, oraz sprawdzenie wszystkich odpowiedzi. Twoja odpowiedź jest pokazana obok poprawnej, a cyfry, w których była pomyłka, są wyróżnione kolorem.</p>
+  <p>Najwyższy poziom, na którym rozwiążesz bezbłędnie wszystkie 5 zadań, to Twój <strong>zakres pamięci cyfr</strong>. Gdy pobijesz swój rekord, na ekranie wyniku pojawi się napis „Rekord osobisty”. Przyjmuje się, że typowy wynik osoby dorosłej w trybie „Po kolei” to 7±2 cyfry (Miller, 1956). Ta aplikacja zalicza poziom dopiero wtedy, gdy rozwiążesz na nim bezbłędnie wszystkie 5 zadań, dlatego liczy wynik inaczej niż standardowe testy.</p>
+  <p>Dotknij „Spróbuj ponownie”, aby od razu rozpocząć ten sam test, lub „Strona główna”, aby wrócić do ekranu głównego.</p>
+
+  <h2>6. Historia</h2>
+  <p>Otwórz historię z ekranu głównego, aby zobaczyć swój najlepszy wynik dnia z ostatnich 14 dni oraz listę wszystkich wyników.</p>
+
+  <h2>7. Ustawienia</h2>
+  <p>Ustawienia otworzysz z ekranu głównego. Poziom, czas wyświetlania cyfry i sposób prezentacji obowiązują od następnego testu. Motyw i kolor zmieniają się od razu.</p>
+  <ul>
+    <li><strong>Poziom (liczba cyfr)</strong>: od 2 do 12 cyfr. Można go też zmienić na ekranie głównym</li>
+    <li><strong>Czas wyświetlania cyfry</strong>: od 0,05 do 2,0 sekundy (co 0,05 sekundy). Przerwa między cyframi zmienia się razem z czasem wyświetlania (przy 0,7 s wynosi 0,3 s)</li>
+    <li><strong>Sposób prezentacji</strong>: Ekran (tylko wyświetlanie) / Głos (tylko czytanie na głos) / Oba</li>
+    <li><strong>Motyw</strong>: Systemowy / Jasny / Ciemny</li>
+    <li><strong>Kolor</strong>: Fioletowy / Niebieski / Pomarańczowy / Różowy. Zmienia kolor przycisków, rekordu osobistego i zaznaczonych elementów (kolory poprawnej odpowiedzi i pomyłki się nie zmieniają)</li>
+    <li><strong>Premium</strong>: miesięczna, automatycznie odnawiana subskrypcja, która wyłącza reklamy (cena jest podana w aplikacji i w App Store). Tutaj możesz ją kupić, przywrócić zakupy i zarządzać subskrypcją (także ją anulować)</li>
+    <li><strong>Ustawienia prywatności</strong>: widoczne tylko dla osób mieszkających w Europejskim Obszarze Gospodarczym (EOG), Wielkiej Brytanii i Szwajcarii. Pozwalają później zmienić zgodę na reklamy</li>
+  </ul>
+
+  <h2>8. Najczęstsze pytania</h2>
+  <p><strong>Od jakiego poziomu zacząć?</strong><br>Na początek polecamy 3 cyfry (ustawienie domyślne). Gdy rozwiążesz bezbłędnie wszystkie 5 zadań, podnieś poziom o jeden na ekranie głównym. Najwyższy poziom, na którym wszystkie zadania zostały rozwiązane bezbłędnie, jest zapisywany jako rekord osobisty.</p>
+  <p><strong>Gdzie są zapisywane moje wyniki?</strong><br>Tylko na Twoim urządzeniu. Nie ma konta ani logowania. Usunięcie aplikacji usuwa również wyniki.</p>
+  <p><strong>Jak usunąć wyniki?</strong><br>Nie można usuwać pojedynczych wyników. Aby usunąć wszystkie, usuń aplikację.</p>
+  <p><strong>Kiedy pojawiają się reklamy?</strong><br>U dołu ekranu głównego, ekranu wyniku i ekranu historii oraz jako reklama pełnoekranowa przy rozpoczynaniu testu („Rozpocznij test” na ekranie głównym lub „Spróbuj ponownie” na ekranie wyniku; co drugi raz). Nigdy wtedy, gdy patrzysz na cyfry, wpisujesz odpowiedź lub gdy sprawdzana jest jej poprawność. Przy aktywnej subskrypcji Premium reklamy nie pojawiają się wcale.</p>
+  <p><strong>Jak anulować Premium?</strong><br>W aplikacji wybierz Ustawienia › Premium › „Zarządzaj subskrypcją” albo na iPhonie otwórz aplikację Ustawienia › [Twoje imię i nazwisko] › Subskrypcje. Do końca opłaconego okresu nadal korzystasz z aplikacji bez reklam.</p>
+  <p><strong>Czy wynik pokazuje, jak dobrą mam pamięć?</strong><br>Wynik pokazuje, ile zadań na wybranym poziomie zostało rozwiązanych poprawnie w danym momencie. Może się zmieniać w zależności od samopoczucia i skupienia. Nie zastępuje diagnozy medycznej ani żadnej oceny umiejętności.</p>
+
+  <h2>9. Kontakt</h2>
+  <p>Zgłoszenia błędów i sugestie wysyłaj na adres <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — test pamięci cyfr na iOS</p>
+  <p><a href="../privacy/index.html">Polityka prywatności</a> / <a href="../terms/index.html">Regulamin</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

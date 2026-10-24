@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طريقة الاستخدام | Digit Span</title>
+<meta name="description" content="طريقة استخدام Digit Span: مسار الاختبار، ووضعا «بالترتيب» و«من آخر رقم»، وقواعد التقييم، وقراءة النتيجة والإحصاءات، والإعدادات، والأسئلة الشائعة.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="اختيار اللغة">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="index.html" aria-current="true">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">سمة العرض</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">تلقائي</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">فاتح</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">داكن</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">الرئيسية</a>
+    <a href="index.html" aria-current="page">طريقة الاستخدام</a>
+    <a href="../privacy/index.html">سياسة الخصوصية</a>
+    <a href="../terms/index.html">شروط الخدمة</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">اختبار ذاكرة الأرقام / DIGIT SPAN</p>
+    <h1>طريقة الاستخدام</h1>
+  </header>
+
+  <h2>1. بدء الاختبار</h2>
+  <p>في الشاشة الرئيسية، يمكنك اختيار «بالترتيب» أو «من آخر رقم» والمستوى (عدد الأرقام)، ثم الضغط على «بدء الاختبار».</p>
+  <ul>
+    <li><strong>بالترتيب</strong>: تُدخَل الأرقام بالترتيب الذي ظهرت به. مثال: إذا ظهرت 3 ثم 8 ثم 1، فالإجابة «381»</li>
+    <li><strong>من آخر رقم</strong>: تُدخَل الأرقام بدءًا بآخر رقم ظهر وانتهاءً بأول رقم. مثال: إذا ظهرت 3 ثم 8 ثم 1، فالإجابة «183»</li>
+  </ul>
+  <p>تُسجَّل أفضل نتيجة شخصية لكلٍّ من «بالترتيب» و«من آخر رقم» على حدة.</p>
+
+  <h2>2. حفظ الأرقام</h2>
+  <p>تظهر الأرقام واحدًا تلو الآخر. في الإعداد الافتراضي يُعرض كل رقم 0.7 ثانية، تليه فجوة مدتها 0.3 ثانية. ولا حاجة إلى لمس الشاشة أثناء العرض. وعند اختيار «الصوت» في الإعدادات، لا تظهر الأرقام على الشاشة، بل تُسمع بالصوت فقط.</p>
+
+  <h2>3. إدخال الإجابة</h2>
+  <p>بعد انتهاء عرض الأرقام تظهر لوحة أرقام، ويمكنك إدخال الأرقام التي حفظتها. وعند الخطأ في الإدخال، يحذف زر «حذف» آخر رقم مُدخَل. وبمجرد إدخال العدد الكامل من الأرقام تُفحص الإجابة فورًا (لا يوجد زر تأكيد).</p>
+  <p>للتوقف في منتصف الاختبار، يمكن الضغط على «إنهاء». ولا يُسجَّل الاختبار الذي يُنهى قبل اكتماله.</p>
+
+  <h2>4. قواعد التقييم</h2>
+  <ul>
+    <li>يتكوّن كل اختبار من 5 أسئلة، ويبقى عدد الأرقام عند المستوى الذي اخترته (من 2 إلى 12 رقمًا؛ 3 أرقام في الإعداد الافتراضي)</li>
+    <li>لا تزيد الإجابة الصحيحة عدد الأرقام. ولتجربة عدد أكبر من الأرقام، يمكن رفع المستوى من الشاشة الرئيسية أو من الإعدادات</li>
+    <li>بعد كل سؤال يظهر فقط «صحيح» أو «غير صحيح»، ولا تُعرض الإجابة</li>
+    <li>الأرقام من 0 إلى 9، ولا يظهر الرقم نفسه مرتين متتاليتين</li>
+  </ul>
+
+  <h2>5. الاطلاع على النتيجة</h2>
+  <p>يظهر عدد الأسئلة التي أجبت عنها إجابة صحيحة من الأسئلة الخمسة، مع مراجعة إجابات الأسئلة الخمسة كلها. وتُعرض إجابتك بجوار الإجابة الصحيحة، مع تلوين الأرقام المختلفة.</p>
+  <p>أعلى مستوى تكون فيه إجاباتك عن الأسئلة الخمسة كلها صحيحة هو <strong>سعة الأرقام</strong> لديك. وعند تجاوز أفضل نتيجة سابقة، تظهر عبارة «أفضل نتيجة شخصية» في النتيجة. يُقال إن المعتاد لدى البالغين في وضع «بالترتيب» هو 7±2 أرقام (<bdi>Miller, 1956</bdi>). غير أن هذا التطبيق لا يحتسب المستوى إلا عند الإجابة الصحيحة عن الأسئلة الخمسة كلها بعدد الأرقام نفسه، لذا تختلف طريقة الاحتساب عن الاختبارات المعتادة.</p>
+  <p>يبدأ زر «إعادة الاختبار» اختبارًا من النوع نفسه فورًا، ويعيدك زر «العودة إلى الرئيسية» إلى الشاشة الرئيسية.</p>
+
+  <h2>6. الإحصاءات</h2>
+  <p>عند فتح شاشة «الإحصاءات» من الشاشة الرئيسية، يمكنك متابعة «أفضل نتيجة لكل يوم» خلال آخر 14 يومًا، وقائمة بجميع سجلاتك.</p>
+
+  <h2>7. الإعدادات</h2>
+  <p>تُفتح «الإعدادات» من الشاشة الرئيسية. ويُطبَّق المستوى والسرعة وطريقة العرض بدءًا من الاختبار التالي، أما السمة واللون فيتغيران فورًا.</p>
+  <ul>
+    <li><strong>المستوى (عدد الأرقام)</strong>: من 2 إلى 12 رقمًا. ويمكن تغييره من الشاشة الرئيسية أيضًا</li>
+    <li><strong>سرعة عرض الأرقام</strong>: من 0.05 إلى 2.0 ثانية (بخطوات قدرها 0.05 ثانية). وتتغير الفجوة بين الأرقام أيضًا حسب السرعة (0.3 ثانية عند 0.7 ثانية)</li>
+    <li><strong>طريقة العرض</strong>: الشاشة (عرض فقط) / الصوت (قراءة بصوت مسموع فقط) / كلاهما</li>
+    <li><strong>السمة</strong>: حسب الجهاز / فاتح / داكن</li>
+    <li><strong>اللون</strong>: بنفسجي / أزرق / برتقالي / وردي. يتغير لون الأزرار ورقم أفضل نتيجة شخصية والعناصر المحدَّدة (لا تتغير ألوان الإجابة الصحيحة والخاطئة)</li>
+    <li><strong>بريميوم</strong>: اشتراك شهري يتجدد تلقائيًا ويوقف الإعلانات (يظهر السعر في التطبيق وفي App Store). ومن هنا يتم الشراء واستعادة المشتريات وإدارة الاشتراك (إلغاؤه)</li>
+    <li><strong>إعدادات الخصوصية</strong>: تظهر فقط للمقيمين في المنطقة الاقتصادية الأوروبية (EEA) والمملكة المتحدة وسويسرا، وتتيح تغيير الموافقة على الإعلانات لاحقًا</li>
+  </ul>
+
+  <h2>8. الأسئلة الشائعة</h2>
+  <p><strong>من أي مستوى يُستحسن البدء؟</strong><br>يُنصح بالبدء من 3 أرقام (الإعداد الافتراضي). وعند الإجابة الصحيحة عن الأسئلة الخمسة كلها، يمكن رفع المستوى رقمًا واحدًا من الشاشة الرئيسية. ويُسجَّل أعلى مستوى أُجيب فيه عن الأسئلة الخمسة كلها إجابة صحيحة على أنه أفضل نتيجة شخصية.</p>
+  <p><strong>أين تُحفظ سجلاتي؟</strong><br>على جهازك فقط. لا يوجد حساب ولا تسجيل دخول. وعند حذف التطبيق تُحذف السجلات أيضًا.</p>
+  <p><strong>كيف أحذف سجلاتي؟</strong><br>لا تتوفر ميزة لحذف السجلات واحدًا تلو الآخر. ولحذفها كلها، يمكن حذف التطبيق.</p>
+  <p><strong>متى تظهر الإعلانات؟</strong><br>أسفل شاشات «الرئيسية» و«النتيجة» و«الإحصاءات»، وبملء الشاشة عند بدء الاختبار («بدء الاختبار» في الشاشة الرئيسية و«إعادة الاختبار» في شاشة النتيجة؛ مرة واحدة من كل مرتين). ولا تظهر أبدًا أثناء مشاهدة الأرقام أو إدخال الإجابة أو عرض الحكم عليها. ولا تظهر أي إعلانات أثناء الاشتراك في بريميوم.</p>
+  <p><strong>كيف أُلغي اشتراك بريميوم؟</strong><br>من «الإعدادات» ← «بريميوم» ← «إدارة الاشتراك» في التطبيق، أو على iPhone من الإعدادات ← [اسمك] ← الاشتراكات. ويبقى التطبيق بلا إعلانات حتى نهاية الفترة المدفوعة.</p>
+  <p><strong>هل تكشف النتيجة مدى جودة ذاكرتي؟</strong><br>تبيّن النتيجة عدد الأسئلة التي أُجيب عنها إجابة صحيحة بعدد الأرقام المختار في تلك اللحظة فقط، وقد تتغير حسب الحالة الصحية ودرجة التركيز. وهي ليست بديلًا عن التشخيص الطبي ولا عن أي تقييم للقدرات.</p>
+
+  <h2>9. التواصل معنا</h2>
+  <p>لإرسال بلاغات الأعطال أو الطلبات، يُرجى المراسلة على <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — اختبار ذاكرة الأرقام لنظام iOS</p>
+  <p><a href="../privacy/index.html">سياسة الخصوصية</a> / <a href="../terms/index.html">شروط الخدمة</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

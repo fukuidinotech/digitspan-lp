@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anleitung | Digit Span</title>
+<meta name="description" content="So verwendest du Digit Span: Ablauf des Tests, „Vorwärts“ und „Rückwärts“, Wertungsregeln, Ergebnis und Verlauf, Einstellungen und häufige Fragen.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Sprache wählen">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="index.html" aria-current="true">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Farbschema</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Automatisch</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Hell</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Dunkel</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Startseite</a>
+    <a href="index.html" aria-current="page">Anleitung</a>
+    <a href="../privacy/index.html">Datenschutzerklärung</a>
+    <a href="../terms/index.html">Nutzungsbedingungen</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">ZAHLENGEDÄCHTNISTEST / DIGIT SPAN</p>
+    <h1>Anleitung</h1>
+  </header>
+
+  <h2>1. Test starten</h2>
+  <p>Wähle auf der Startseite „Vorwärts“ oder „Rückwärts“ und eine Stufe (Anzahl der Ziffern) und tippe auf „Test starten“.</p>
+  <ul>
+    <li><strong>Vorwärts</strong>: Gib die Ziffern in der Reihenfolge ein, in der sie erschienen sind. Beispiel: 3 → 8 → 1 ergibt „381“</li>
+    <li><strong>Rückwärts</strong>: Gib sie in umgekehrter Reihenfolge ein, mit der zuletzt gezeigten Ziffer zuerst. Beispiel: 3 → 8 → 1 ergibt „183“</li>
+  </ul>
+  <p>Für „Vorwärts“ und „Rückwärts“ wird jeweils eine eigene Bestleistung gespeichert.</p>
+
+  <h2>2. Ziffern merken</h2>
+  <p>Die Ziffern erscheinen nacheinander. Standardmäßig wird jede Ziffer 0,7 Sekunden lang gezeigt, danach folgt eine Pause von 0,3 Sekunden. Während der Anzeige musst du den Bildschirm nicht berühren. Wenn du in den Einstellungen „Vorlesen“ wählst, werden die Ziffern nicht angezeigt, sondern nur vorgelesen.</p>
+
+  <h2>3. Antwort eingeben</h2>
+  <p>Wenn alle Ziffern gezeigt wurden, erscheint ein Ziffernblock. Gib die Ziffern ein, die du dir gemerkt hast. Bei einem Tippfehler entfernst du mit „Löschen“ die letzte Ziffer. Sobald du alle Ziffern eingegeben hast, wird die Antwort sofort ausgewertet – es gibt keine Bestätigungstaste.</p>
+  <p>Um vorzeitig aufzuhören, tippe auf „Beenden“. Ein abgebrochener Test wird nicht gespeichert.</p>
+
+  <h2>4. Wertungsregeln</h2>
+  <ul>
+    <li>Ein Test besteht aus 5 Runden. Die Ziffernzahl bleibt bei der gewählten Stufe (2–12 Ziffern; standardmäßig 3)</li>
+    <li>Eine richtige Antwort fügt keine Ziffer hinzu. Für längere Ziffernfolgen erhöhst du die Stufe auf der Startseite oder in den Einstellungen</li>
+    <li>Nach jeder Runde wird nur „Richtig“ oder „Falsch“ angezeigt – die Lösung siehst du dabei nicht</li>
+    <li>Die Ziffern reichen von 0 bis 9, und dieselbe Ziffer erscheint nie zweimal hintereinander</li>
+  </ul>
+
+  <h2>5. Ergebnis ansehen</h2>
+  <p>Du siehst, wie viele der 5 Runden du richtig hattest, und die Auswertung aller 5 Runden. Deine Antwort steht neben der Lösung, abweichende Ziffern sind farbig markiert.</p>
+  <p>Die höchste Stufe, bei der du alle 5 Runden richtig hast, ist deine <strong>Zahlenspanne</strong>. Wenn du deine Bestleistung übertriffst, zeigt das Ergebnis „Persönliche Bestleistung“ an. Für Erwachsene wird vorwärts oft ein Richtwert von 7±2 Ziffern genannt (Miller, 1956). Diese App zählt eine Stufe jedoch nur, wenn du bei derselben Ziffernzahl alle 5 Runden richtig hast – sie wertet also anders als übliche Tests.</p>
+  <p>Mit „Noch einmal“ startest du sofort denselben Test erneut. Mit „Zur Startseite“ kehrst du zur Startseite zurück.</p>
+
+  <h2>6. Verlauf ansehen</h2>
+  <p>Öffne auf der Startseite den Verlauf. Dort siehst du deine Bestleistung pro Tag in den letzten 14 Tagen und eine Liste aller bisherigen Ergebnisse.</p>
+
+  <h2>7. Einstellungen</h2>
+  <p>Die Einstellungen öffnest du auf der Startseite. Stufe, Anzeigetempo und Ausgabe gelten ab dem nächsten Test. Design und Farbe ändern sich sofort.</p>
+  <ul>
+    <li><strong>Stufe (Ziffern)</strong>: 2–12 Ziffern. Lässt sich auch auf der Startseite ändern</li>
+    <li><strong>Anzeigetempo</strong>: 0,05–2,0 Sekunden (in Schritten von 0,05 Sekunden). Die Pause zwischen den Ziffern passt sich dem Tempo an (bei 0,7 Sekunden: 0,3 Sekunden)</li>
+    <li><strong>Ausgabe</strong>: Bildschirm (nur Anzeige) / Vorlesen (nur Stimme) / Beides</li>
+    <li><strong>Design</strong>: Automatisch / Hell / Dunkel</li>
+    <li><strong>Farbe</strong>: Violett / Blau / Orange / Pink. Ändert die Farbe von Tasten, deiner Bestleistung und ausgewählten Elementen (die Farben für richtig und falsch bleiben gleich)</li>
+    <li><strong>Premium</strong>: ein monatliches, sich automatisch verlängerndes Abo, mit dem keine Werbung mehr angezeigt wird (der Preis wird in der App und im App Store angezeigt). Hier kannst du das Abo abschließen, Käufe wiederherstellen und das Abo verwalten (kündigen)</li>
+    <li><strong>Datenschutzeinstellungen</strong>: wird nur Nutzern im Europäischen Wirtschaftsraum (EWR), im Vereinigten Königreich und in der Schweiz angezeigt. Hier kannst du deine Einwilligung zur Werbung nachträglich ändern</li>
+  </ul>
+
+  <h2>8. Häufige Fragen</h2>
+  <p><strong>Mit welcher Stufe soll ich anfangen?</strong><br>Wir empfehlen, mit 3 Ziffern (Standard) zu beginnen. Wenn du alle 5 Runden richtig hast, erhöhe die Stufe auf der Startseite um eins. Die höchste Stufe, bei der du alle 5 Runden richtig hast, wird als deine Bestleistung gespeichert.</p>
+  <p><strong>Wo werden meine Ergebnisse gespeichert?</strong><br>Nur auf deinem Gerät. Es gibt kein Konto und keine Anmeldung. Wenn du die App löschst, werden auch deine Ergebnisse gelöscht.</p>
+  <p><strong>Wie lösche ich meine Ergebnisse?</strong><br>Einzelne Ergebnisse lassen sich nicht löschen. Um alle zu löschen, lösche die App.</p>
+  <p><strong>Wann wird Werbung angezeigt?</strong><br>Unten auf der Startseite und auf den Bildschirmen „Ergebnis“ und „Verlauf“ sowie als Vollbildwerbung beim Starten eines Tests („Test starten“ auf der Startseite oder „Noch einmal“ im Ergebnis; jedes zweite Mal). Nie, während du die Ziffern ansiehst, deine Antwort eingibst oder angezeigt wird, ob sie richtig war. Mit einem Premium-Abo wird gar keine Werbung angezeigt.</p>
+  <p><strong>Wie kündige ich Premium?</strong><br>In der App unter Einstellungen › Premium › „Abo verwalten“ oder in der App „Einstellungen“ › [dein Name] › „Abonnements“. Bis zum Ende des bezahlten Zeitraums nutzt du die App weiterhin ohne Werbung.</p>
+  <p><strong>Sagt mein Ergebnis, wie gut mein Gedächtnis ist?</strong><br>Dein Ergebnis zeigt, wie viele Runden du bei der gewählten Stufe in diesem Moment richtig eingegeben hast. Es kann je nach Verfassung und Konzentration schwanken. Es ersetzt keine medizinische Diagnose und keine Beurteilung von Fähigkeiten.</p>
+
+  <h2>9. Kontakt</h2>
+  <p>Fehlermeldungen und Wünsche kannst du an <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a> senden.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — Zahlengedächtnistest für iOS</p>
+  <p><a href="../privacy/index.html">Datenschutzerklärung</a> / <a href="../terms/index.html">Nutzungsbedingungen</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

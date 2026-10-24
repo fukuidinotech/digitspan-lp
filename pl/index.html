@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test pamięci cyfr: Digit Span — ile cyfr zapamiętasz?</title>
+<meta name="description" content="Cyfry pojawiają się po jednej. Wpisz je w tej samej kolejności albo od ostatniej do pierwszej. Test pamięci krótkotrwałej na iOS, który sprawdza, ile cyfr potrafisz zapamiętać (zakres pamięci cyfr). Osobne rekordy osobiste dla trybów „Po kolei” i „Od końca” oraz porównanie cyfr, w których była pomyłka.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Digit Span — ile cyfr zapamiętasz?">
+<meta property="og:description" content="Patrz na cyfry i wpisz je w tej samej kolejności. Test pamięci cyfr na iOS.">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Wybierz język">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../es/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../nl/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="index.html" aria-current="true">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../ar/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../ko/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../vi/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Motyw kolorystyczny</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Auto</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Jasny</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Ciemny</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">Strona główna</a>
+    <a href="guide/index.html">Jak korzystać</a>
+    <a href="privacy/index.html">Polityka prywatności</a>
+    <a href="terms/index.html">Regulamin</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">TEST PAMIĘCI CYFR / DIGIT SPAN</p>
+    <h1><span>Ile cyfr</span> <span>zapamiętasz?</span></h1>
+    <p class="lead">Cyfry pojawiają się na ekranie po jednej. Gdy znikną, wpisz je w kolejności, w jakiej się pojawiły. Wybierz poziom (liczbę cyfr) i rozwiąż 5 zadań. Najwyższy poziom, na którym rozwiążesz bezbłędnie wszystkie zadania, pokazuje, ile cyfr potrafisz zapamiętać — to Twój zakres pamięci cyfr. Prosty test pamięci krótkotrwałej.</p>
+    <!-- When live on the App Store, restore: <a class="badge" href="https://apps.apple.com/pl/app/id6826156702">Zobacz w App Store</a> -->
+    <span class="badge badge-soon">Już wkrótce (na iPhone’a, bezpłatna, z opcjonalną subskrypcją)</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Cyfry pojawiają się na ekranie, wpisujesz je z pamięci i sprawdzasz wynik."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Cyfry pojawiają się na ekranie, wpisujesz je z pamięci i sprawdzasz wynik."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="Cyfry pojawiają się na ekranie, wpisujesz je z pamięci i sprawdzasz wynik.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="Cyfry pojawiają się na ekranie, wpisujesz je z pamięci i sprawdzasz wynik.">
+  </figure>
+
+  <h2>Jak to działa</h2>
+  <ol class="steps">
+    <li><strong>Patrz na cyfry</strong><span>Pojawiają się po jednej (domyślnie każda przez 0,7 sekundy).</span></li>
+    <li><strong>Wpisz je w tej samej kolejności</strong><span>W trybie „Od końca” wpisuj je od ostatniej cyfry, która się pojawiła, do pierwszej.</span></li>
+    <li><strong>Sprawdź 5 zadań</strong><span>Pięć zadań o tej samej liczbie cyfr. Po każdym zadaniu widzisz tylko, czy odpowiedź jest dobra; na końcu zobaczysz wszystkie odpowiedzi razem. Najwyższy poziom, na którym rozwiążesz bezbłędnie wszystkie 5 zadań, to Twój zakres pamięci cyfr.</span></li>
+  </ol>
+  <p><a href="guide/index.html">Pełna instrukcja i najczęstsze pytania →</a></p>
+
+  <h2>Funkcje</h2>
+  <ul class="features">
+    <li>Dwa testy: „Po kolei” i „Od końca”, każdy z osobnym rekordem osobistym. W trybie „Od końca” trzeba w myślach odwrócić kolejność cyfr, więc angażuje on też pamięć roboczą</li>
+    <li>Na ekranie wyniku sprawdzisz wszystkie 5 zadań: Twoja odpowiedź jest obok poprawnej, a cyfry, w których była pomyłka, są wyróżnione kolorem</li>
+    <li>Na ekranie historii zobaczysz, jak zmieniał się Twój najlepszy wynik dnia</li>
+    <li>Możesz zmienić poziom (od 2 do 12 cyfr) i czas wyświetlania cyfry (od 0,05 do 2,0 sekundy)</li>
+    <li>Wybierz sposób prezentacji cyfr: „Ekran”, „Głos” lub „Oba”. Przy opcji „Głos” cyfry zapamiętujesz ze słuchu</li>
+    <li>Wybierz motyw („Systemowy”, „Jasny” lub „Ciemny”) i kolor („Fioletowy”, „Niebieski”, „Pomarańczowy” lub „Różowy”)</li>
+    <li>Wszystkie cyfry mają stałą szerokość, a ekran jest prosty i bez ozdobników, jak przyrząd pomiarowy</li>
+    <li>Wyniki są zapisywane tylko na Twoim urządzeniu. Bez logowania</li>
+  </ul>
+  <p class="note">Przyjmuje się, że typowy wynik osoby dorosłej w trybie „Po kolei” to 7±2 cyfry (Miller, 1956). Ta aplikacja zalicza poziom dopiero wtedy, gdy rozwiążesz na nim bezbłędnie wszystkie 5 zadań, dlatego liczy wynik inaczej niż standardowe testy. Aplikacja pozwala sprawdzić, ile cyfr potrafisz zapamiętać; nie służy do diagnozy medycznej ani do poprawy pamięci.</p>
+
+  <h2>Siostrzana aplikacja</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/pl/" hreflang="pl">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>Test pamięci roboczej, w którym stale aktualizujesz to, co pamiętasz</span></span>
+  </a>
+
+  <h2>Reklamy</h2>
+  <p class="note">Reklamy są wyświetlane u dołu ekranu głównego, ekranu wyniku i ekranu historii. Przy rozpoczynaniu testu (przycisk „Rozpocznij test” na ekranie głównym lub „Spróbuj ponownie” na ekranie wyniku; co drugi raz) wyświetla się reklama pełnoekranowa. Reklamy nie pojawiają się, gdy patrzysz na cyfry, wpisujesz odpowiedź ani gdy sprawdzana jest jej poprawność.</p>
+  <p class="note">Gdy masz subskrypcję Premium (miesięczną, odnawianą automatycznie; cena jest podana w aplikacji i w App Store), reklamy nie są wyświetlane. Subskrypcja odnawia się automatycznie, chyba że anulujesz ją co najmniej 24 godziny przed końcem bieżącego okresu. Szczegóły i sposób anulowania znajdziesz w <a href="terms/index.html">Regulaminie</a>. Wszystkie funkcje testów i historii działają bez subskrypcji.</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">Jak korzystać</a>
+    <a href="privacy/index.html">Polityka prywatności</a>
+    <a href="terms/index.html">Regulamin</a>
+    <a href="mailto:fukuidinotech@gmail.com">Kontakt</a>
+  </p>
+  <p>Digit Span — test pamięci cyfr na iOS</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

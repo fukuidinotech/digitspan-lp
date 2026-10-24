@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digit Span: prueba de memoria de números — ¿Cuántos dígitos puedes recordar?</title>
+<meta name="description" content="Mira los dígitos de uno en uno y escríbelos en el mismo orden, o empezando por el último. Una app para iOS que mide cuántos dígitos puedes recordar (tu amplitud de dígitos), con récords personales separados para En orden y Al revés, y una comparación de los dígitos en los que fallaste.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Digit Span — ¿Cuántos dígitos puedes recordar?">
+<meta property="og:description" content="Mira los dígitos y escríbelos en el orden en que salen. Una prueba de memoria de números para iOS.">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/es/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Elegir idioma">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="index.html" aria-current="true">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../nl/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../pl/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../ar/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../ko/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../vi/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Tema</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Automático</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Claro</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Oscuro</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">Inicio</a>
+    <a href="guide/index.html">Cómo se usa</a>
+    <a href="privacy/index.html">Política de privacidad</a>
+    <a href="terms/index.html">Términos de uso</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">PRUEBA DE MEMORIA DE NÚMEROS / DIGIT SPAN</p>
+    <h1><span>¿Cuántos dígitos</span> <span>puedes recordar?</span></h1>
+    <p class="lead">Los dígitos aparecen de uno en uno. Cuando desaparecen, escríbelos en el orden en que salieron. Elige un nivel (número de dígitos) y responde 5 rondas. El nivel más alto en el que aciertas las 5 indica cuántos dígitos puedes retener: tu amplitud de dígitos (digit span). Una prueba sencilla de memoria a corto plazo.</p>
+    <!-- Cuando esté en el App Store, restaurar: <a class="badge" href="https://apps.apple.com/es/app/id6826156702">Ver en el App Store</a> -->
+    <span class="badge badge-soon">Próximamente (para iPhone, uso gratuito)</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Así funciona la prueba: ves aparecer los dígitos, los escribes de memoria y consultas el resultado."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Así funciona la prueba: ves aparecer los dígitos, los escribes de memoria y consultas el resultado."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="Así funciona la prueba: ves aparecer los dígitos, los escribes de memoria y consultas el resultado.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="Así funciona la prueba: ves aparecer los dígitos, los escribes de memoria y consultas el resultado.">
+  </figure>
+
+  <h2>Cómo funciona</h2>
+  <ol class="steps">
+    <li><strong>Mira los dígitos</strong><span>Aparecen de uno en uno (0,7 segundos cada uno por defecto).</span></li>
+    <li><strong>Escríbelos en el mismo orden</strong><span>En el modo Al revés, escríbelos empezando por el último que salió.</span></li>
+    <li><strong>Revisa las 5 rondas</strong><span>Cinco rondas con el mismo número de dígitos. En cada ronda solo se indica si has acertado o no; al terminar, ves todas las respuestas juntas. El nivel más alto en el que aciertas las 5 es tu amplitud de dígitos.</span></li>
+  </ol>
+  <p><a href="guide/index.html">Guía completa y preguntas frecuentes →</a></p>
+
+  <h2>Características</h2>
+  <ul class="features">
+    <li>Dos pruebas, En orden y Al revés, cada una con su propio récord personal. En Al revés tienes que reordenar los dígitos mentalmente, así que también entra en juego la memoria de trabajo</li>
+    <li>Revisa las 5 rondas en la pantalla Resultado: tu respuesta junto a la correcta, con los dígitos que no coinciden resaltados</li>
+    <li>Consulta en la pantalla Historial cómo evoluciona tu récord personal día a día</li>
+    <li>Cambia el nivel (de 2 a 12 dígitos) y la velocidad de los dígitos (de 0,05 a 2,0 segundos)</li>
+    <li>Elige cómo se presentan los dígitos: Pantalla, Voz o Ambos. Con Voz, la prueba se hace solo de oído</li>
+    <li>Elige un tema (Sistema, Claro u Oscuro) y un color (Violeta, Azul, Naranja o Rosa)</li>
+    <li>Todos los dígitos son monoespaciados, en una pantalla limpia, sin adornos, como un instrumento de medida</li>
+    <li>Los registros se guardan solo en tu dispositivo. Sin inicio de sesión</li>
+  </ul>
+  <p class="note">Se suele decir que la referencia para un adulto medio es de 7±2 dígitos en orden directo (Miller, 1956). Esta app solo cuenta un nivel cuando aciertas las 5 rondas con el mismo número de dígitos, así que la forma de puntuar es distinta de la de las pruebas habituales. Sirve para comprobar cuántos dígitos puedes retener; no es un diagnóstico médico ni tiene como fin mejorar la memoria.</p>
+
+  <h2>App hermana</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/es/" hreflang="es">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>Una prueba de memoria de trabajo en la que vas actualizando lo que recuerdas</span></span>
+  </a>
+
+  <h2>Sobre los anuncios</h2>
+  <p class="note">Se muestran anuncios en la parte inferior de las pantallas Inicio, Resultado e Historial. Al empezar una prueba (Empezar prueba en Inicio u Otra vez en Resultado; una de cada dos veces) se muestra un anuncio a pantalla completa. No se muestran anuncios mientras ves los dígitos, escribes tu respuesta o ves si has acertado.</p>
+  <p class="note">Con la suscripción Premium activa (mensual, de renovación automática; el precio se muestra en la app y en el App Store) no se muestran anuncios. Se renueva automáticamente salvo que la canceles al menos 24 horas antes de que termine el periodo actual. Consulta los <a href="terms/index.html">Términos de uso</a> para conocer las condiciones y cómo cancelarla. Todas las funciones de las pruebas y del historial se pueden usar sin suscribirse.</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">Cómo se usa</a>
+    <a href="privacy/index.html">Política de privacidad</a>
+    <a href="terms/index.html">Términos de uso</a>
+    <a href="mailto:fukuidinotech@gmail.com">Contacto</a>
+  </p>
+  <p>Digit Span — prueba de memoria de números para iOS</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

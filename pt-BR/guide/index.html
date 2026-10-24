@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como usar | Digit Span</title>
+<meta name="description" content="Como usar o Digit Span: o andamento do teste, os modos Direta e Inversa, as regras de pontuação, como ler o resultado e o histórico, os ajustes e as perguntas frequentes.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Escolha o idioma">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="index.html" aria-current="true">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Tema de cores</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Automático</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Claro</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Escuro</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Início</a>
+    <a href="index.html" aria-current="page">Como usar</a>
+    <a href="../privacy/index.html">Política de Privacidade</a>
+    <a href="../terms/index.html">Termos de Uso</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">TESTE DE MEMÓRIA NUMÉRICA / DIGIT SPAN</p>
+    <h1>Como usar</h1>
+  </header>
+
+  <h2>1. Comece um teste</h2>
+  <p>Na tela Início, escolha Direta ou Inversa, selecione o nível (número de dígitos) e toque em Iniciar teste.</p>
+  <ul>
+    <li><strong>Direta</strong>: digite os dígitos na ordem em que apareceram. Exemplo: 3 → 8 → 1 vira “381”</li>
+    <li><strong>Inversa</strong>: digite começando pelo último dígito que apareceu. Exemplo: 3 → 8 → 1 vira “183”</li>
+  </ul>
+  <p>Os modos Direta e Inversa têm, cada um, o seu próprio recorde pessoal.</p>
+
+  <h2>2. Memorize os dígitos</h2>
+  <p>Os dígitos aparecem um de cada vez. Por padrão, cada dígito fica na tela por 0,7 segundo, seguido de um intervalo de 0,3 segundo. Você não precisa tocar na tela enquanto eles aparecem. Se escolher Voz em Ajustes, os dígitos são lidos em voz alta e não aparecem na tela.</p>
+
+  <h2>3. Digite sua resposta</h2>
+  <p>Quando os dígitos terminam, aparece um teclado numérico. Digite os dígitos de que você se lembra. Se errar ao digitar, toque em Apagar para remover o último. Assim que você digita todos os dígitos, a resposta é conferida na hora — não há botão de confirmar.</p>
+  <p>Para parar no meio, toque em Sair. Um teste interrompido não fica registrado.</p>
+
+  <h2>4. Regras de pontuação</h2>
+  <ul>
+    <li>Cada teste tem 5 rodadas. O número de dígitos fica no nível que você escolheu (2 a 12 dígitos; 3 por padrão)</li>
+    <li>Acertar não acrescenta um dígito. Para tentar mais dígitos, aumente o nível na tela Início ou em Ajustes</li>
+    <li>A cada rodada, aparece apenas “Correto” ou “Incorreto” — a resposta não é revelada</li>
+    <li>Os dígitos vão de 0 a 9, e o mesmo dígito nunca aparece duas vezes seguidas</li>
+  </ul>
+
+  <h2>5. Veja o resultado</h2>
+  <p>Você vê quantas das 5 rodadas acertou e a correção de todas as 5. Sua resposta aparece ao lado da correta, com os dígitos errados destacados.</p>
+  <p>O nível mais alto em que você acerta as 5 rodadas é a sua <strong>extensão de dígitos</strong> (digit span). Quando você bate o seu recorde, o resultado mostra “Recorde pessoal”. Costuma-se dizer que a referência para um adulto médio é de 7±2 dígitos na ordem direta (Miller, 1956). Como este app só conta um nível quando você acerta as 5 rodadas, a pontuação é diferente da dos testes convencionais.</p>
+  <p>Toque em De novo para começar o mesmo tipo de teste na hora, ou em Ir para o início para voltar à tela Início.</p>
+
+  <h2>6. Veja o histórico</h2>
+  <p>Abra Histórico na tela Início para ver a evolução do seu recorde pessoal de cada dia nos últimos 14 dias e a lista de todos os seus registros.</p>
+
+  <h2>7. Ajustes</h2>
+  <p>Abra Ajustes na tela Início. Nível, velocidade e modo de apresentação valem a partir do próximo teste. Tema e cor mudam na hora.</p>
+  <ul>
+    <li><strong>Nível (dígitos)</strong>: 2 a 12 dígitos. Você também pode alterá-lo na tela Início</li>
+    <li><strong>Velocidade dos dígitos</strong>: 0,05 a 2,0 segundos (em passos de 0,05 segundo). O intervalo entre um dígito e outro acompanha a velocidade (0,3 segundo com 0,7 segundo)</li>
+    <li><strong>Modo de apresentação</strong>: Tela (só na tela) / Voz (só em voz alta) / Ambos</li>
+    <li><strong>Tema</strong>: Sistema / Claro / Escuro</li>
+    <li><strong>Cor</strong>: Violeta / Azul / Laranja / Rosa. Muda a cor dos botões, dos números do recorde pessoal e dos itens selecionados (as cores de acerto e erro não mudam)</li>
+    <li><strong>Premium</strong>: uma assinatura mensal com renovação automática que desativa os anúncios (o preço é mostrado no app e na App Store). Aqui você pode assinar, restaurar compras e gerenciar (cancelar) a assinatura</li>
+    <li><strong>Configurações de privacidade</strong>: aparece apenas para quem mora no Espaço Econômico Europeu (EEE), no Reino Unido ou na Suíça. Permite alterar depois o seu consentimento para anúncios</li>
+  </ul>
+
+  <h2>8. Perguntas frequentes</h2>
+  <p><strong>Por qual nível devo começar?</strong><br>Recomendamos começar com 3 dígitos (o padrão). Quando acertar as 5 rodadas, aumente o nível em um na tela Início. O nível mais alto em que você acerta as 5 fica registrado como seu recorde pessoal.</p>
+  <p><strong>Onde meus registros ficam salvos?</strong><br>Apenas no seu aparelho. Não há conta nem login. Se você apagar o app, os registros também são apagados.</p>
+  <p><strong>Como apago meus registros?</strong><br>Não é possível apagar registros um por um. Para apagar todos, apague o app.</p>
+  <p><strong>Quando os anúncios aparecem?</strong><br>Na parte de baixo das telas Início, Resultado e Histórico e, em tela cheia, quando você começa um teste (Iniciar teste, na tela Início, ou De novo, na tela Resultado; uma vez sim, outra não). Nunca enquanto você vê os dígitos, digita sua resposta ou vê se acertou. Com a assinatura Premium ativa, não aparece nenhum anúncio.</p>
+  <p><strong>Como cancelo o Premium?</strong><br>Em Ajustes › Premium › Gerenciar assinatura, no app, ou no app Ajustes do iPhone › [seu nome] › Assinaturas. Você continua usando o app sem anúncios até o fim do período já pago.</p>
+  <p><strong>O resultado mostra se a minha memória é boa ou ruim?</strong><br>O resultado mostra quantas rodadas você acertou no nível escolhido, naquele momento. Ele pode variar conforme o seu estado físico e a sua concentração. Não substitui um diagnóstico médico nem uma avaliação de capacidade.</p>
+
+  <h2>9. Contato</h2>
+  <p>Para relatar problemas ou fazer sugestões, envie um e-mail para <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — teste de memória numérica para iOS</p>
+  <p><a href="../privacy/index.html">Política de Privacidade</a> / <a href="../terms/index.html">Termos de Uso</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

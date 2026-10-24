@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulamin | Digit Span</title>
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/pl/terms/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/terms/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/terms/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/terms/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/terms/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/terms/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/terms/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/terms/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/terms/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/terms/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/terms/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/terms/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/terms/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/terms/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/terms/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/terms/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/pl/terms/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Wybierz język">
+      <a lang="en" hreflang="en" href="../../terms/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/terms/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/terms/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/terms/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/terms/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/terms/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/terms/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/terms/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="index.html" aria-current="true">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/terms/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/terms/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/terms/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/terms/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/terms/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/terms/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/terms/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Motyw kolorystyczny</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Auto</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Jasny</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Ciemny</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Strona główna</a>
+    <a href="../guide/index.html">Jak korzystać</a>
+    <a href="../privacy/index.html">Polityka prywatności</a>
+    <a href="index.html" aria-current="page">Regulamin</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">TEST PAMIĘCI CYFR / DIGIT SPAN</p>
+    <h1>Regulamin</h1>
+    <p class="updated" data-updated="2026-10-24">Ostatnia aktualizacja: 24 października 2026</p>
+  </header>
+
+  <p class="i18n-note">To jest tłumaczenie oryginału w języku japońskim. W razie rozbieżności rozstrzygająca jest wersja japońska.</p>
+
+  <p>Niniejszy Regulamin (dalej „Regulamin”) określa zasady korzystania z aplikacji na iOS „Digit Span” (nazwa japońska: 数字記憶テスト; dalej „Aplikacja”). Pobierając lub używając Aplikacji, akceptujesz niniejszy Regulamin.</p>
+  <p>Aplikacja podlega <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Umowie licencyjnej użytkownika końcowego licencjonowanej aplikacji</a> firmy Apple Inc. (dalej „Standardowa umowa EULA”). Niniejszy Regulamin uzupełnia Standardową umowę EULA; w razie sprzeczności pierwszeństwo ma Standardowa umowa EULA.</p>
+
+  <h2>1. Usługa</h2>
+  <p>Aplikacja udostępnia test, w którym zapamiętujesz cyfry wyświetlane na ekranie (lub czytane na głos) po jednej, wpisujesz je i sprawdzasz, ile cyfr potrafisz zapamiętać (zakres pamięci cyfr).</p>
+
+  <h2>2. Wyniki testu</h2>
+  <p>Wynik pokazuje, ile zadań na wybranym poziomie zostało rozwiązanych poprawnie w danym momencie. Nie zastępuje diagnozy medycznej ani jakiejkolwiek oceny umiejętności. Aplikacja nie gwarantuje poprawy pamięci, koncentracji ani innych umiejętności. Jeśli masz wątpliwości dotyczące zdrowia, skonsultuj się z lekarzem.</p>
+
+  <h2>3. Reklamy</h2>
+  <p>Aplikacja jest bezpłatna (z opcjonalną płatną subskrypcją Premium), a na pokrycie kosztów jej utrzymania wyświetla reklamy podmiotów trzecich (Google AdMob). Przy aktywnej subskrypcji (pkt 4) reklamy nie są wyświetlane. Deweloper nie odpowiada za treść reklam ani za jakiekolwiek relacje z reklamodawcami. Informacje o przetwarzaniu danych związanych z reklamami znajdziesz w <a href="../privacy/index.html">Polityce prywatności</a>.</p>
+
+  <h2>4. Premium (subskrypcja odnawiana automatycznie)</h2>
+  <ul>
+    <li>Zakres: w czasie subskrypcji w Aplikacji nie są wyświetlane reklamy (banery ani reklamy pełnoekranowe). Funkcje testów i historii są bezpłatne niezależnie od tego, czy masz subskrypcję.</li>
+    <li>Okres i cena: subskrypcja odnawia się co miesiąc. Cena jest podana na ekranie zakupu w Aplikacji i w App Store. Płatność jest pobierana z Twojego konta Apple w chwili potwierdzenia zakupu, a opłata za odnowienie — w ciągu 24 godzin przed końcem bieżącego okresu.</li>
+    <li>Automatyczne odnawianie: subskrypcja odnawia się automatycznie na ten sam okres i w tej samej cenie, chyba że anulujesz ją co najmniej 24 godziny przed końcem bieżącego okresu.</li>
+    <li>Anulowanie: subskrypcję możesz anulować w każdej chwili za pomocą opcji „Zarządzaj subskrypcją” w Aplikacji (Ustawienia › Premium) lub w ustawieniach konta Apple. Po anulowaniu możesz korzystać z Aplikacji bez reklam do końca opłaconego okresu.</li>
+    <li>Zwroty: anulowanie w trakcie okresu nie daje prawa do proporcjonalnego zwrotu. Zwroty obsługuje Apple zgodnie ze swoimi zasadami.</li>
+    <li>Przywracanie zakupów: na urządzeniach zalogowanych na to samo konto Apple subskrypcję można przenieść za pomocą opcji „Przywróć zakupy”. Subskrypcja nie jest objęta Chmurą rodzinną.</li>
+    <li>Zmiany cen: jeśli cena się zmieni, poinformujemy Cię o tym z wyprzedzeniem zgodnie z procedurą Apple.</li>
+  </ul>
+
+  <h2>5. Zabronione działania</h2>
+  <ul>
+    <li>Kopiowanie, modyfikowanie lub adaptowanie Aplikacji albo tworzenie utworów zależnych</li>
+    <li>Inżynieria wsteczna, dekompilacja lub dezasemblacja Aplikacji</li>
+    <li>Rozpowszechnianie, użyczanie lub sprzedaż Aplikacji albo jej części</li>
+    <li>Zakłócanie lub zmienianie sposobu wyświetlania reklam</li>
+    <li>Działania naruszające przepisy prawa lub dobre obyczaje</li>
+    <li>Działania utrudniające udostępnianie Aplikacji</li>
+  </ul>
+
+  <h2>6. Własność intelektualna</h2>
+  <p>Wszelkie prawa własności intelektualnej do Aplikacji, w tym do jej oprogramowania, projektu graficznego i tekstów, należą do dewelopera lub uprawnionych podmiotów.</p>
+
+  <h2>7. Wyłączenie odpowiedzialności</h2>
+  <p>Aplikacja jest udostępniana w takim stanie, w jakim jest („as is”). Deweloper nie gwarantuje, że Aplikacja będzie odpowiadać konkretnym celom użytkownika, działać bez przerw ani że będzie wolna od błędów. Deweloper nie odpowiada za odzyskanie wyników zapisanych na urządzeniu, jeśli zostaną utracone.</p>
+  <p>Deweloper nie ponosi odpowiedzialności za szkody wynikające z korzystania z Aplikacji lub z niemożności korzystania z niej, z wyjątkiem szkód wyrządzonych umyślnie lub wskutek rażącego niedbalstwa dewelopera. Jeśli jednak niniejszy Regulamin stanowi umowę konsumencką w rozumieniu japońskiej ustawy o umowach konsumenckich (Consumer Contract Act), a szkoda powstała wskutek niedbalstwa dewelopera (innego niż rażące), deweloper naprawi wyłącznie szkodę zwykłą i bezpośrednią.</p>
+
+  <h2>8. Zmiana lub zakończenie udostępniania Aplikacji</h2>
+  <p>Deweloper może zmienić Aplikację lub zakończyć jej udostępnianie. Jeśli Aplikacja ma przestać być udostępniana w czasie, gdy są aktywni subskrybenci Premium, poinformujemy o tym z wyprzedzeniem na tej stronie i w Aplikacji oraz wstrzymamy przyjmowanie nowych zakupów. Zwroty odbywają się zgodnie z zasadami Apple.</p>
+
+  <h2>9. Zmiany Regulaminu</h2>
+  <p>Deweloper może w razie potrzeby zmienić niniejszy Regulamin. W takim przypadku poinformujemy na tej stronie o treści zmian i dacie ich wejścia w życie z odpowiednim wyprzedzeniem przed tą datą.</p>
+
+  <h2>10. Prawo właściwe i jurysdykcja</h2>
+  <p>Niniejszy Regulamin podlega prawu japońskiemu. Wszelkie spory dotyczące Aplikacji lub niniejszego Regulaminu podlegają wyłącznej jurysdykcji Sądu Okręgowego w Tokio jako sądu pierwszej instancji.</p>
+
+  <h2>11. Kontakt</h2>
+  <p>Usługodawca: Toru Fukui</p>
+  <p><a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a></p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — test pamięci cyfr na iOS</p>
+  <p><a href="../guide/index.html">Jak korzystać</a> / <a href="../privacy/index.html">Polityka prywatności</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

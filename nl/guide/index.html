@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uitleg | Digit Span</title>
+<meta name="description" content="Uitleg bij Digit Span: het verloop van de test, Vooruit en Achteruit, de beoordelingsregels, je resultaten en geschiedenis, de instellingen en veelgestelde vragen.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Kies een taal">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="index.html" aria-current="true">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Kleurenschema</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Automatisch</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Licht</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Donker</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Home</a>
+    <a href="index.html" aria-current="page">Uitleg</a>
+    <a href="../privacy/index.html">Privacybeleid</a>
+    <a href="../terms/index.html">Gebruiksvoorwaarden</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">CIJFERGEHEUGENTEST / DIGIT SPAN</p>
+    <h1>Uitleg</h1>
+  </header>
+
+  <h2>1. Een test starten</h2>
+  <p>Kies op het scherm Home Vooruit of Achteruit en een niveau (aantal cijfers), en tik op Start test.</p>
+  <ul>
+    <li><strong>Vooruit</strong>: typ de cijfers in de volgorde waarin ze verschenen. Voorbeeld: 3 → 8 → 1 wordt “381”</li>
+    <li><strong>Achteruit</strong>: typ ze in omgekeerde volgorde, te beginnen bij het laatst getoonde cijfer. Voorbeeld: 3 → 8 → 1 wordt “183”</li>
+  </ul>
+  <p>Vooruit en Achteruit hebben elk hun eigen persoonlijk record.</p>
+
+  <h2>2. De cijfers onthouden</h2>
+  <p>De cijfers verschijnen één voor één. Standaard wordt elk cijfer 0,7 seconde getoond, gevolgd door een pauze van 0,3 seconde. Terwijl ze verschijnen, hoef je het scherm niet aan te raken. Kies je in Instellingen voor Voorlezen, dan worden de cijfers alleen voorgelezen en niet op het scherm getoond.</p>
+
+  <h2>3. Je antwoord invoeren</h2>
+  <p>Als alle cijfers getoond zijn, verschijnt er een cijferklavier. Typ de cijfers die je hebt onthouden. Typ je een verkeerd cijfer, tik dan op Wis om het laatste cijfer te verwijderen. Zodra je het volledige aantal cijfers hebt ingevoerd, wordt je antwoord meteen beoordeeld — er is geen bevestigingsknop.</p>
+  <p>Wil je halverwege stoppen, tik dan op Stoppen. Een test die je stopt, wordt niet bewaard.</p>
+
+  <h2>4. Beoordelingsregels</h2>
+  <ul>
+    <li>Elke test bestaat uit 5 rondes. Het aantal cijfers blijft gelijk aan het niveau dat je kiest (2–12 cijfers; standaard 3)</li>
+    <li>Een goed antwoord voegt geen cijfer toe. Wil je een langere reeks proberen, verhoog dan het niveau op het scherm Home of in Instellingen</li>
+    <li>Na elke ronde zie je alleen “Goed” of “Fout”; het juiste antwoord wordt dan nog niet getoond</li>
+    <li>De cijfers zijn 0–9, en hetzelfde cijfer verschijnt nooit twee keer achter elkaar</li>
+  </ul>
+
+  <h2>5. Je resultaat</h2>
+  <p>Je ziet hoeveel van de 5 rondes je goed had, en de antwoorden van alle 5 rondes. Je antwoord staat naast het juiste antwoord, met de afwijkende cijfers gemarkeerd.</p>
+  <p>Het hoogste niveau waarop je alle 5 rondes goed hebt, is je <strong>cijferspanne</strong>. Haal je een nieuw record, dan staat er “Persoonlijk record” bij het resultaat. Voor volwassenen wordt bij vooruit herhalen vaak een richtwaarde van 7±2 cijfers genoemd (Miller, 1956). Deze app telt een niveau alleen als je alle 5 rondes op dat niveau goed hebt, dus de score wordt anders berekend dan bij gangbare tests.</p>
+  <p>Tik op Opnieuw om meteen dezelfde test opnieuw te starten, of op Naar home om terug te gaan.</p>
+
+  <h2>6. Geschiedenis</h2>
+  <p>Open Geschiedenis vanaf het scherm Home om je persoonlijk record per dag over de afgelopen 14 dagen te zien, en een lijst met al je resultaten.</p>
+
+  <h2>7. Instellingen</h2>
+  <p>Open Instellingen vanaf het scherm Home. Niveau, snelheid en presentatie gelden vanaf de volgende test. Thema en kleur veranderen meteen.</p>
+  <ul>
+    <li><strong>Niveau (cijfers)</strong>: 2–12 cijfers. Je kunt het ook op het scherm Home aanpassen</li>
+    <li><strong>Snelheid</strong>: 0,05–2,0 seconde (in stappen van 0,05 seconde). De pauze tussen de cijfers past zich aan de snelheid aan (bij 0,7 seconde: 0,3 seconde)</li>
+    <li><strong>Presentatie</strong>: Scherm (alleen tonen) / Voorlezen (alleen horen) / Beide</li>
+    <li><strong>Thema</strong>: Automatisch / Licht / Donker</li>
+    <li><strong>Kleur</strong>: Paars / Blauw / Oranje / Roze. Verandert de kleur van knoppen, je persoonlijk record en geselecteerde onderdelen (de kleuren voor goed en fout blijven hetzelfde)</li>
+    <li><strong>Premium</strong>: een maandelijks, automatisch verlengd abonnement dat de advertenties uitzet (de prijs staat in de app en in de App Store). Hier kun je het abonnement kopen, aankopen herstellen en je abonnement beheren (opzeggen)</li>
+    <li><strong>Privacyinstellingen</strong>: alleen zichtbaar voor gebruikers in de Europese Economische Ruimte (EER), het Verenigd Koninkrijk en Zwitserland. Hiermee kun je je toestemming voor advertenties later wijzigen</li>
+  </ul>
+
+  <h2>8. Veelgestelde vragen</h2>
+  <p><strong>Met welk niveau kan ik het beste beginnen?</strong><br>We raden aan te beginnen met 3 cijfers (de standaardinstelling). Heb je alle 5 rondes goed, verhoog het niveau dan met één op het scherm Home. Het hoogste niveau waarop je alle 5 rondes goed hebt, wordt bewaard als je persoonlijk record.</p>
+  <p><strong>Waar worden mijn resultaten bewaard?</strong><br>Alleen op je apparaat. Er is geen account en je hoeft niet in te loggen. Als je de app verwijdert, worden ook je resultaten verwijderd.</p>
+  <p><strong>Hoe verwijder ik mijn resultaten?</strong><br>Je kunt resultaten niet afzonderlijk verwijderen. Wil je ze allemaal verwijderen, verwijder dan de app.</p>
+  <p><strong>Wanneer verschijnen er advertenties?</strong><br>Onderaan de schermen Home, Resultaat en Geschiedenis, en als advertentie op volledig scherm wanneer je een test start (Start test op Home of Opnieuw op het scherm Resultaat; om de keer). Nooit terwijl je de cijfers bekijkt, je antwoord typt of ziet of het goed was. Met een Premium-abonnement zie je helemaal geen advertenties.</p>
+  <p><strong>Hoe zeg ik Premium op?</strong><br>Ga in de app naar Instellingen › Premium › Abonnement beheren, of open op je iPhone de app Instellingen › [je naam] › Abonnementen. Tot het einde van de periode waarvoor je hebt betaald, gebruik je de app zonder advertenties.</p>
+  <p><strong>Zegt mijn resultaat hoe goed mijn geheugen is?</strong><br>Je resultaat laat zien hoeveel rondes je goed had op het niveau dat je koos. Het geeft alleen dat moment weer en kan verschillen afhankelijk van hoe je je voelt en hoe geconcentreerd je bent. Het is geen vervanging voor een medische diagnose of voor een beoordeling van je vaardigheden.</p>
+
+  <h2>9. Contact</h2>
+  <p>Stuur foutmeldingen of verzoeken naar <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — cijfergeheugentest voor iOS</p>
+  <p><a href="../privacy/index.html">Privacybeleid</a> / <a href="../terms/index.html">Gebruiksvoorwaarden</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

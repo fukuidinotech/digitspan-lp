@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>شروط الخدمة | Digit Span</title>
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/ar/terms/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/terms/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/terms/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/terms/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/terms/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/terms/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/terms/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/terms/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/terms/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/terms/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/terms/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/terms/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/terms/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/terms/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/terms/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/terms/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/ar/terms/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="اختيار اللغة">
+      <a lang="en" hreflang="en" href="../../terms/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/terms/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/terms/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/terms/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/terms/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/terms/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/terms/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/terms/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/terms/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/terms/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="index.html" aria-current="true">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/terms/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/terms/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/terms/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/terms/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/terms/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">سمة العرض</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">تلقائي</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">فاتح</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">داكن</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">الرئيسية</a>
+    <a href="../guide/index.html">طريقة الاستخدام</a>
+    <a href="../privacy/index.html">سياسة الخصوصية</a>
+    <a href="index.html" aria-current="page">شروط الخدمة</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">اختبار ذاكرة الأرقام / DIGIT SPAN</p>
+    <h1>شروط الخدمة</h1>
+    <p class="updated" data-updated="2026-10-24">آخر تحديث: 24 أكتوبر 2026</p>
+  </header>
+
+  <p class="i18n-note">هذه ترجمة للنص الأصلي باللغة اليابانية. وفي حال وجود أي اختلاف بينهما، تكون الأولوية للنسخة اليابانية.</p>
+
+  <p>تحدّد شروط الخدمة هذه (ويُشار إليها فيما يلي بـ«الشروط») شروط استخدام تطبيق iOS «Digit Span» (الاسم الياباني: <bdi lang="ja">数字記憶テスト</bdi>؛ ويُشار إليه فيما يلي بـ«التطبيق»). ويُعدّ تنزيل التطبيق أو استخدامه موافقةً على هذه الشروط.</p>
+  <p>يخضع التطبيق لـ<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">اتفاقية ترخيص المستخدم النهائي للتطبيقات المرخّصة</a> (اتفاقية EULA القياسية) الصادرة عن <bdi>Apple Inc.</bdi> وتُكمّل هذه الشروط اتفاقيةَ EULA القياسية، وفي حال التعارض بينهما تكون الأولوية لاتفاقية EULA القياسية.</p>
+
+  <h2>1. الخدمة المقدّمة</h2>
+  <p>يوفّر التطبيق اختبارًا تُحفظ فيه الأرقام التي تُعرض على الشاشة (أو تُقرأ بصوت مسموع) واحدًا تلو الآخر ثم تُدخَل، للتعرّف على عدد الأرقام التي يمكنك تذكّرها (سعة الأرقام).</p>
+
+  <h2>2. نتائج الاختبار</h2>
+  <p>تبيّن نتيجة التطبيق عدد الأسئلة التي أُدخلت إجابتها بشكل صحيح بعدد الأرقام المختار في تلك اللحظة. وهي ليست بديلًا عن التشخيص الطبي ولا عن تقييم القدرات أو الحكم عليها. كما لا يضمن التطبيق تحسّن الذاكرة أو التركيز أو غيرهما من القدرات. وإذا كانت لديك مخاوف صحية، يُرجى استشارة جهة طبية مختصة.</p>
+
+  <h2>3. عرض الإعلانات</h2>
+  <p>يُقدَّم التطبيق مجانًا في الأساس، ولتغطية تكاليف تشغيله يعرض إعلانات من جهات خارجية (Google AdMob). ولا تُعرض أي إعلانات أثناء الاشتراك في بريميوم (القسم 4). ولا يتحمّل المطوّر أي مسؤولية عن محتوى الإعلانات أو عن أي تعاملات مع المعلنين. وللاطلاع على كيفية التعامل مع البيانات المتعلقة بالإعلانات، يُرجى مراجعة <a href="../privacy/index.html">سياسة الخصوصية</a>.</p>
+
+  <h2>4. بريميوم (اشتراك يتجدد تلقائيًا)</h2>
+  <ul>
+    <li>المحتوى: أثناء الاشتراك، لا تُعرض أي إعلانات داخل التطبيق (الإعلانات الشريطية أو الإعلانات بملء الشاشة). وميزات الاختبار والإحصاءات مجانية سواء أكان هناك اشتراك أم لا.</li>
+    <li>المدة والسعر: يتجدد الاشتراك تلقائيًا كل شهر. ويظهر السعر في شاشة الشراء داخل التطبيق وفي App Store. ويُخصم المبلغ من حساب Apple الخاص بك عند تأكيد الشراء، ويُخصم مبلغ التجديد خلال الـ 24 ساعة السابقة لنهاية الفترة الحالية.</li>
+    <li>التجديد التلقائي: يتجدد الاشتراك تلقائيًا للمدة نفسها وبالسعر نفسه ما لم يُلغَ قبل 24 ساعة على الأقل من نهاية الفترة الحالية.</li>
+    <li>الإلغاء: يمكن الإلغاء في أي وقت من «إدارة الاشتراك» في «الإعدادات ← بريميوم» داخل التطبيق، أو من إعدادات حساب Apple. وبعد الإلغاء، يبقى التطبيق بلا إعلانات حتى نهاية الفترة المدفوعة.</li>
+    <li>استرداد المبالغ: لا يُسترد أي مبلغ عن الجزء المتبقي من الفترة عند الإلغاء قبل انتهائها. وتتولى Apple معالجة طلبات الاسترداد وفقًا لسياساتها.</li>
+    <li>استعادة المشتريات: على الأجهزة المسجَّل الدخول فيها بحساب Apple نفسه، يمكن نقل الاشتراك باستخدام «استعادة المشتريات». ولا يشمل الاشتراك «المشاركة العائلية».</li>
+    <li>تغيير السعر: في حال تغيير السعر، سنُعلم المستخدمين مسبقًا وفقًا لإجراءات Apple.</li>
+  </ul>
+
+  <h2>5. الأفعال المحظورة</h2>
+  <ul>
+    <li>نسخ التطبيق أو تعديله أو تحويره أو إنشاء أعمال مشتقة منه</li>
+    <li>الهندسة العكسية للتطبيق أو فك ترجمته أو تفكيكه</li>
+    <li>إعادة توزيع التطبيق أو أي جزء منه أو تأجيره أو بيعه</li>
+    <li>إعاقة عرض الإعلانات أو التلاعب به</li>
+    <li>أي فعل يخالف القوانين أو النظام العام والآداب العامة</li>
+    <li>أي فعل يعيق تقديم التطبيق</li>
+  </ul>
+
+  <h2>6. حقوق الملكية الفكرية</h2>
+  <p>تعود حقوق الملكية الفكرية في التطبيق وما يتضمنه من برامج وتصميم ونصوص وغيرها إلى المطوّر أو إلى أصحاب الحقوق المشروعين.</p>
+
+  <h2>7. إخلاء المسؤولية</h2>
+  <p>يُقدَّم التطبيق «كما هو». ولا يضمن المطوّر ملاءمة التطبيق لغرض معيّن لدى المستخدم، ولا إتاحته دون انقطاع، ولا خلوّه من الأعطال. ولا يتحمّل المطوّر مسؤولية استعادة السجلات المحفوظة على الجهاز في حال فقدانها.</p>
+  <p>لا يتحمّل المطوّر المسؤولية عن أي ضرر ينشأ عن استخدام التطبيق أو تعذّر استخدامه، إلا إذا كان ناتجًا عن عمد المطوّر أو إهماله الجسيم. ومع ذلك، إذا كانت هذه الشروط تُعدّ عقد مستهلك بموجب قانون عقود المستهلك الياباني، ووقع ضرر بسبب إهمال المطوّر (باستثناء الإهمال الجسيم)، فإن المطوّر يعوّض عن الأضرار العادية والمباشرة فقط.</p>
+
+  <h2>8. تغيير التطبيق أو إيقاف تقديمه</h2>
+  <p>قد يغيّر المطوّر محتوى التطبيق أو يوقف تقديمه. وإذا أُوقف تقديم التطبيق مع وجود مشتركين في بريميوم، فسنُعلن ذلك مسبقًا في هذه الصفحة وفي التطبيق، ونتوقف عن قبول عمليات الشراء الجديدة. ويخضع استرداد المبالغ لسياسات Apple.</p>
+
+  <h2>9. تغيير هذه الشروط</h2>
+  <p>قد يغيّر المطوّر هذه الشروط عند الحاجة. وفي هذه الحالة، سنعلن في هذه الصفحة عن محتوى التغييرات وتاريخ سريانها قبل تاريخ السريان بمدة معقولة.</p>
+
+  <h2>10. القانون الواجب التطبيق والاختصاص القضائي</h2>
+  <p>تخضع هذه الشروط لقوانين اليابان. وفي حال نشوء أي نزاع يتعلق بالتطبيق أو بهذه الشروط، تختص محكمة طوكيو المحلية (Tokyo District Court) اختصاصًا حصريًا بنظره بوصفها محكمة الدرجة الأولى.</p>
+
+  <h2>11. التواصل معنا</h2>
+  <p>مقدّم الخدمة: Toru Fukui</p>
+  <p><a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a></p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — اختبار ذاكرة الأرقام لنظام iOS</p>
+  <p><a href="../guide/index.html">طريقة الاستخدام</a> / <a href="../privacy/index.html">سياسة الخصوصية</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

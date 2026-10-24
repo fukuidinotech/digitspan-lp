@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>숫자 기억 테스트 Digit Span — 숫자를 몇 자리까지 기억할 수 있을까요?</title>
+<meta name="description" content="숫자를 하나씩 보고, 기억한 순서대로(또는 마지막에 나온 숫자부터) 입력합니다. 몇 자리까지 기억할 수 있는지(숫자 폭, digit span)를 측정하는 iOS 단기 기억 테스트. ‘순서대로’와 ‘거꾸로’의 최고 기록을 따로 남기고, 틀린 자리를 정답과 나란히 비교해 볼 수 있습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Digit Span — 숫자를 몇 자리까지 기억할 수 있을까요?">
+<meta property="og:description" content="숫자를 하나씩 보고, 기억한 순서대로 입력합니다. 몇 자리까지 기억할 수 있는지 측정하는 iOS 숫자 기억 테스트.">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="언어 선택">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../es/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../nl/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../pl/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../ar/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="index.html" aria-current="true">한국어</a>
+      <a lang="vi" hreflang="vi" href="../vi/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">화면 색상</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">자동</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">라이트</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">다크</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">홈</a>
+    <a href="guide/index.html">사용 방법</a>
+    <a href="privacy/index.html">개인정보 처리방침</a>
+    <a href="terms/index.html">이용약관</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">숫자 기억 테스트 / DIGIT SPAN</p>
+    <h1><span>몇 자리까지</span> <span>기억할 수 있을까요?</span></h1>
+    <p class="lead">숫자가 하나씩 표시됩니다. 숫자가 사라지면 나온 순서대로 입력합니다. 자릿수를 골라 5문제를 풉니다. 5문제를 모두 맞힌 자릿수로 몇 자리까지 기억할 수 있는지(숫자 폭, digit span)를 측정하는 단기 기억 테스트입니다.</p>
+    <!-- App Store에 공개되면 다음으로 되돌립니다: <a class="badge" href="https://apps.apple.com/kr/app/id6826156702">App Store에서 보기</a> -->
+    <span class="badge badge-soon">출시 예정(iPhone·기본 무료)</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="숫자를 보고 기억해서 입력한 뒤, 결과를 확인하는 테스트의 흐름을 소개합니다."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="숫자를 보고 기억해서 입력한 뒤, 결과를 확인하는 테스트의 흐름을 소개합니다."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="숫자를 보고 기억해서 입력한 뒤, 결과를 확인하는 테스트의 흐름을 소개합니다.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="숫자를 보고 기억해서 입력한 뒤, 결과를 확인하는 테스트의 흐름을 소개합니다.">
+  </figure>
+
+  <h2>사용 방법</h2>
+  <ol class="steps">
+    <li><strong>숫자를 봅니다</strong><span>숫자가 하나씩 표시됩니다(기본값은 숫자 하나에 0.7초).</span></li>
+    <li><strong>기억한 순서대로 입력합니다</strong><span>‘거꾸로’에서는 마지막에 나온 숫자부터 입력합니다.</span></li>
+    <li><strong>5문제를 풀고 정답을 확인합니다</strong><span>같은 자릿수로 5문제를 풉니다. 문제마다 정답인지 아닌지만 보여 주고, 끝나면 5문제의 답을 한꺼번에 보여 줍니다. 5문제를 모두 맞힌 가장 높은 자릿수가 나의 숫자 폭입니다.</span></li>
+  </ol>
+  <p><a href="guide/index.html">자세한 사용 방법과 자주 묻는 질문 →</a></p>
+
+  <h2>특징</h2>
+  <ul class="features">
+    <li>‘순서대로’와 ‘거꾸로’, 두 가지 테스트. 최고 기록을 각각 따로 기록합니다. ‘거꾸로’는 머릿속에서 순서를 바꿔야 하므로 작업기억도 함께 사용합니다</li>
+    <li>결과 화면에서 5문제를 모두 확인할 수 있습니다. 정답과 내 답을 나란히 보여 주고, 틀린 자리에 색을 표시합니다</li>
+    <li>성적 화면에서 일별 최고 기록의 변화를 볼 수 있습니다</li>
+    <li>레벨(2~12자리)과 숫자 표시 속도(0.05~2.0초)를 바꿀 수 있습니다</li>
+    <li>숫자의 제시 방식은 ‘화면’, ‘음성’, ‘둘 다’ 중에서 고를 수 있습니다. ‘음성’만 고르면 귀로 듣고 기억하는 테스트가 됩니다</li>
+    <li>테마(시스템·라이트·다크)와 색상(보라색·파란색·주황색·분홍색)을 고를 수 있습니다</li>
+    <li>모든 숫자는 고정폭 글꼴로 표시됩니다. 장식 없는 계기판 같은 화면입니다</li>
+    <li>기록은 기기 안에만 저장됩니다. 로그인이 필요 없습니다</li>
+  </ul>
+  <p class="note">일반적인 성인은 ‘순서대로’에서 7±2자리 정도로 알려져 있습니다(Miller, 1956). 다만 이 앱은 같은 자릿수로 5문제를 모두 맞혔을 때만 인정하므로, 일반적인 검사와는 세는 방식이 다릅니다. 이 앱은 기억 상태를 확인하기 위한 것이며, 의료상의 진단이나 기억력 향상을 목적으로 한 것이 아닙니다.</p>
+
+  <h2>자매 앱</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/ko/" hreflang="ko">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>기억한 내용을 계속 바꿔 가며 붙잡아 두는 작업기억 테스트</span></span>
+  </a>
+
+  <h2>광고 안내</h2>
+  <p class="note">홈·결과·성적 화면 아래쪽에 광고가 표시됩니다. 테스트를 시작할 때(홈의 ‘테스트 시작’과 결과 화면의 ‘한 번 더’, 2번에 1번)에는 전면 광고가 표시됩니다. 숫자를 보는 동안, 답을 입력하는 동안, 정답 여부를 보여 주는 동안에는 광고를 표시하지 않습니다.</p>
+  <p class="note">프리미엄(1개월 단위의 자동 갱신 구독. 요금은 앱과 App Store에 표시됩니다)을 구독하는 동안에는 광고를 표시하지 않습니다. 현재 기간이 끝나기 24시간 전까지 해지하지 않으면 자동으로 갱신됩니다. 조건과 해지 방법은 <a href="terms/index.html">이용약관</a>을 확인해 주세요. 테스트와 성적 기능은 구독하지 않아도 모두 이용할 수 있습니다.</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">사용 방법</a>
+    <a href="privacy/index.html">개인정보 처리방침</a>
+    <a href="terms/index.html">이용약관</a>
+    <a href="mailto:fukuidinotech@gmail.com">문의하기</a>
+  </p>
+  <p>Digit Span — iOS용 숫자 기억 테스트</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

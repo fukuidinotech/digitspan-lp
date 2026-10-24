@@ -53,6 +53,62 @@ LANGS = {
         "theme": "表示の色", "theme_auto": "自動", "theme_light": "ライト", "theme_dark": "ダーク",
         "updated": "最終更新日", "date": "{y}年{m}月{d}日",
     },
+    "de": {
+        "dir": "de", "locale": "de_DE",
+        "native": "Deutsch", "pick": "Sprache wählen", "app": "Digit Span", "tagline": "Zahlengedächtnistest für iOS", "home": "Startseite", "guide": "Anleitung", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen", "contact": "Kontakt", "theme": "Farbschema", "theme_auto": "Automatisch", "theme_light": "Hell", "theme_dark": "Dunkel", "updated": "Zuletzt aktualisiert", "date": "{d}. {month} {y}",
+    },
+    "fr": {
+        "dir": "fr", "locale": "fr_FR", "sep": "\u202f: ",
+        "native": "Français", "pick": "Choisir la langue", "app": "Digit Span", "tagline": "test de mémoire des chiffres pour iOS", "home": "Accueil", "guide": "Mode d’emploi", "privacy": "Politique de confidentialité", "terms": "Conditions d’utilisation", "contact": "Nous contacter", "theme": "Thème d’affichage", "theme_auto": "Auto", "theme_light": "Clair", "theme_dark": "Sombre", "updated": "Dernière mise à jour", "date": "{d} {month} {y}",
+    },
+    "es": {
+        "dir": "es", "locale": "es_ES",
+        "native": "Español", "pick": "Elegir idioma", "app": "Digit Span", "tagline": "prueba de memoria de números para iOS", "home": "Inicio", "guide": "Cómo se usa", "privacy": "Política de privacidad", "terms": "Términos de uso", "contact": "Contacto", "theme": "Tema", "theme_auto": "Automático", "theme_light": "Claro", "theme_dark": "Oscuro", "updated": "Última actualización", "date": "{d} de {month} de {y}",
+    },
+    "it": {
+        "dir": "it", "locale": "it_IT",
+        "native": "Italiano", "pick": "Scegli la lingua", "app": "Digit Span", "tagline": "test di memoria numerica per iOS", "home": "Home", "guide": "Come si usa", "privacy": "Informativa sulla privacy", "terms": "Termini di utilizzo", "contact": "Contattaci", "theme": "Tema dei colori", "theme_auto": "Automatico", "theme_light": "Chiaro", "theme_dark": "Scuro", "updated": "Ultimo aggiornamento", "date": "{d} {month} {y}",
+    },
+    "pt-BR": {
+        "dir": "pt-BR", "locale": "pt_BR",
+        "native": "Português (Brasil)", "pick": "Escolha o idioma", "app": "Digit Span", "tagline": "teste de memória numérica para iOS", "home": "Início", "guide": "Como usar", "privacy": "Política de Privacidade", "terms": "Termos de Uso", "contact": "Contato", "theme": "Tema de cores", "theme_auto": "Automático", "theme_light": "Claro", "theme_dark": "Escuro", "updated": "Última atualização", "date": "{d} de {month} de {y}",
+    },
+    "nl": {
+        "dir": "nl", "locale": "nl_NL",
+        "native": "Nederlands", "pick": "Kies een taal", "app": "Digit Span", "tagline": "cijfergeheugentest voor iOS", "home": "Home", "guide": "Uitleg", "privacy": "Privacybeleid", "terms": "Gebruiksvoorwaarden", "contact": "Contact", "theme": "Kleurenschema", "theme_auto": "Automatisch", "theme_light": "Licht", "theme_dark": "Donker", "updated": "Laatst bijgewerkt", "date": "{d} {month} {y}",
+    },
+    "pl": {
+        "dir": "pl", "locale": "pl_PL",
+        "native": "Polski", "pick": "Wybierz język", "app": "Digit Span", "tagline": "test pamięci cyfr na iOS", "home": "Strona główna", "guide": "Jak korzystać", "privacy": "Polityka prywatności", "terms": "Regulamin", "contact": "Kontakt", "theme": "Motyw kolorystyczny", "theme_auto": "Auto", "theme_light": "Jasny", "theme_dark": "Ciemny", "updated": "Ostatnia aktualizacja", "date": "{d} {month} {y}",
+    },
+    "ru": {
+        "dir": "ru", "locale": "ru_RU",
+        "native": "Русский", "pick": "Выберите язык", "app": "Digit Span", "tagline": "тест памяти на цифры для iOS", "home": "Главная", "guide": "Как пользоваться", "privacy": "Политика конфиденциальности", "terms": "Условия использования", "contact": "Связаться с нами", "theme": "Цветовая тема", "theme_auto": "Авто", "theme_light": "Светлая", "theme_dark": "Тёмная", "updated": "Последнее обновление", "date": "{d} {month} {y} г.",
+    },
+    "ar": {
+        "dir": "ar", "locale": "ar_AR", "rtl": True,
+        "native": "العربية", "pick": "اختيار اللغة", "app": "Digit Span", "tagline": "اختبار ذاكرة الأرقام لنظام iOS", "home": "الرئيسية", "guide": "طريقة الاستخدام", "privacy": "سياسة الخصوصية", "terms": "شروط الخدمة", "contact": "التواصل معنا", "theme": "سمة العرض", "theme_auto": "تلقائي", "theme_light": "فاتح", "theme_dark": "داكن", "updated": "آخر تحديث", "date": "{d} {month} {y}",
+    },
+    "he": {
+        "dir": "he", "locale": "he_IL", "rtl": True,
+        "native": "עברית", "pick": "בחירת שפה", "app": "Digit Span", "tagline": "מבחן זיכרון מספרים ל-iOS", "home": "דף הבית", "guide": "איך משתמשים", "privacy": "מדיניות פרטיות", "terms": "תנאי שימוש", "contact": "יצירת קשר", "theme": "ערכת נושא", "theme_auto": "אוטומטי", "theme_light": "בהיר", "theme_dark": "כהה", "updated": "עודכן לאחרונה", "date": "{d} ב{month} {y}",
+    },
+    "ko": {
+        "dir": "ko", "locale": "ko_KR",
+        "native": "한국어", "pick": "언어 선택", "app": "Digit Span", "tagline": "iOS용 숫자 기억 테스트", "home": "홈", "guide": "사용 방법", "privacy": "개인정보 처리방침", "terms": "이용약관", "contact": "문의하기", "theme": "화면 색상", "theme_auto": "자동", "theme_light": "라이트", "theme_dark": "다크", "updated": "최종 업데이트", "date": "{y}년 {m}월 {d}일",
+    },
+    "vi": {
+        "dir": "vi", "locale": "vi_VN",
+        "native": "Tiếng Việt", "pick": "Chọn ngôn ngữ", "app": "Digit Span", "tagline": "bài kiểm tra trí nhớ số cho iOS", "home": "Trang chủ", "guide": "Cách sử dụng", "privacy": "Chính sách quyền riêng tư", "terms": "Điều khoản sử dụng", "contact": "Liên hệ", "theme": "Màu hiển thị", "theme_auto": "Tự động", "theme_light": "Sáng", "theme_dark": "Tối", "updated": "Cập nhật lần cuối", "date": "{d} tháng {m} năm {y}",
+    },
+    "zh-Hans": {
+        "dir": "zh-Hans", "locale": "zh_CN",
+        "native": "简体中文", "pick": "选择语言", "app": "Digit Span", "tagline": "iOS 数字记忆测试", "home": "首页", "guide": "使用说明", "privacy": "隐私政策", "terms": "使用条款", "contact": "联系我们", "theme": "配色", "theme_auto": "自动", "theme_light": "浅色", "theme_dark": "深色", "updated": "最后更新", "date": "{y}年{m}月{d}日",
+    },
+    "zh-Hant": {
+        "dir": "zh-Hant", "locale": "zh_TW",
+        "native": "繁體中文", "pick": "選擇語言", "app": "Digit Span", "tagline": "iOS 數字記憶測驗", "home": "首頁", "guide": "使用說明", "privacy": "隱私權政策", "terms": "使用條款", "contact": "聯絡我們", "theme": "顯示配色", "theme_auto": "自動", "theme_light": "淺色", "theme_dark": "深色", "updated": "最後更新日期", "date": "{y}年{m}月{d}日",
+    },
 
 }
 
@@ -60,6 +116,16 @@ LANGS = {
 MONTHS = {
     "en": ["", "January", "February", "March", "April", "May", "June",
            "July", "August", "September", "October", "November", "December"],
+    "de": ["", "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+    "fr": ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    "es": ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "it": ["", "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+    "pt-BR": ["", "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+    "nl": ["", "januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"],
+    "pl": ["", "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"],
+    "ru": ["", "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
+    "ar": ["", "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+    "he": ["", "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
 }
 
 
@@ -104,7 +170,10 @@ def date_text(lang: str, iso: str) -> str:
     y, m, d = (int(v) for v in iso.split("-"))
     cfg = LANGS[lang]
     month = MONTHS[lang][m] if "{month}" in cfg["date"] else ""
-    return f'{cfg["updated"]}: ' + cfg["date"].format(y=y, m=m, d=d, month=month)
+    # 見出しと日付のあいだ。fr はコロンの前に U+202F（狭い空白）を置く
+    # fr は1日だけ序数（1er octobre）
+    day = "1er" if lang == "fr" and d == 1 else d
+    return cfg["updated"] + cfg.get("sep", ": ") + cfg["date"].format(y=y, m=m, d=day, month=month)
 
 
 # **この LP で置く JS はこれだけ**（2026-10-23 ユーザー判断で「ページに JS を置かない」の例外）。
@@ -252,7 +321,9 @@ def apply(text: str, lang: str, page: str) -> str:
         text = pattern.sub(lambda m: f"{m.group(1)}\n{fn(lang, page)}\n{m.group(2)}", text)
     text = re.sub(r'(<p class="updated" data-updated="(\d{4}-\d{2}-\d{2})">).*?(</p>)',
                   lambda m: f"{m.group(1)}{date_text(lang, m.group(2))}{m.group(3)}", text, flags=re.S)
-    text = re.sub(r'<html lang="[^"]*">', f'<html lang="{lang}">', text, count=1)
+    # 右から左の言語（ar・he）は dir を付ける。ほかは付けない（付いていたら外す）
+    direction = ' dir="rtl"' if LANGS[lang].get("rtl") else ""
+    text = re.sub(r'<html lang="[^"]*"(?: dir="[^"]*")?>', f'<html lang="{lang}"{direction}>', text, count=1)
     return text
 
 

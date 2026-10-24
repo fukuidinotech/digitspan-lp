@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cijfergeheugentest: Digit Span — Hoeveel cijfers kun je onthouden?</title>
+<meta name="description" content="Bekijk cijfers één voor één en typ ze terug in dezelfde volgorde — of in omgekeerde volgorde. Een iOS-app voor het kortetermijngeheugen die meet hoeveel cijfers je kunt onthouden (je cijferspanne), met aparte persoonlijke records voor Vooruit en Achteruit en een vergelijking van de cijfers die je fout had.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Digit Span — Hoeveel cijfers kun je onthouden?">
+<meta property="og:description" content="Bekijk de cijfers en typ ze terug in dezelfde volgorde. Een cijfergeheugentest voor iOS.">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Kies een taal">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../es/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="index.html" aria-current="true">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../pl/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../ar/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../ko/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../vi/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Kleurenschema</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Automatisch</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Licht</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Donker</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="guide/index.html">Uitleg</a>
+    <a href="privacy/index.html">Privacybeleid</a>
+    <a href="terms/index.html">Gebruiksvoorwaarden</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">CIJFERGEHEUGENTEST / DIGIT SPAN</p>
+    <h1><span>Hoeveel cijfers</span> <span>kun je onthouden?</span></h1>
+    <p class="lead">Cijfers verschijnen één voor één. Zodra ze verdwijnen, typ je ze terug in de volgorde waarin je ze zag. Kies een niveau en beantwoord 5 rondes. Het hoogste niveau waarop je alle 5 rondes goed hebt, laat zien hoeveel cijfers je kunt onthouden: je cijferspanne. Een eenvoudige test voor het kortetermijngeheugen.</p>
+    <!-- Zodra de app in de App Store staat, terugzetten: <a class="badge" href="https://apps.apple.com/nl/app/id6826156702">Bekijk in de App Store</a> -->
+    <span class="badge badge-soon">Binnenkort beschikbaar (gratis te gebruiken, voor iPhone)</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Zo werkt de test: cijfers zien verschijnen, ze uit je hoofd invoeren en het resultaat bekijken."></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="Zo werkt de test: cijfers zien verschijnen, ze uit je hoofd invoeren en het resultaat bekijken."></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="Zo werkt de test: cijfers zien verschijnen, ze uit je hoofd invoeren en het resultaat bekijken.">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="Zo werkt de test: cijfers zien verschijnen, ze uit je hoofd invoeren en het resultaat bekijken.">
+  </figure>
+
+  <h2>Zo werkt het</h2>
+  <ol class="steps">
+    <li><strong>Bekijk de cijfers</strong><span>Ze verschijnen één voor één (standaard 0,7 seconde per cijfer).</span></li>
+    <li><strong>Typ ze terug</strong><span>Bij Achteruit typ je ze in omgekeerde volgorde, te beginnen bij het laatst getoonde cijfer.</span></li>
+    <li><strong>Controleer alle 5 rondes</strong><span>Vijf rondes met hetzelfde aantal cijfers. Na elke ronde zie je alleen of je antwoord goed of fout was; aan het eind zie je alle antwoorden samen. Het hoogste niveau waarop je alle 5 rondes goed hebt, is je cijferspanne.</span></li>
+  </ol>
+  <p><a href="guide/index.html">Volledige uitleg en veelgestelde vragen →</a></p>
+
+  <h2>Kenmerken</h2>
+  <ul class="features">
+    <li>Twee tests, Vooruit en Achteruit, elk met een eigen persoonlijk record. Bij Achteruit zet je de cijfers in gedachten in een andere volgorde, dus gebruik je ook je werkgeheugen</li>
+    <li>Bekijk alle 5 rondes op het scherm Resultaat: je antwoord naast het juiste antwoord, met de afwijkende cijfers gemarkeerd</li>
+    <li>Bekijk op het scherm Geschiedenis hoe je persoonlijk record per dag verloopt</li>
+    <li>Pas het niveau aan (2–12 cijfers) en hoe lang elk cijfer wordt getoond (0,05–2,0 seconde)</li>
+    <li>Kies hoe de cijfers worden aangeboden: Scherm, Voorlezen of Beide. Kies je alleen Voorlezen, dan wordt het een luistertest</li>
+    <li>Kies een thema (Automatisch, Licht of Donker) en een kleur (Paars, Blauw, Oranje of Roze)</li>
+    <li>Alle cijfers hebben een vaste breedte, op een sober scherm dat aan een meetinstrument doet denken</li>
+    <li>Je resultaten blijven op je apparaat. Inloggen is niet nodig</li>
+  </ul>
+  <p class="note">Voor volwassenen wordt bij vooruit herhalen vaak een richtwaarde van 7±2 cijfers genoemd (Miller, 1956). Deze app telt een niveau alleen als je alle 5 rondes op dat niveau goed hebt, dus de score wordt anders berekend dan bij gangbare tests. De app is bedoeld om na te gaan hoeveel cijfers je kunt onthouden; hij stelt geen medische diagnose en is niet bedoeld om je geheugen te verbeteren.</p>
+
+  <h2>Zusterapp</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/nl/" hreflang="nl">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>Een werkgeheugentest waarbij je steeds bijwerkt wat je onthoudt</span></span>
+  </a>
+
+  <h2>Over advertenties</h2>
+  <p class="note">Onderaan de schermen Home, Resultaat en Geschiedenis verschijnen advertenties. Wanneer je een test start (Start test op Home of Opnieuw op het scherm Resultaat; om de keer), verschijnt een advertentie op volledig scherm. Terwijl je de cijfers bekijkt, je antwoord typt of ziet of het goed was, worden geen advertenties getoond.</p>
+  <p class="note">Met een Premium-abonnement (maandelijks, automatisch verlengd; de prijs staat in de app en in de App Store) worden geen advertenties getoond. Het abonnement wordt automatisch verlengd, tenzij je uiterlijk 24 uur vóór het einde van de lopende periode opzegt. Zie de <a href="terms/index.html">Gebruiksvoorwaarden</a> voor de voorwaarden en hoe je opzegt. Alle test- en geschiedenisfuncties kun je ook zonder abonnement gebruiken.</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">Uitleg</a>
+    <a href="privacy/index.html">Privacybeleid</a>
+    <a href="terms/index.html">Gebruiksvoorwaarden</a>
+    <a href="mailto:fukuidinotech@gmail.com">Contact</a>
+  </p>
+  <p>Digit Span — cijfergeheugentest voor iOS</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

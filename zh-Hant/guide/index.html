@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用說明 | Digit Span 數字記憶測驗</title>
+<meta name="description" content="Digit Span 數字記憶測驗的使用說明：測驗流程、「正序」與「倒序」、判定規則、結果與成績的查看方式、設定與常見問題。">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="選擇語言">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="index.html" aria-current="true">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">顯示配色</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">自動</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">淺色</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">深色</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">首頁</a>
+    <a href="index.html" aria-current="page">使用說明</a>
+    <a href="../privacy/index.html">隱私權政策</a>
+    <a href="../terms/index.html">使用條款</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">數字記憶測驗 / DIGIT SPAN</p>
+    <h1>使用說明</h1>
+  </header>
+
+  <h2>1. 開始測驗</h2>
+  <p>在主頁選擇「正序」或「倒序」與等級（位數），然後點一下「開始測驗」。</p>
+  <ul>
+    <li><strong>正序</strong>（順背）：按出現的順序輸入。例：3 → 8 → 1 就輸入「381」</li>
+    <li><strong>倒序</strong>（倒背）：從最後出現的數字開始倒著輸入。例：3 → 8 → 1 就輸入「183」</li>
+  </ul>
+  <p>個人最佳會分別記錄「正序」與「倒序」。</p>
+
+  <h2>2. 記住數字</h2>
+  <p>數字會一個一個出現。預設每個數字顯示 0.7 秒，間隔 0.3 秒。顯示期間不需要觸碰螢幕。若在設定中選擇「朗讀」，數字不會顯示在螢幕上，只會以聲音朗讀。</p>
+
+  <h2>3. 輸入答案</h2>
+  <p>數字顯示完畢後，會出現數字鍵盤。請輸入你記住的數字。輸入錯誤時，點一下「刪除」可刪掉最後一個數字。輸入滿位數後會立即判定（沒有確認按鈕）。</p>
+  <p>想中途停止時，請點一下「中止」。中止的測驗不會留下記錄。</p>
+
+  <h2>4. 判定規則</h2>
+  <ul>
+    <li>每次測驗 5 題。位數固定為你選擇的等級（2～12 位，預設 3 位），不會改變</li>
+    <li>答對也不會增加位數。想挑戰更多位數時，請在主頁或設定中提高等級</li>
+    <li>每題只顯示「正確」或「不對」，不會顯示答案</li>
+    <li>數字為 0～9，同一個數字不會連續出現兩次</li>
+  </ul>
+
+  <h2>5. 查看結果</h2>
+  <p>畫面會顯示 5 題中答對幾題，以及全部 5 題的答案核對。正確答案與你的答案並排顯示，不一致的位數會標上顏色。</p>
+  <p>5 題全部答對的最高等級，就是你的<strong>數字廣度</strong>。刷新個人最佳時，結果會顯示「個人最佳」。一般認為，成人正序（順背）的參考值為 7±2 位（Miller, 1956）。不過，本 App 只在同一位數的 5 題全部答對時才計入，計算方式與一般的測驗不同。</p>
+  <p>點一下「再來一次」可立即開始同一種測驗；點一下「返回主頁」可回到主頁。</p>
+
+  <h2>6. 查看成績</h2>
+  <p>從主頁開啟「成績」畫面，可查看最近 14 天每日個人最佳的變化，以及所有記錄的列表。</p>
+
+  <h2>7. 設定</h2>
+  <p>可從主頁的設定變更。等級、速度與呈現方式從下一次測驗開始生效。主題與顏色會立即變更。</p>
+  <ul>
+    <li><strong>等級（位數）</strong>：2～12 位。也可以在主頁變更</li>
+    <li><strong>數字顯示速度</strong>：0.05～2.0 秒（以 0.05 秒為單位）。數字之間的間隔也會隨速度變化（0.7 秒時為 0.3 秒）</li>
+    <li><strong>呈現方式</strong>：螢幕（只顯示）／朗讀（只有聲音）／兩者</li>
+    <li><strong>主題</strong>：跟隨系統／淺色／深色</li>
+    <li><strong>顏色</strong>：紫色／藍色／橘色／粉紅色。會改變按鈕、個人最佳的數字、已選項目等的顏色（正確與錯誤的顏色不變）</li>
+    <li><strong>進階版</strong>：可關閉廣告的按月自動續訂訂閱（價格顯示於 App 內與 App Store）。可在這裡購買、回復購買項目，以及管理（取消）訂閱</li>
+    <li><strong>隱私設定</strong>：只會向居住在歐洲經濟區（EEA）、英國與瑞士的使用者顯示。可在之後變更廣告的同意設定</li>
+  </ul>
+
+  <h2>8. 常見問題</h2>
+  <p><strong>從哪個等級開始比較好？</strong><br>建議先從 3 位（預設）開始。5 題全部答對後，可以在主頁將等級提高一級試試看。全部答對的最高等級會記錄為個人最佳。</p>
+  <p><strong>記錄儲存在哪裡？</strong><br>只儲存在你的裝置中。沒有帳號，也不需要登入。刪除 App 後，記錄也會一併刪除。</p>
+  <p><strong>想刪除記錄該怎麼做？</strong><br>無法逐筆刪除記錄。若要全部刪除，請刪除 App。</p>
+  <p><strong>廣告什麼時候出現？</strong><br>在主頁、結果與成績畫面的下方，以及開始測驗時（主頁的「開始測驗」與結果畫面的「再來一次」，每 2 次有 1 次，全螢幕）。在觀看數字、輸入答案與判定期間不會出現。訂閱進階版期間不會出現。</p>
+  <p><strong>如何取消進階版？</strong><br>前往 App 內的「設定」›「進階版」的「管理訂閱」，或 iPhone 的「設定」›［你的名稱］›「訂閱項目」即可取消。在已付費的期間結束前，仍可無廣告使用。</p>
+  <p><strong>結果能看出記憶力的好壞嗎？</strong><br>結果顯示的是在你選擇的位數下，當時答對了幾題，也會因身體狀況與專注程度而改變。不能取代醫療診斷或能力的評估。</p>
+
+  <h2>9. 聯絡我們</h2>
+  <p>如有問題回報或建議，請寄信至 <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>。</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — iOS 數字記憶測驗</p>
+  <p><a href="../privacy/index.html">隱私權政策</a> / <a href="../terms/index.html">使用條款</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

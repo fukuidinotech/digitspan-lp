@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digit Span 數字記憶測驗｜你能記住幾位數？短期記憶測驗</title>
+<meta name="description" content="數字會一個一個出現，請按記住的順序（或倒序）輸入。測量你能記住幾位數（數字廣度）的 iOS App。分別記錄正序與倒序的個人最佳，並可對照答錯的位數。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="數字記憶測驗｜你能記住幾位數？">
+<meta property="og:description" content="看著一個一個出現的數字，按順序輸入。測量你能記住幾位數的短期記憶測驗。">
+<meta property="og:image" content="https://fukuidinotech.github.io/digitspan-lp/icon-512.png">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/">
+<link rel="stylesheet" href="../site.css?v=b2077dbb">
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="選擇語言">
+      <a lang="en" hreflang="en" href="../index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../ja/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../de/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../fr/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../es/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../it/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../pt-BR/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../nl/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../pl/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../ru/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../ar/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../he/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../ko/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../vi/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="index.html" aria-current="true">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">顯示配色</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">自動</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">淺色</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">深色</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="index.html" aria-current="page">首頁</a>
+    <a href="guide/index.html">使用說明</a>
+    <a href="privacy/index.html">隱私權政策</a>
+    <a href="terms/index.html">使用條款</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="../icon-512.png" alt="" width="88" height="88">
+    <p class="app-name">數字記憶測驗 / DIGIT SPAN</p>
+    <h1><span>你能記住</span><span>幾位數？</span></h1>
+    <p class="lead">數字會一個一個出現。消失後，請按出現的順序輸入。選好位數後作答 5 題。以全部答對的位數，測量你能記住幾位數（數字廣度），是一款短期記憶測驗。</p>
+    <!-- 在 App Store 上架後改回: <a class="badge" href="https://apps.apple.com/tw/app/id6826156702">在 App Store 查看</a> -->
+    <span class="badge badge-soon">即將推出（iPhone，可免費使用）</span>
+  </section>
+
+  <figure class="intro-media">
+    <video class="intro-video" data-theme="dark" src="../media/intro-en-dark.mp4" poster="../media/intro-en-dark.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="介紹測驗的流程：記住數字、輸入，再查看結果。"></video>
+    <video class="intro-video" data-theme="light" src="../media/intro-en-light.mp4" poster="../media/intro-en-light.jpg" autoplay muted loop playsinline preload="metadata" width="1080" height="1350" aria-label="介紹測驗的流程：記住數字、輸入，再查看結果。"></video>
+    <img class="intro-poster" data-theme="dark" loading="lazy" decoding="async" src="../media/intro-en-dark.jpg" width="1080" height="1350" alt="介紹測驗的流程：記住數字、輸入，再查看結果。">
+    <img class="intro-poster" data-theme="light" loading="lazy" decoding="async" src="../media/intro-en-light.jpg" width="1080" height="1350" alt="介紹測驗的流程：記住數字、輸入，再查看結果。">
+  </figure>
+
+  <h2>使用方式</h2>
+  <ol class="steps">
+    <li><strong>看數字</strong><span>數字一次顯示一個（預設每個 0.7 秒）。</span></li>
+    <li><strong>按記住的順序輸入</strong><span>選擇「倒序」時，請從最後出現的數字開始倒著輸入。</span></li>
+    <li><strong>5 題後核對答案</strong><span>同一位數作答 5 題。每題只顯示對錯，結束後一次顯示全部 5 題的答案。全部答對的最高位數，就是你的數字廣度。</span></li>
+  </ol>
+  <p><a href="guide/index.html">詳細使用說明與常見問題 →</a></p>
+
+  <h2>特色</h2>
+  <ul class="features">
+    <li>「正序」（順背）與「倒序」（倒背）兩種測驗，分別記錄個人最佳。「倒序」需要在腦中重新排列數字，因此也會用到工作記憶</li>
+    <li>在「結果」畫面核對全部 5 題。正確答案與你的答案並排顯示，不一致的位數會標上顏色</li>
+    <li>在「成績」畫面查看每日個人最佳的變化</li>
+    <li>可調整等級（2～12 位）與數字顯示速度（0.05～2.0 秒）</li>
+    <li>數字的呈現方式可選「螢幕」、「朗讀」或「兩者」。只選「朗讀」時，就成了用耳朵記憶的測驗</li>
+    <li>可選擇主題（跟隨系統、淺色、深色）與顏色（紫色、藍色、橘色、粉紅色）</li>
+    <li>所有數字皆為等寬字體。沒有多餘裝飾，像儀表一樣的畫面</li>
+    <li>記錄只儲存在裝置中。不需登入</li>
+  </ul>
+  <p class="note">一般認為，成人正序（順背）的參考值為 7±2 位（Miller, 1956）。不過，本 App 只在同一位數的 5 題全部答對時才計入，計算方式與一般的測驗不同。本 App 用於確認記憶的狀態，並非醫療診斷，也不是以提升記憶力為目的。</p>
+
+  <h2>姊妹 App</h2>
+  <a class="sister" href="https://fukuidinotech.github.io/nback-training-site/zh-Hant/" hreflang="zh-Hant">
+    <img src="../images/nback-icon.png" alt="" width="64" height="64">
+    <span><strong>N-Back Brain Trainer</strong><span>持續更新所記內容的工作記憶測驗</span></span>
+  </a>
+
+  <h2>關於廣告</h2>
+  <p class="note">主頁、結果與成績畫面的下方會顯示廣告。開始測驗時（主頁的「開始測驗」與結果畫面的「再來一次」，每 2 次有 1 次）會顯示全螢幕廣告。在觀看數字、輸入答案與判定期間不會顯示廣告。</p>
+  <p class="note">訂閱進階版（按月自動續訂；價格顯示於 App 內與 App Store）期間不會顯示廣告。除非在目前期間結束前至少 24 小時取消，否則將自動續訂。條件與取消方式請參閱<a href="terms/index.html">使用條款</a>。不訂閱也能使用所有測驗與成績功能。</p>
+</main>
+<!--chrome:foot-->
+<footer>
+  <p>
+    <a href="guide/index.html">使用說明</a>
+    <a href="privacy/index.html">隱私權政策</a>
+    <a href="terms/index.html">使用條款</a>
+    <a href="mailto:fukuidinotech@gmail.com">聯絡我們</a>
+  </p>
+  <p>Digit Span — iOS 數字記憶測驗</p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

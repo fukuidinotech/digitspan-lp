@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Termos de Uso | Digit Span</title>
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/terms/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/terms/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/terms/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/terms/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/terms/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/terms/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/terms/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/terms/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/terms/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/terms/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/terms/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/terms/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/terms/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/terms/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/terms/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/terms/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/pt-BR/terms/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Escolha o idioma">
+      <a lang="en" hreflang="en" href="../../terms/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/terms/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/terms/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/terms/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/terms/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/terms/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="index.html" aria-current="true">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/terms/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/terms/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/terms/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/terms/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/terms/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/terms/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/terms/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/terms/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/terms/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Tema de cores</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Automático</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Claro</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Escuro</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Início</a>
+    <a href="../guide/index.html">Como usar</a>
+    <a href="../privacy/index.html">Política de Privacidade</a>
+    <a href="index.html" aria-current="page">Termos de Uso</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">TESTE DE MEMÓRIA NUMÉRICA / DIGIT SPAN</p>
+    <h1>Termos de Uso</h1>
+    <p class="updated" data-updated="2026-10-24">Última atualização: 24 de outubro de 2026</p>
+  </header>
+
+  <p class="i18n-note">Esta é uma tradução do original em japonês. Em caso de divergência, prevalece a versão em japonês.</p>
+
+  <p>Estes Termos de Uso (doravante, os “Termos”) estabelecem as condições de uso do app para iOS “Digit Span” (nome em japonês: 数字記憶テスト; doravante, o “App”). Ao baixar ou usar o App, você concorda com estes Termos.</p>
+  <p>O App está sujeito ao <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Contrato de Licença de Usuário Final de Aplicativo Licenciado</a> da Apple Inc. (o “EULA Padrão”). Estes Termos complementam o EULA Padrão; em caso de conflito, prevalece o EULA Padrão.</p>
+
+  <h2>1. O serviço</h2>
+  <p>O App oferece um teste em que você memoriza dígitos exibidos na tela (ou lidos em voz alta) um de cada vez, digita-os e verifica quantos dígitos consegue memorizar (sua extensão de dígitos).</p>
+
+  <h2>2. Sobre os resultados do teste</h2>
+  <p>O resultado mostra quantas rodadas você acertou no nível escolhido, naquele momento. Ele não substitui um diagnóstico médico nem qualquer avaliação ou julgamento de capacidade. O App também não garante nenhuma melhora da memória, da concentração ou de outras capacidades. Se você tiver preocupações com a sua saúde, consulte um profissional de saúde.</p>
+
+  <h2>3. Anúncios</h2>
+  <p>O App é oferecido gratuitamente e, para cobrir os custos de operação, exibe anúncios de terceiros (Google AdMob). Enquanto a sua assinatura Premium (seção 4) estiver ativa, nenhum anúncio é exibido. O desenvolvedor não se responsabiliza pelo conteúdo dos anúncios nem por qualquer relação com os anunciantes. Para saber como os dados relacionados aos anúncios são tratados, consulte a <a href="../privacy/index.html">Política de Privacidade</a>.</p>
+
+  <h2>4. Premium (assinatura com renovação automática)</h2>
+  <ul>
+    <li>O que inclui: durante a assinatura, os anúncios do App (banners e anúncios em tela cheia) não são exibidos. Os recursos de teste e de histórico são gratuitos, com ou sem assinatura.</li>
+    <li>Período e preço: renovação automática a cada mês. O preço é mostrado na tela de compra do App e na App Store. O pagamento é cobrado na sua Conta Apple na confirmação da compra, e as renovações são cobradas nas 24 horas anteriores ao fim do período atual.</li>
+    <li>Renovação automática: a assinatura é renovada automaticamente pelo mesmo período e preço, a menos que você a cancele pelo menos 24 horas antes do fim do período atual.</li>
+    <li>Cancelamento: você pode cancelar a qualquer momento em Gerenciar assinatura, em Ajustes › Premium no App, ou nos ajustes da sua Conta Apple. Depois de cancelar, você continua usando o App sem anúncios até o fim do período já pago.</li>
+    <li>Reembolso: cancelar no meio de um período não dá direito a reembolso proporcional. Os reembolsos são tratados pela Apple, de acordo com as regras da Apple.</li>
+    <li>Restauração de compras: em aparelhos com a sessão iniciada na mesma Conta Apple, Restaurar compras transfere a sua assinatura. O Compartilhamento Familiar não está disponível.</li>
+    <li>Alterações de preço: se o preço mudar, avisaremos com antecedência, seguindo o procedimento da Apple.</li>
+  </ul>
+
+  <h2>5. Condutas proibidas</h2>
+  <ul>
+    <li>Copiar, modificar ou adaptar o App, ou criar obras derivadas dele</li>
+    <li>Fazer engenharia reversa, descompilar ou desmontar o App</li>
+    <li>Redistribuir, emprestar ou vender o App ou qualquer parte dele</li>
+    <li>Impedir ou alterar a exibição dos anúncios</li>
+    <li>Qualquer conduta que viole a lei, a ordem pública ou os bons costumes</li>
+    <li>Qualquer conduta que prejudique o fornecimento do App</li>
+  </ul>
+
+  <h2>6. Propriedade intelectual</h2>
+  <p>Todos os direitos de propriedade intelectual sobre o App e sobre os programas, o design, os textos e demais elementos nele contidos pertencem ao desenvolvedor ou aos legítimos titulares.</p>
+
+  <h2>7. Isenção de responsabilidade</h2>
+  <p>O App é fornecido “no estado em que se encontra”. O desenvolvedor não garante que o App seja adequado a qualquer finalidade específica, que possa ser usado sem interrupções ou que esteja livre de defeitos. Se os registros salvos no seu aparelho forem perdidos, o desenvolvedor não se responsabiliza por restaurá-los.</p>
+  <p>O desenvolvedor não se responsabiliza por danos decorrentes do uso ou da impossibilidade de uso do App, exceto nos casos de dolo ou culpa grave do desenvolvedor. No entanto, se estes Termos constituírem um contrato de consumo nos termos da Lei de Contratos de Consumo do Japão e o dano for causado por culpa do desenvolvedor (exceto culpa grave), o desenvolvedor indenizará apenas os danos ordinários e diretos.</p>
+
+  <h2>8. Alterações e encerramento do App</h2>
+  <p>O desenvolvedor pode alterar o conteúdo do App ou encerrar o seu fornecimento. Se o App for encerrado enquanto houver assinantes do Premium, avisaremos com antecedência nesta página e no App, e deixaremos de aceitar novas compras. Os reembolsos seguem as regras da Apple.</p>
+
+  <h2>9. Alterações destes Termos</h2>
+  <p>O desenvolvedor pode alterar estes Termos quando necessário. Nesse caso, avisaremos nesta página o conteúdo das alterações e a data em que entram em vigor, com uma antecedência razoável em relação a essa data.</p>
+
+  <h2>10. Lei aplicável e foro</h2>
+  <p>Estes Termos são regidos pelas leis do Japão. Qualquer disputa relacionada ao App ou a estes Termos será submetida à jurisdição exclusiva do Tribunal Distrital de Tóquio como foro de primeira instância.</p>
+
+  <h2>11. Contato</h2>
+  <p>Responsável: Toru Fukui</p>
+  <p><a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a></p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — teste de memória numérica para iOS</p>
+  <p><a href="../guide/index.html">Como usar</a> / <a href="../privacy/index.html">Política de Privacidade</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>איך משתמשים | Digit Span</title>
+<meta name="description" content="איך משתמשים ב-Digit Span: מהלך המבחן, המצבים &quot;לפי הסדר&quot; ו&quot;מהאחרונה&quot;, כללי הבדיקה, התוצאה והסטטיסטיקה, הגדרות ושאלות נפוצות.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="he_IL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="בחירת שפה">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="index.html" aria-current="true">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/guide/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">ערכת נושא</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">אוטומטי</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">בהיר</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">כהה</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">דף הבית</a>
+    <a href="index.html" aria-current="page">איך משתמשים</a>
+    <a href="../privacy/index.html">מדיניות פרטיות</a>
+    <a href="../terms/index.html">תנאי שימוש</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">מבחן זיכרון מספרים / DIGIT SPAN</p>
+    <h1>איך משתמשים</h1>
+  </header>
+
+  <h2>1. התחלת מבחן</h2>
+  <p>במסך הבית בוחרים "לפי הסדר" או "מהאחרונה" ורמה (מספר הספרות), ולוחצים על "התחלת המבחן".</p>
+  <ul>
+    <li><strong>לפי הסדר</strong>: מקלידים את הספרות בסדר שבו הופיעו. לדוגמה: אם הופיעו 3, אחריה 8 ואחריה 1, מקלידים 381</li>
+    <li><strong>מהאחרונה</strong>: מקלידים החל מהספרה האחרונה שהופיעה ועד הראשונה. לדוגמה: אם הופיעו 3, אחריה 8 ואחריה 1, מקלידים 183</li>
+  </ul>
+  <p>השיא האישי נשמר בנפרד עבור "לפי הסדר" ועבור "מהאחרונה".</p>
+
+  <h2>2. שינון הספרות</h2>
+  <p>הספרות מופיעות אחת אחרי השנייה. בהגדרות ברירת המחדל כל ספרה מוצגת למשך 0.7 שניות, ואחריה הפסקה של 0.3 שניות. אין צורך לגעת במסך בזמן ההצגה. בבחירה ב"הקראה" בהגדרות, הספרות לא מוצגות על המסך — שומעים אותן רק בקול.</p>
+
+  <h2>3. הקלדת התשובה</h2>
+  <p>כשהצגת הספרות מסתיימת, מופיעה מקלדת מספרים. מקלידים את הספרות שזוכרים. אם הוקלדה ספרה שגויה, אפשר ללחוץ על "מחיקה" כדי למחוק את הספרה האחרונה. ברגע שמוקלדות כל הספרות, התשובה נבדקת מיד (אין כפתור אישור).</p>
+  <p>כדי להפסיק באמצע, לוחצים על "יציאה". מבחן שהופסק לא נשמר ברשומות.</p>
+
+  <h2>4. כללי הבדיקה</h2>
+  <ul>
+    <li>כל מבחן כולל 5 שאלות. מספר הספרות נשאר ברמה שנבחרה (2–12 ספרות; ברירת המחדל: 3)</li>
+    <li>תשובה נכונה לא מוסיפה ספרה. כדי לנסות מספר ספרות גדול יותר, מעלים את הרמה במסך הבית או בהגדרות</li>
+    <li>אחרי כל שאלה מוצג רק "נכון" או "לא נכון", והתשובה הנכונה לא נחשפת</li>
+    <li>הספרות הן 0–9, ואותה ספרה אף פעם לא מופיעה פעמיים ברצף</li>
+  </ul>
+
+  <h2>5. התוצאה</h2>
+  <p>מוצג כמה מתוך 5 השאלות נענו נכון, וכן בדיקת התשובות של כל 5 השאלות. התשובה שלך מוצגת לצד התשובה הנכונה, והספרות השגויות מסומנות בצבע.</p>
+  <p>הרמה הגבוהה ביותר שבה כל 5 התשובות נכונות היא <strong>טווח הספרות</strong> שלך. כשהשיא האישי משתפר, מופיע בתוצאה "שיא אישי". נהוג לומר שהטווח האופייני אצל מבוגרים במצב "לפי הסדר" הוא 7±2 ספרות (Miller, 1956). האפליקציה סופרת רמה רק כשכל 5 השאלות באותה רמה נענו נכון, ולכן אופן הספירה שונה מזה של מבחנים מקובלים.</p>
+  <p>בלחיצה על "ניסיון נוסף" מתחיל מיד מבחן מאותו סוג, ובלחיצה על "חזרה לדף הבית" חוזרים למסך הבית.</p>
+
+  <h2>6. סטטיסטיקה</h2>
+  <p>ממסך הבית אפשר לפתוח את מסך הסטטיסטיקה, ולראות בו את השיא האישי היומי ב-14 הימים האחרונים ורשימה של כל הרשומות.</p>
+
+  <h2>7. הגדרות</h2>
+  <p>את ההגדרות פותחים ממסך הבית. הרמה, המהירות ואופן ההצגה חלים מהמבחן הבא. ערכת הנושא והצבע משתנים מיד.</p>
+  <ul>
+    <li><strong>רמה (מספר הספרות)</strong>: 2–12 ספרות. אפשר לשנות אותה גם במסך הבית</li>
+    <li><strong>מהירות הצגת הספרות</strong>: 0.05–2.0 שניות (בקפיצות של 0.05 שניות). גם ההפסקה בין הספרות משתנה לפי המהירות (0.3 שניות כשהמהירות היא 0.7 שניות)</li>
+    <li><strong>אופן ההצגה</strong>: מסך (תצוגה בלבד) / הקראה (קול בלבד) / שניהם</li>
+    <li><strong>ערכת נושא</strong>: לפי המכשיר / בהיר / כהה</li>
+    <li><strong>צבע</strong>: סגול / כחול / כתום / ורוד. משנה את הצבע של הכפתורים, של מספר השיא האישי ושל הפריטים שנבחרו (הצבעים של תשובה נכונה ושל טעות לא משתנים)</li>
+    <li><strong>פרימיום (בלי פרסומות)</strong>: מינוי חודשי שמתחדש אוטומטית ומבטל את הפרסומות (המחיר מוצג באפליקציה וב-App Store). כאן אפשר לרכוש, לשחזר רכישות ולנהל (לבטל) את המינוי</li>
+    <li><strong>הגדרות פרטיות</strong>: מוצג רק למשתמשים באזור הכלכלי האירופי (EEA), בבריטניה ובשווייץ. מאפשר לשנות מאוחר יותר את ההסכמה לפרסומות</li>
+  </ul>
+
+  <h2>8. שאלות נפוצות</h2>
+  <p><strong>באיזו רמה כדאי להתחיל?</strong><br>מומלץ להתחיל ב-3 ספרות (ברירת המחדל). אחרי שכל 5 השאלות נענו נכון, אפשר להעלות את הרמה באחת במסך הבית. הרמה הגבוהה ביותר שבה כל 5 התשובות נכונות נשמרת כשיא האישי.</p>
+  <p><strong>איפה נשמרות הרשומות?</strong><br>רק במכשיר. אין חשבון ואין התחברות. מחיקת האפליקציה מוחקת גם את הרשומות.</p>
+  <p><strong>איך מוחקים את הרשומות?</strong><br>אי אפשר למחוק רשומות בודדות. כדי למחוק את כולן, יש למחוק את האפליקציה.</p>
+  <p><strong>מתי מוצגות פרסומות?</strong><br>בתחתית מסכי הבית, התוצאה והסטטיסטיקה, ובמסך מלא בהתחלת מבחן (בלחיצה על "התחלת המבחן" במסך הבית או על "ניסיון נוסף" במסך התוצאה; פעם אחת מכל שתיים). אף פעם לא בזמן הצפייה בספרות, הקלדת התשובה או הצגת התוצאה של השאלה. בזמן מינוי פרימיום פעיל לא מוצגות פרסומות בכלל.</p>
+  <p><strong>איך מבטלים את פרימיום?</strong><br>באפליקציה: הגדרות › פרימיום › "ניהול המינוי", או ב-iPhone תחת הגדרות › [השם שלך] › מינויים. אפשר להמשיך להשתמש באפליקציה בלי פרסומות עד סוף התקופה ששולמה.</p>
+  <p><strong>האם התוצאה מראה עד כמה הזיכרון שלי טוב?</strong><br>התוצאה מראה כמה שאלות נענו נכון ברמה שנבחרה, באותו רגע בלבד. היא יכולה להשתנות לפי ההרגשה ומידת הריכוז. היא אינה תחליף לאבחון רפואי או להערכה של יכולות.</p>
+
+  <h2>9. יצירת קשר</h2>
+  <p>לדיווח על תקלות או לבקשות, אפשר לשלוח אימייל אל <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — מבחן זיכרון מספרים ל-iOS</p>
+  <p><a href="../privacy/index.html">מדיניות פרטיות</a> / <a href="../terms/index.html">תנאי שימוש</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

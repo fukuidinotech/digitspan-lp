@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cách sử dụng | Digit Span</title>
+<meta name="description" content="Cách sử dụng Digit Span: trình tự bài kiểm tra, “Theo thứ tự” và “Đảo ngược”, quy tắc chấm, cách xem kết quả và thành tích, cài đặt và câu hỏi thường gặp.">
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/guide/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/guide/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/guide/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/guide/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/guide/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/guide/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/guide/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/guide/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/guide/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/guide/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/guide/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/guide/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/guide/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/guide/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/vi/guide/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="Chọn ngôn ngữ">
+      <a lang="en" hreflang="en" href="../../guide/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/guide/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/guide/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/guide/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/guide/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/guide/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/guide/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/guide/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/guide/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/guide/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/guide/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/guide/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/guide/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="index.html" aria-current="true">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/guide/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="../../zh-Hant/guide/index.html">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">Màu hiển thị</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">Tự động</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">Sáng</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">Tối</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">Trang chủ</a>
+    <a href="index.html" aria-current="page">Cách sử dụng</a>
+    <a href="../privacy/index.html">Chính sách quyền riêng tư</a>
+    <a href="../terms/index.html">Điều khoản sử dụng</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">KIỂM TRA TRÍ NHỚ SỐ / DIGIT SPAN</p>
+    <h1>Cách sử dụng</h1>
+  </header>
+
+  <h2>1. Bắt đầu bài kiểm tra</h2>
+  <p>Ở Trang chủ, chọn “Theo thứ tự” hoặc “Đảo ngược” và mức (số chữ số), rồi nhấn “Bắt đầu kiểm tra”.</p>
+  <ul>
+    <li><strong>Theo thứ tự</strong> (nhắc lại xuôi): nhập đúng thứ tự xuất hiện. Ví dụ: 3 → 8 → 1 thì nhập “381”</li>
+    <li><strong>Đảo ngược</strong> (nhắc lại ngược): nhập từ chữ số xuất hiện sau cùng. Ví dụ: 3 → 8 → 1 thì nhập “183”</li>
+  </ul>
+  <p>Kỷ lục cá nhân được ghi riêng cho “Theo thứ tự” và “Đảo ngược”.</p>
+
+  <h2>2. Ghi nhớ các chữ số</h2>
+  <p>Các chữ số hiện ra lần lượt từng số. Theo cài đặt mặc định, mỗi chữ số hiện trong 0,7 giây, sau đó có khoảng trống 0,3 giây. Trong lúc hiển thị, bạn không cần chạm vào màn hình. Nếu chọn “Giọng đọc” trong Cài đặt, chữ số sẽ không hiện trên màn hình mà chỉ được đọc to.</p>
+
+  <h2>3. Nhập câu trả lời</h2>
+  <p>Khi các chữ số hiện xong, bàn phím số sẽ xuất hiện. Hãy nhập các chữ số bạn nhớ. Nếu nhập nhầm, nhấn “Xóa” để xóa chữ số vừa nhập. Khi nhập đủ số chữ số, câu trả lời được chấm ngay (không có nút xác nhận).</p>
+  <p>Nếu muốn dừng giữa chừng, nhấn “Dừng”. Bài kiểm tra đã dừng sẽ không được ghi lại.</p>
+
+  <h2>4. Quy tắc chấm</h2>
+  <ul>
+    <li>Mỗi bài kiểm tra có 5 câu. Số chữ số giữ nguyên theo mức đã chọn (2–12 chữ số; mặc định 3 chữ số)</li>
+    <li>Trả lời đúng cũng không làm tăng số chữ số. Muốn thử dãy dài hơn, hãy tăng mức ở Trang chủ hoặc trong Cài đặt</li>
+    <li>Sau mỗi câu chỉ hiện “Đúng” hoặc “Chưa đúng”, không hiện đáp án</li>
+    <li>Các chữ số từ 0 đến 9. Một chữ số không bao giờ xuất hiện hai lần liên tiếp</li>
+  </ul>
+
+  <h2>5. Xem kết quả</h2>
+  <p>Bạn sẽ thấy mình trả lời đúng bao nhiêu trong 5 câu, cùng phần đối chiếu đáp án của cả 5 câu. Đáp án đúng và câu trả lời của bạn được đặt cạnh nhau, chữ số sai được tô màu.</p>
+  <p>Mức cao nhất mà bạn trả lời đúng cả 5 câu là <strong>khoảng nhớ chữ số</strong> của bạn. Khi lập kỷ lục mới, màn hình kết quả sẽ hiện “Kỷ lục cá nhân”. Ở chế độ Theo thứ tự (nhắc lại xuôi), mức thông thường của người trưởng thành được cho là 7±2 chữ số (Miller, 1956). Tuy nhiên, ứng dụng này chỉ tính khi bạn trả lời đúng cả 5 câu ở cùng số chữ số, nên cách tính khác với các bài kiểm tra thông thường.</p>
+  <p>Nhấn “Thử lại” để bắt đầu ngay bài kiểm tra cùng loại, hoặc “Về trang chủ” để quay lại Trang chủ.</p>
+
+  <h2>6. Xem thành tích</h2>
+  <p>Mở màn hình Thành tích từ Trang chủ để xem diễn biến kỷ lục cá nhân theo ngày trong 14 ngày gần đây và danh sách mọi kết quả từ trước đến nay.</p>
+
+  <h2>7. Cài đặt</h2>
+  <p>Mở Cài đặt từ Trang chủ. Mức, tốc độ và cách trình bày được áp dụng từ lần kiểm tra tiếp theo. Chủ đề và màu thay đổi ngay.</p>
+  <ul>
+    <li><strong>Mức (số chữ số)</strong>: 2–12 chữ số. Cũng có thể thay đổi ở Trang chủ</li>
+    <li><strong>Tốc độ hiển thị chữ số</strong>: 0,05–2,0 giây (mỗi bước 0,05 giây). Khoảng trống giữa các chữ số cũng thay đổi theo tốc độ (0,3 giây khi chọn 0,7 giây)</li>
+    <li><strong>Cách trình bày</strong>: Màn hình (chỉ hiển thị) / Giọng đọc (chỉ đọc to) / Cả hai</li>
+    <li><strong>Chủ đề</strong>: Theo hệ thống / Sáng / Tối</li>
+    <li><strong>Màu</strong>: Tím / Xanh dương / Cam / Hồng. Đổi màu của các nút, con số kỷ lục cá nhân, mục đang chọn… (màu của đúng và sai không đổi)</li>
+    <li><strong>Premium</strong>: gói đăng ký hằng tháng, tự động gia hạn, giúp tắt quảng cáo (giá được hiển thị trong ứng dụng và trên App Store). Bạn có thể mua, khôi phục giao dịch mua và quản lý (hủy) gói đăng ký tại đây</li>
+    <li><strong>Cài đặt quyền riêng tư</strong>: chỉ hiển thị với người dùng ở Khu vực Kinh tế Châu Âu (EEA), Vương quốc Anh và Thụy Sĩ. Cho phép bạn thay đổi sự đồng ý về quảng cáo sau này</li>
+  </ul>
+
+  <h2>8. Câu hỏi thường gặp</h2>
+  <p><strong>Nên bắt đầu từ mức nào?</strong><br>Ban đầu nên chọn 3 chữ số (mặc định). Khi trả lời đúng cả 5 câu, hãy thử tăng mức thêm 1 ở Trang chủ. Mức cao nhất mà bạn trả lời đúng cả 5 câu sẽ được ghi lại làm kỷ lục cá nhân.</p>
+  <p><strong>Kết quả được lưu ở đâu?</strong><br>Chỉ trên thiết bị của bạn. Không có tài khoản hay đăng nhập. Khi xóa ứng dụng, kết quả cũng bị xóa.</p>
+  <p><strong>Muốn xóa kết quả thì làm thế nào?</strong><br>Không có chức năng xóa từng kết quả. Để xóa tất cả, hãy xóa ứng dụng.</p>
+  <p><strong>Khi nào quảng cáo xuất hiện?</strong><br>Ở cuối màn hình Trang chủ, Kết quả và Thành tích, và khi bắt đầu bài kiểm tra (“Bắt đầu kiểm tra” ở Trang chủ và “Thử lại” ở màn hình Kết quả; cứ 2 lần thì có 1 lần, toàn màn hình). Không xuất hiện trong lúc bạn xem chữ số, nhập câu trả lời hay trong lúc chấm từng câu. Khi đang đăng ký Premium thì không có quảng cáo.</p>
+  <p><strong>Hủy Premium thế nào?</strong><br>Bạn có thể hủy trong “Quản lý gói đăng ký” tại Cài đặt › Premium của ứng dụng, hoặc trong Cài đặt › [tên của bạn] › Đăng ký trên iPhone. Bạn vẫn dùng không quảng cáo cho đến hết kỳ đã thanh toán.</p>
+  <p><strong>Kết quả có cho biết trí nhớ của tôi tốt hay kém không?</strong><br>Kết quả cho biết bạn đã nhập đúng bao nhiêu câu ở số chữ số đã chọn, tại thời điểm đó. Kết quả cũng thay đổi theo thể trạng và mức độ tập trung. Kết quả không thay thế cho chẩn đoán y khoa hay việc đánh giá năng lực.</p>
+
+  <h2>9. Liên hệ</h2>
+  <p>Vui lòng gửi báo lỗi hoặc góp ý đến <a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a>.</p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — bài kiểm tra trí nhớ số cho iOS</p>
+  <p><a href="../privacy/index.html">Chính sách quyền riêng tư</a> / <a href="../terms/index.html">Điều khoản sử dụng</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>

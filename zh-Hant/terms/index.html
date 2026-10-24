@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用條款 | Digit Span</title>
+<!--chrome:alt-->
+<script>
+(function () {
+  var KEY = "digitspan-lp-theme", root = document.documentElement;
+  function saved() {
+    try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "auto"; } catch (e) { return "auto"; }
+  }
+  function apply(v) {
+    if (v === "auto") { root.removeAttribute("data-scheme"); } else { root.setAttribute("data-scheme", v); }
+    var radio = document.getElementById("theme-" + v);
+    if (radio) { radio.checked = true; }
+  }
+  apply(saved());
+  document.addEventListener("DOMContentLoaded", function () {
+    apply(saved());
+    var radios = document.querySelectorAll('input[name="theme"]');
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function (event) {
+        var v = event.target.value === "light" || event.target.value === "dark" ? event.target.value : "auto";
+        apply(v);
+        try { if (v === "auto") { localStorage.removeItem(KEY); } else { localStorage.setItem(KEY, v); } } catch (e) {}
+      });
+    }
+  });
+  // 「戻る」で前のページがそのまま出たとき（bfcache）も、いまの選択に合わせ直す
+  window.addEventListener("pageshow", function () { apply(saved()); });
+})();
+</script>
+<link rel="canonical" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/terms/">
+<link rel="alternate" hreflang="en" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="alternate" hreflang="ja" href="https://fukuidinotech.github.io/digitspan-lp/ja/terms/">
+<link rel="alternate" hreflang="de" href="https://fukuidinotech.github.io/digitspan-lp/de/terms/">
+<link rel="alternate" hreflang="fr" href="https://fukuidinotech.github.io/digitspan-lp/fr/terms/">
+<link rel="alternate" hreflang="es" href="https://fukuidinotech.github.io/digitspan-lp/es/terms/">
+<link rel="alternate" hreflang="it" href="https://fukuidinotech.github.io/digitspan-lp/it/terms/">
+<link rel="alternate" hreflang="pt-BR" href="https://fukuidinotech.github.io/digitspan-lp/pt-BR/terms/">
+<link rel="alternate" hreflang="nl" href="https://fukuidinotech.github.io/digitspan-lp/nl/terms/">
+<link rel="alternate" hreflang="pl" href="https://fukuidinotech.github.io/digitspan-lp/pl/terms/">
+<link rel="alternate" hreflang="ru" href="https://fukuidinotech.github.io/digitspan-lp/ru/terms/">
+<link rel="alternate" hreflang="ar" href="https://fukuidinotech.github.io/digitspan-lp/ar/terms/">
+<link rel="alternate" hreflang="he" href="https://fukuidinotech.github.io/digitspan-lp/he/terms/">
+<link rel="alternate" hreflang="ko" href="https://fukuidinotech.github.io/digitspan-lp/ko/terms/">
+<link rel="alternate" hreflang="vi" href="https://fukuidinotech.github.io/digitspan-lp/vi/terms/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hans/terms/">
+<link rel="alternate" hreflang="zh-Hant" href="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/terms/">
+<link rel="alternate" hreflang="x-default" href="https://fukuidinotech.github.io/digitspan-lp/terms/">
+<link rel="stylesheet" href="../../legal.css?v=33942191">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:url" content="https://fukuidinotech.github.io/digitspan-lp/zh-Hant/terms/">
+<meta property="og:site_name" content="Digit Span">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<!--/chrome:alt-->
+</head>
+<body>
+<!--chrome:nav-->
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../../favicon.png" alt="" width="28" height="28">Digit Span</a>
+  <div class="display-controls">
+    <nav class="langs" aria-label="選擇語言">
+      <a lang="en" hreflang="en" href="../../terms/index.html">English</a>
+      <a lang="ja" hreflang="ja" href="../../ja/terms/index.html">日本語</a>
+      <a lang="de" hreflang="de" href="../../de/terms/index.html">Deutsch</a>
+      <a lang="fr" hreflang="fr" href="../../fr/terms/index.html">Français</a>
+      <a lang="es" hreflang="es" href="../../es/terms/index.html">Español</a>
+      <a lang="it" hreflang="it" href="../../it/terms/index.html">Italiano</a>
+      <a lang="pt-BR" hreflang="pt-BR" href="../../pt-BR/terms/index.html">Português (Brasil)</a>
+      <a lang="nl" hreflang="nl" href="../../nl/terms/index.html">Nederlands</a>
+      <a lang="pl" hreflang="pl" href="../../pl/terms/index.html">Polski</a>
+      <a lang="ru" hreflang="ru" href="../../ru/terms/index.html">Русский</a>
+      <a lang="ar" hreflang="ar" href="../../ar/terms/index.html">العربية</a>
+      <a lang="he" hreflang="he" href="../../he/terms/index.html">עברית</a>
+      <a lang="ko" hreflang="ko" href="../../ko/terms/index.html">한국어</a>
+      <a lang="vi" hreflang="vi" href="../../vi/terms/index.html">Tiếng Việt</a>
+      <a lang="zh-Hans" hreflang="zh-Hans" href="../../zh-Hans/terms/index.html">简体中文</a>
+      <a lang="zh-Hant" hreflang="zh-Hant" href="index.html" aria-current="true">繁體中文</a>
+    </nav>
+    <fieldset class="themes">
+      <legend class="visually-hidden">顯示配色</legend>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-auto" value="auto" autocomplete="off" checked>
+      <label for="theme-auto">自動</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-light" value="light" autocomplete="off">
+      <label for="theme-light">淺色</label>
+      <input class="visually-hidden" type="radio" name="theme" id="theme-dark" value="dark" autocomplete="off">
+      <label for="theme-dark">深色</label>
+    </fieldset>
+  </div>
+  <nav class="pages">
+    <a href="../index.html">首頁</a>
+    <a href="../guide/index.html">使用說明</a>
+    <a href="../privacy/index.html">隱私權政策</a>
+    <a href="index.html" aria-current="page">使用條款</a>
+  </nav>
+</header>
+<!--/chrome:nav-->
+<main>
+  <header>
+    <p class="app-name">數字記憶測驗 / DIGIT SPAN</p>
+    <h1>使用條款</h1>
+    <p class="updated" data-updated="2026-10-24">最後更新日期: 2026年10月24日</p>
+  </header>
+
+  <p class="i18n-note">本頁為日文原文的翻譯。如有歧異，以日文版為準。</p>
+
+  <p>本使用條款（以下稱「本條款」）訂定 iOS App「Digit Span」（日文名稱「数字記憶テスト」，以下稱「本 App」）的使用條件。下載或使用本 App 時，即視為你已同意本條款。</p>
+  <p>本 App 適用 Apple Inc. 的「<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">授權應用程式終端使用者授權合約（標準 EULA）</a>」。本條款為標準 EULA 的補充；兩者有衝突時，以標準 EULA 為準。</p>
+
+  <h2>1. 提供的服務</h2>
+  <p>本 App 提供一項測驗：記住在螢幕上逐一顯示（或朗讀）的數字並輸入，確認你能記住幾位數（數字廣度）。</p>
+
+  <h2>2. 關於測驗結果</h2>
+  <p>本 App 的結果顯示的是在你選擇的位數下，當時正確輸入了幾題，不能取代醫療診斷或能力的評估與判定。此外，本 App 不保證提升記憶力、專注力或其他能力。如有健康方面的疑慮，請諮詢醫療機構。</p>
+
+  <h2>3. 廣告的顯示</h2>
+  <p>本 App 可免費使用，並為支應營運費用而顯示第三方投放的廣告（Google AdMob）。訂閱進階版（第 4 節）期間不會顯示廣告。開發者對廣告內容及你與廣告主之間的往來不負責任。關於廣告相關資料的處理，請參閱<a href="../privacy/index.html">隱私權政策</a>。</p>
+
+  <h2>4. 進階版（自動續訂訂閱）</h2>
+  <ul>
+    <li>內容：訂閱期間，本 App 內不會顯示廣告（橫幅廣告與全螢幕廣告）。無論是否訂閱，都能免費使用測驗與成績功能。</li>
+    <li>期間與費用：每 1 個月自動續訂。費用顯示於本 App 的購買畫面與 App Store。費用會在確認購買時向你的 Apple 帳號收取，續訂費用會在目前期間結束前的 24 小時內收取。</li>
+    <li>自動續訂：除非在目前期間結束前至少 24 小時取消，否則將以相同的期間與費用自動續訂。</li>
+    <li>取消：可隨時從本 App「設定」›「進階版」中的「管理訂閱」，或 Apple 帳號的設定取消。取消後，在已付費的期間結束前，仍可無廣告使用。</li>
+    <li>退款：於期間中途取消，不會按日數比例退款。退款依 Apple 的規定，由 Apple 處理。</li>
+    <li>回復購買項目：在以相同 Apple 帳號登入的裝置上，可透過「回復購買項目」延續訂閱。不適用「家人共享」。</li>
+    <li>費用變更：變更費用時，將依 Apple 的程序事先通知。</li>
+  </ul>
+
+  <h2>5. 禁止事項</h2>
+  <ul>
+    <li>複製、修改、改編本 App，或製作衍生著作</li>
+    <li>還原工程、反編譯、反組譯</li>
+    <li>重新散布、出借或販售本 App 或其任何部分</li>
+    <li>妨礙或竄改廣告顯示的行為</li>
+    <li>違反法令或公共秩序善良風俗的行為</li>
+    <li>妨礙本 App 提供的行為</li>
+  </ul>
+
+  <h2>6. 智慧財產權</h2>
+  <p>本 App 及其所含的程式、設計、文字等的智慧財產權，歸開發者或合法的權利人所有。</p>
+
+  <h2>7. 免責聲明</h2>
+  <p>本 App 依「現狀」提供。開發者不保證本 App 符合使用者的特定目的、可不中斷地使用，或不存在瑕疵。裝置內儲存的記錄遺失時，開發者亦不負責復原。</p>
+  <p>因使用或無法使用本 App 所生的損害，除因開發者的故意或重大過失所致者外，開發者不負責任。但本條款屬於日本《消費者契約法》所稱的消費者契約，且損害係因開發者的過失（重大過失除外）所致時，開發者僅賠償通常且直接的損害。</p>
+
+  <h2>8. 本 App 的變更與終止提供</h2>
+  <p>開發者可能變更本 App 的內容或終止提供。若在仍有進階版訂閱者時終止提供，將事先在本頁與本 App 中公告，並停止受理新的購買。退款依 Apple 的規定處理。</p>
+
+  <h2>9. 本條款的變更</h2>
+  <p>開發者可能視需要變更本條款。變更時，將於生效日前的相當期間，在本頁公告變更內容與生效日期。</p>
+
+  <h2>10. 準據法與管轄法院</h2>
+  <p>本條款以日本法為準據法。因本 App 或本條款發生爭議時，以東京地方法院為第一審專屬合意管轄法院。</p>
+
+  <h2>11. 聯絡我們</h2>
+  <p>提供者：Toru Fukui</p>
+  <p><a href="mailto:fukuidinotech@gmail.com">fukuidinotech@gmail.com</a></p>
+
+</main>
+<!--chrome:foot-->
+<footer>
+  <p><a href="../index.html">Digit Span</a> — iOS 數字記憶測驗</p>
+  <p><a href="../guide/index.html">使用說明</a> / <a href="../privacy/index.html">隱私權政策</a></p>
+  <p>&copy; 2026 Toru Fukui</p>
+</footer>
+<!--/chrome:foot-->
+</body>
+</html>
