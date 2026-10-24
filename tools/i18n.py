@@ -241,12 +241,16 @@ def block_nav(lang: str, page: str) -> str:
            f'  <a class="brand" href="{rel(lang, page, lang, "index")}">'
            f'<img src="{asset(lang, page, "favicon.png")}" alt="" width="28" height="28">{cfg["app"]}</a>',
            '  <div class="display-controls">',
-           f'    <nav class="langs" aria-label="{cfg["pick"]}">']
+           # 16言語は横に並べると本文の幅を突き抜けるので、今の言語だけを出して開閉する（N-Back の LP と同じ。JS なし）
+           f'    <nav class="langs" aria-label="{cfg["pick"]}">',
+           '      <details class="langpick">',
+           f'        <summary>{cfg["native"]}</summary>',
+           '        <ul>']
     for other, ocfg in LANGS.items():
         cur = ' aria-current="true"' if other == lang else ""
-        out.append(f'      <a lang="{other}" hreflang="{other}" '
-                   f'href="{rel(lang, page, other, page)}"{cur}>{ocfg["native"]}</a>')
-    out.append('    </nav>')
+        out.append(f'          <li><a lang="{other}" hreflang="{other}" '
+                   f'href="{rel(lang, page, other, page)}"{cur}>{ocfg["native"]}</a></li>')
+    out += ['        </ul>', '      </details>', '    </nav>']
     out.append('    <fieldset class="themes">')
     out.append(f'      <legend class="visually-hidden">{cfg["theme"]}</legend>')
     for theme in ("auto", "light", "dark"):
